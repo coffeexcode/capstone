@@ -16,6 +16,7 @@ export default function CAButton(props) {
 
 const styles = StyleSheet.create({
   default: {
+    alignItems: 'center',
     borderRadius: 10,
     backgroundColor: '#6C63FF',
     padding: 18,
