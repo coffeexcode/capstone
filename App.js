@@ -13,7 +13,7 @@ import ScanQR from './components/screens/ScanQR';
 export default function App() {
   return (
     <>
-      <SelectView/>
+      <PresentQR/>
       <StatusBar style="auto" />
     </>
   );
