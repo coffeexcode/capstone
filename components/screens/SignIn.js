@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Image, TextInput, View } from 'react-native';
+import { KeyboardAvoidingView, StyleSheet, Image, TextInput, View, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native';
 
 // Fix relative imports
 import CAText from '../core/CAText';
@@ -14,45 +14,53 @@ export default function SignIn() {
 
   const loginRequest = () => {
     // TODO send API request to authenticate
+    // If authenticated, navigate to SelectView
     console.log(username);
     console.log(password);
   }
 
   return (
-    <View style={styles.container}>
-      <Image source={logInImg} style={styles.splash}/>
-      <Spacer size="lg"/>
-      <CAText size="xlg">Sign In</CAText>
-      <Spacer size="md"/>
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          placeholderTextColor='#A9A9A9'
-          placeholder="Username"
-          onChangeText={text => setUsername(text)}/>
-      </View>
-      <View style={styles.inputContainer}>
-        <TextInput
-          secureTextEntry
-          style={styles.input}
-          placeholderTextColor='#A9A9A9'
-          text
-          placeholder="Password"
-          onChangeText={text => setPassword(text)}/>
-      </View>
-      <CAButton
-        size="sm"
-        title="Log in"
-        onPress={loginRequest}
-      />
-      <Spacer size=""/>
-      <CAText style={{ color: '#A9A9A9' }} size="xsm">
-        {createAccountMsg}
-        <CAText
-          style={{ textDecorationLine: 'underline'}}
-          size="xsm">here</CAText>
-        </CAText>
-    </View>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={{ flex: 1 }}
+    >
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={styles.container}>
+          <Image source={logInImg} style={styles.splash}/>
+          <Spacer size="lg"/>
+          <CAText size="xlg">Sign In</CAText>
+          <Spacer size="md"/>
+          <View style={styles.inputContainer}>
+            <TextInput
+              style={styles.input}
+              placeholderTextColor='#A9A9A9'
+              placeholder="Username"
+              onChangeText={text => setUsername(text)}/>
+          </View>
+          <View style={styles.inputContainer}>
+            <TextInput
+              secureTextEntry
+              style={styles.input}
+              placeholderTextColor='#A9A9A9'
+              text
+              placeholder="Password"
+              onChangeText={text => setPassword(text)}/>
+          </View>
+          <CAButton
+            size="sm"
+            title="Log in"
+            onPress={loginRequest}
+          />
+          <Spacer size=""/>
+          <CAText style={{ color: '#A9A9A9' }} size="xsm">
+            {createAccountMsg}
+            <CAText
+              style={{ textDecorationLine: 'underline'}}
+              size="xsm">here</CAText>
+            </CAText>
+        </View>
+      </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
   )
 }
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Modal } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import * as Permissions from 'expo-permissions';
 
@@ -10,6 +10,8 @@ import CAButton from '../core/CAButton';
 export default function ScanQR() {
   const [hasScanned, setHasScanned] = useState(false);
   const [hasCameraPermission, setHasCameraPermission] = useState(false);
+  const [postScanMsg, setPostScanMsg] = useState('');
+  const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
     async function askCameraPermissions() {
@@ -20,7 +22,8 @@ export default function ScanQR() {
   }, [])
 
   const handleScan = ({ type, data }) => {
-    alert(`${hasScanned} => Bar code with type ${type} and data ${data} has been scanned!`);
+    setPostScanMsg(`You have signed in a user\nTYPE: ${type}\nDATA: ${data}`);
+    setModalVisible(true);
     setHasScanned(true);
   }
 
@@ -41,16 +44,34 @@ export default function ScanQR() {
         return QRCodeScanner;
     }
   }
+
+  const promptModal = () => (
+    <Modal
+        animationType="slide"
+        visible={modalVisible}
+        transparent={true}
+        onRequestClose={() => setModalVisible(false)}
+      >
+        <View style={styles.container}>
+          <View style={styles.modalContainer}>
+            <CAText size="sm">{ postScanMsg }</CAText>
+            <Spacer size="sm"/>
+            <CAButton title="Dismiss" onPress={() => setModalVisible(!modalVisible)}/>
+          </View>
+        </View>
+      </Modal>
+  );
   
   return (
     <View style={styles.container}>
-      <CAText appColor size="xlg">Scan QR Code</CAText>
-      {renderQRCodeScanner()}
-      <View style={styles.msgContainer}>
-        <CAText style={{ color: '#A9A9A9'}} size="xsm">
-          {`Use this to scan attendee's QR Codes.`}
-        </CAText>
-      </View>
+        {promptModal()}
+        <CAText appColor size="xlg">Scan QR Code</CAText>
+        {renderQRCodeScanner()}
+        <View style={styles.msgContainer}>
+          <CAText style={{ color: '#A9A9A9'}} size="xsm">
+            {`Use this to scan attendee's QR Codes.`}
+          </CAText>
+        </View>
     </View>
   )
 }
@@ -60,6 +81,21 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center'
+  },
+  modalContainer: {
+    margin: 20, 
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    elevation: 3
   },
   msgContainer: {
     width: "65%"

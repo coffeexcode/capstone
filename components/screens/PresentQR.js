@@ -12,7 +12,7 @@ export default function PresentQR() {
     <View style={styles.container}>
       <CAText appColor size="xlg">Your QR Code</CAText>
       <Spacer size="xlg"/>
-      {/* TODO: Get QR Code from API */}
+      {/* TODO: Get QR Code from API based on current user */}
       <Image source={exampleQR} style={styles.displayQR}/>
       <Spacer size="xlg"/>
       <View style={styles.msgContainer}>
