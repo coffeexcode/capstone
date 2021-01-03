@@ -2,13 +2,13 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import CAText from './CAText';
 
-export default function CAButton(props) {
+export default function CAButton({ onPress, style, title }) {
   return (
   <TouchableOpacity 
-    onPress={props.onPress}
-    style={[styles.default, props.style]}>
+    onPress={onPress}
+    style={[styles.default, style]}>
       <CAText style={{ color: '#fff' }} size="sm">
-        {props.title}
+        {title}
       </CAText>
     </TouchableOpacity>
   )

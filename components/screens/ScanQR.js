@@ -45,7 +45,7 @@ export default function ScanQR() {
     }
   }
 
-  const promptModal = () => (
+  const renderPromptModal = () => (
     <Modal
         animationType="slide"
         visible={modalVisible}
@@ -64,7 +64,7 @@ export default function ScanQR() {
   
   return (
     <View style={styles.container}>
-        {promptModal()}
+        {renderPromptModal()}
         <CAText appColor size="xlg">Scan QR Code</CAText>
         {renderQRCodeScanner()}
         <View style={styles.msgContainer}>

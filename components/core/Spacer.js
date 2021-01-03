@@ -1,10 +1,9 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-export default function Spacer(props) {
+export default function Spacer({ size, style }) {
   return (
-    <View style={[styles.default, props.style, styles[`${props.size}`]]}>
-      {props.children}
+    <View style={[styles.default, style, styles[`${size}`]]}>
     </View>
   )
 }

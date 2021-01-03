@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 
-export default function CAText(props) {
-  const appColor = props.appColor ? styles.appColor : null;
+export default function CAText({ appColor, style, size, children }) {
+  const applyAppColor = appColor ? styles.appColor : null;
   return (
-    <Text style={[styles.default, appColor, props.style, styles[`${props.size}`]]}>
-      {props.children}
+    <Text style={[styles.default, applyAppColor, style, styles[`${size}`]]}>
+      {children}
     </Text>
   )
 }
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
   xsm: { fontSize: 14 },
   sm: { fontSize: 18 },
-  md: { fontSize: 26 },
+  md: { fontSize: 22 },
   lg: { fontSize: 34 },
   xlg: { fontSize: 42 }
 });
