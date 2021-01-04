@@ -1,0 +1,13 @@
+.admin-home {
+  padding-top: 15%;
+}
+.event-img {
+  width: 60%;
+  height: auto;
+}
+.landing-call {
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: normal;
+  width: 450px;
+  float: right;
+}
