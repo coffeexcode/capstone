@@ -12,7 +12,7 @@ export const Banner = (props) => {
         <Grid item xs={7}>
           <div className="brand">
             <div style={{float: "left", width: "50%"}}>
-              <span className="brandIcon"><DonutSmallIcon/></span>
+              <span className="brandIcone"><DonutSmallIcon/></span>
               <span className="brandName">ConAssist</span>
             </div>
           </div>
@@ -29,7 +29,6 @@ export const Banner = (props) => {
         <Grid item xs={2}>
           <div className="login">
           Login <span className="loginIcon"><AccountCircleIcon/></span>
-
           </div>
         </Grid>
       </Grid>
