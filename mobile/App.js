@@ -6,11 +6,12 @@ import SelectView from './components/screens/SelectView';
 import PresentQR from './components/screens/PresentQR';
 import ScanQR from './components/screens/ScanQR';
 import Schedule from './components/screens/Schedule';
+import Profile from './components/screens/Profile';
 
 export default function App() {
   return (
     <>
-      <PresentQR/>
+      <Profile/>
       <StatusBar style="auto" />
     </>
   );
