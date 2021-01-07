@@ -10,7 +10,7 @@ import Schedule from './components/screens/Schedule';
 export default function App() {
   return (
     <>
-      <Schedule/>
+      <PresentQR/>
       <StatusBar style="auto" />
     </>
   );
