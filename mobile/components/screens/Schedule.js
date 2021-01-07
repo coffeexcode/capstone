@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, SafeAreaView } from 'react-native';
 import { Agenda } from 'react-native-calendars';
 
 import { Entypo, FontAwesome, FontAwesome5, Ionicons } from '@expo/vector-icons'; 
@@ -65,34 +65,37 @@ export default function Schedule() {
   );
 
   return (
-    <View style={{ flex: 1, marginTop: '15%'}}>
-    <CAText style={{ alignSelf: 'center'}} size="lg">Schedule</CAText>
-    <Spacer size="sm"/>
-    <Agenda
-      items={items}
-      selected={currentDate}
-      renderItem={renderItem}
-      renderEmptyDate={(renderEmptyDate)}
-      renderEmptyData={renderEmptyDate}
-      rowHasChanged={(r1, r2) => r1.name !== r2.name}
-      pastScrollRange={1}
-      futureScrollRange={1}
-      theme={{
-        agendaDayNumColor: 'black',
-        agendaDayTextColor: 'black',
-        agendaKnobColor: APP_THEME_COLOR,
-        dotColor: APP_THEME_COLOR,
-        selectedDotColor: 'white',
-        selectedDayBackgroundColor: APP_THEME_COLOR,
-        todayTextColor: APP_THEME_COLOR,
-        agendaTodayColor: APP_THEME_COLOR
-      }}
-    />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <CAText style={{ alignSelf: 'center'}} size="lg">Schedule</CAText>
+      <Spacer size="sm"/>
+      <Agenda
+        items={items}
+        selected={currentDate}
+        renderItem={renderItem}
+        renderEmptyDate={(renderEmptyDate)}
+        renderEmptyData={renderEmptyDate}
+        rowHasChanged={(r1, r2) => r1.name !== r2.name}
+        pastScrollRange={1}
+        futureScrollRange={1}
+        theme={{
+          agendaDayNumColor: 'black',
+          agendaDayTextColor: 'black',
+          agendaKnobColor: APP_THEME_COLOR,
+          dotColor: APP_THEME_COLOR,
+          selectedDotColor: 'white',
+          selectedDayBackgroundColor: APP_THEME_COLOR,
+          todayTextColor: APP_THEME_COLOR,
+          agendaTodayColor: APP_THEME_COLOR
+        }}
+      />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
   item: {
     backgroundColor: 'white',
     flex: 1,
