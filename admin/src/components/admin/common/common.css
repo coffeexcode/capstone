@@ -1,0 +1,9 @@
+.admin-sidebar {
+  border: 0.5px #e0e0e0 solid;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.number-widget-card {
+  padding: 10%;
+}

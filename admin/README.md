@@ -56,5 +56,10 @@ yarn install
 ```sh
 yarn start
 ```
+## Design
+
+For design reference or to collaborate on page design see the figma
+folder: `https://www.figma.com/files/project/21846921/ConAssist`
+
 ## Usage
 TODO
