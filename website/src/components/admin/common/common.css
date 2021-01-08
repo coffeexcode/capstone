@@ -1,6 +1,8 @@
 .admin-sidebar {
   border: 0.5px #e0e0e0 solid;
   border-radius: 5px;
+  margin-top: 5%;
+  height: 90%;
   padding: 15px;
 }
 

@@ -6,6 +6,7 @@ import {
   ListItemText,
   Divider,
 } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 import './common.css';
 
 /**
@@ -13,23 +14,28 @@ import './common.css';
  * @param {*} props 
  */
 export const Sidebar = (props) => {
+  const history = useHistory();
+
+  const redirect = (page) => {
+    history.push(`/admin/${page}`);
+  }
 
   return (
     <div className="admin-sidebar">
       <List component="admin-nav">
-        <ListItem button>
+        <ListItem onClick={() => redirect("statistics")} button>
           <ListItemText primary="Statistics" />
         </ListItem>
         <Divider/>
-        <ListItem button>
+        <ListItem onClick={() => redirect("applications")} button>
           <ListItemText primary="Applications" />
         </ListItem>
         <Divider/>
-        <ListItem button>
+        <ListItem onClick={() => redirect("data")} button>
           <ListItemText primary="Manage Data" />
         </ListItem>
         <Divider/>
-        <ListItem button>
+        <ListItem onClick={() => redirect("help")} button>
           <ListItemText primary="Help" />
         </ListItem>
       </List>
