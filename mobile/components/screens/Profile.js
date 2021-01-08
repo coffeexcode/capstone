@@ -11,9 +11,11 @@ import mockInstanceData from '../../assets/testData/instance.json';
 const text = {
   conferenceID: 'Conference ID: ',
   register: 'You are registered as a(n): ',
-  loadNewConference: 'You are using the app with the above conference loaded. You can change this by loading a new conference that you are registered to!'
+  loadNewConferenceTitle: 'Load New Conference',
+  loadNewConferenceMsg: 'You are using the app with the above conference loaded. You can change this by loading a new conference that you are registered to!'
 }
-export default function Profile() {
+
+export default function Profile({ navigation }) {
   const [profileData, setProfileData] = useState({});
   const [instanceData, setInstanceData] = useState({});
 
@@ -22,36 +24,38 @@ export default function Profile() {
     setInstanceData(mockInstanceData[0]);
   }, []);
 
+  const logout = () => navigation.navigate('SignIn');
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.iconContainer}>
-        <FontAwesome5 style={styles.profileIcon} name="user-circle" size={120} color="black" />
+        <FontAwesome5 style={styles.profileIcon} name='user-circle' size={120} color='black' />
       </View>
       <View style={styles.infoContainer}>
         <CAText>{profileData.name}</CAText>
-        <CAText style={styles.email} size="md">{profileData.email}</CAText>
+        <CAText style={styles.email} size='md'>{profileData.email}</CAText>
       </View>
       <View style={styles.horizontalRule} />
       <View style={{ padding: 20 }}>
-        <CAText size="sm" style={{ padding: 10 }}>
+        <CAText size='sm' style={{ padding: 10 }}>
           {text.conferenceID}
           <CAText size="sm" style={{ fontWeight: '400'}}>
             {instanceData.id}
           </CAText>
         </CAText>
-        <CAText size="sm" style={{ padding: 10 }}>
+        <CAText size='sm' style={{ padding: 10 }}>
           {text.register}
-          <CAText size="sm" style={{ fontWeight: '400'}}>
+          <CAText size='sm' style={{ fontWeight: '400'}}>
             {instanceData.role}
           </CAText>
         </CAText>
-        <CAButton style={styles.loadButton} title="Load New Conference" size="sm"/>
-        <CAText style={{ alignSelf: 'center', color: '#A9A9A9'}} size="xsm">
-            {text.loadNewConference}
+        <CAButton style={styles.loadButton} title={text.loadNewConferenceTitle} size='sm'/>
+        <CAText style={{ alignSelf: 'center', color: '#A9A9A9'}} size='xsm'>
+            {text.loadNewConferenceMsg}
           </CAText>
       </View>
       <View style={styles.bottomActionContainer}>
-        <CAButton style={styles.logoutButton} title="Logout"/>
+        <CAButton onPress={logout} style={styles.logoutButton} title='Logout' />
       </View>
     </SafeAreaView>
   )

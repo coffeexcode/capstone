@@ -3,21 +3,25 @@ import { Image, StyleSheet, View } from 'react-native';
 
 import CAText from '../core/CAText';
 import Spacer from '../core/Spacer';
-import exampleQR from '../../assets/images/exampleQR.png';
+import testQR from '../../assets/images/testQR.png';
+
+const text = {
+  qrHeader: 'Your QR Code',
+  qrMessage: 'Expect to be asked to present your QR Code when checking in, getting food/snacks, and winning prizes!'
+};
 
 export default function PresentQR() {
-  const QRCodeMsg = 'Expect to be asked to present your QR Code when checking in, getting food/snacks, and winning prizes!';
   
   return (
     <View style={styles.container}>
-      <CAText appColor size="xlg">Your QR Code</CAText>
-      <Spacer size="xlg"/>
+      <CAText appColor size='xlg'>{text.qrHeader}</CAText>
+      <Spacer size='xlg'/>
       {/* TODO: Get QR Code from API based on current user */}
-      <Image source={exampleQR} style={styles.displayQR}/>
-      <Spacer size="xlg"/>
+      <Image source={testQR} style={styles.displayQR}/>
+      <Spacer size='xlg'/>
       <View style={styles.msgContainer}>
-        <CAText style={{ color: '#A9A9A9' }} size="xsm">
-          {QRCodeMsg}
+        <CAText style={{ color: '#A9A9A9' }} size='xsm'>
+          {text.qrMessage}
         </CAText>
       </View>
     </View>
@@ -35,6 +39,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   msgContainer: {
-    width: "80%"
+    width: '80%'
   }
 });
