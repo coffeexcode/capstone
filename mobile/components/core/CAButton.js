@@ -7,7 +7,7 @@ export default function CAButton({ onPress, style, title }) {
   <TouchableOpacity 
     onPress={onPress}
     style={[styles.default, style]}>
-      <CAText style={{ color: '#fff' }} size="sm">
+      <CAText style={{ color: '#fff' }} size='sm'>
         {title}
       </CAText>
     </TouchableOpacity>
