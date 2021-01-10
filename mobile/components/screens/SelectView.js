@@ -11,7 +11,6 @@ export default function SelectView({ navigation }) {
   const navigateAsAttendee = () => navigation.navigate('AttendeeHome')
   const navigateAsOrganizer = () => navigation.navigate('OrganizerHome')
 
-
   return (
     <View style={styles.container}>
       <CAText appColor size='lg'>View as</CAText>

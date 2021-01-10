@@ -11,14 +11,21 @@ var data = {
 }
 
 const getTicketType = () => {
-  const num = faker.random.number(3);
+  const num = faker.random.number(2);
   return ['Standard', 'Full-Access', 'VIP'][num];
 }
+
+const getApplicationStatus = () => {
+  const num = faker.random.number(2);
+  return ['Accepted', 'Pending', 'Confirmed'][num];
+}
+
 
 for (let i = 0; i < 2000; i++) {
   // Feel free to ammend this USER type as needed during development
   // @edavidj for PR review if you intend to do so.
   const user = {
+    id: faker.random.uuid(),
     name: faker.name.findName(),
     email: faker.internet.email(),
     address: {
@@ -30,7 +37,7 @@ for (let i = 0; i < 2000; i++) {
     },
     age: faker.random.number({'min': 18, 'max': 90}),
     phone: faker.phone.phoneNumber(),
-    ticket: getTicketType(),
+    status: getApplicationStatus(),
   }
   data.users = data.users.concat([user]);
 }

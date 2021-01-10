@@ -9,7 +9,6 @@ import logInImg from '@images/drawkit_login.jpg';
 const text = {
   createAccountMessage: `Don't have an account? Create one `
 }
-
 export default function SignIn({ navigation }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

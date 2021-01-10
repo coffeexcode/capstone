@@ -14,6 +14,13 @@ const text = {
   deniedPermissionsMessage: 'Camera permissions denied'
 };
 
+const text = {
+  qrTitle: 'Scan QR Code',
+  qrMessage: `Use this to scan attendee's QR Codes`,
+  requestPermissionsMessage: 'Requesting for camera permissions',
+  deniedPermissionsMessage: 'Camera permissions denied'
+};
+
 export default function ScanQR() {
   const [hasScanned, setHasScanned] = useState(false);
   const [hasCameraPermission, setHasCameraPermission] = useState(false);

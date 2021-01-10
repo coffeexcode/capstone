@@ -63,8 +63,8 @@ export default function Schedule() {
 
   const renderEmptyDate = () => (
     <View style={styles.emptyDate}>
-       <CAText size='sm'>{text.emptyDateMessage}</CAText>
-        <Image source={noEventsImg} style={styles.splash} />
+      <CAText size='sm'>{text.emptyDateMessage}</CAText>
+      <Image source={noEventsImg} style={styles.splash} />
     </View>
   );
 
@@ -112,13 +112,15 @@ const styles = StyleSheet.create({
     marginTop: 17
   },
   emptyDate: {
+    borderTopColor: 'grey',
+    borderTopWidth: 0.5,
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     height: 15,
     flex: 1,
     paddingTop: 30
   },
-
   splash: {
     height: "40%",
     resizeMode: 'contain',
