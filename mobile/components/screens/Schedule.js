@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Image, TouchableOpacity, SafeAreaView } from 'react-native';
 import { Agenda } from 'react-native-calendars';
-
 import { Entypo, FontAwesome, FontAwesome5, Ionicons } from '@expo/vector-icons'; 
 
 import CAText from '../core/CAText';
 import Spacer from '../core/Spacer';
+import noEventsImg from '../../assets/images/undraw_no_events.png';
 
 import mockData from '../../assets/testData/schedule.json';
 
 const APP_THEME_COLOR = '#9892fe';
+const text = {
+  emptyDateMessage: 'There are no events scheduled for this day'
+}
 
 export default function Schedule() {
   const [items, setItems] = useState({});
@@ -23,13 +26,13 @@ export default function Schedule() {
 
   const renderIcon = type => {
     switch (type) {
-      case "opening":
+      case 'opening':
         return <FontAwesome5 name="door-open" size={36} color='black' />
-      case "speaker":
+      case 'speaker':
         return <Entypo name="megaphone" size={36} color="black" />
-      case "food":
+      case 'food':
         return <Ionicons name="fast-food" size={36} color="black" />;
-      case "meeting":
+      case 'meeting':
         return <FontAwesome name="group" size={36} color="black" />
       default:
         return <FontAwesome5 name="calendar" size={36} color="black" />
@@ -42,13 +45,13 @@ export default function Schedule() {
           {item.startTime} - {item.endTime}
         </CAText>
       : null}
-      <CAText appColor size="xsm">{item.location}</CAText>
-      <CAText size="md">{item.name}</CAText>
+      <CAText appColor size='xsm'>{item.location}</CAText>
+      <CAText size='md'>{item.name}</CAText>
       {item.blurb ? 
         <View
           style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
           <CAText
-            style={{ width: '80%', color: '#A9A9A9' }} size="xsm"
+            style={{ width: '80%', color: '#A9A9A9' }} size='xsm'
           >
             {item.blurb}
           </CAText>
@@ -60,39 +63,43 @@ export default function Schedule() {
 
   const renderEmptyDate = () => (
     <View style={styles.emptyDate}>
-      <CAText size="sm">{`There are no events scheduled for this day`}</CAText>
+      <CAText size='sm'>{text.emptyDateMessage}</CAText>
+      <Image source={noEventsImg} style={styles.splash} />
     </View>
   );
 
   return (
-    <View style={{ flex: 1, marginTop: '15%'}}>
-    <CAText style={{ alignSelf: 'center'}} size="lg">Schedule</CAText>
-    <Spacer size="sm"/>
-    <Agenda
-      items={items}
-      selected={currentDate}
-      renderItem={renderItem}
-      renderEmptyDate={(renderEmptyDate)}
-      renderEmptyData={renderEmptyDate}
-      rowHasChanged={(r1, r2) => r1.name !== r2.name}
-      pastScrollRange={1}
-      futureScrollRange={1}
-      theme={{
-        agendaDayNumColor: 'black',
-        agendaDayTextColor: 'black',
-        agendaKnobColor: APP_THEME_COLOR,
-        dotColor: APP_THEME_COLOR,
-        selectedDotColor: 'white',
-        selectedDayBackgroundColor: APP_THEME_COLOR,
-        todayTextColor: APP_THEME_COLOR,
-        agendaTodayColor: APP_THEME_COLOR
-      }}
-    />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Spacer size='sm'/>
+      <Agenda
+        items={items}
+        selected={currentDate}
+        renderItem={renderItem}
+        renderEmptyDate={renderEmptyDate}
+        renderEmptyData={renderEmptyDate}
+        rowHasChanged={(r1, r2) => r1.name !== r2.name}
+        pastScrollRange={1}
+        futureScrollRange={1}
+        theme={{
+          agendaDayNumColor: 'black',
+          agendaDayTextColor: 'black',
+          agendaKnobColor: APP_THEME_COLOR,
+          dotColor: APP_THEME_COLOR,
+          selectedDotColor: 'white',
+          selectedDayBackgroundColor: APP_THEME_COLOR,
+          todayTextColor: APP_THEME_COLOR,
+          agendaTodayColor: APP_THEME_COLOR
+        }}
+      />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+    flex: 1
+  },
   item: {
     backgroundColor: 'white',
     flex: 1,
@@ -105,9 +112,18 @@ const styles = StyleSheet.create({
     marginTop: 17
   },
   emptyDate: {
+    borderTopColor: 'grey',
+    borderTopWidth: 0.5,
+    backgroundColor: '#fff',
     alignItems: 'center',
+    justifyContent: 'center',
     height: 15,
     flex: 1,
     paddingTop: 30
-  }
+  },
+  splash: {
+    height: "40%",
+    resizeMode: 'contain',
+    marginTop: 30
+  },
 });

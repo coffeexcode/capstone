@@ -14,7 +14,6 @@ import './common.css';
  */
 export const NumberWidget = (props) => {
 
-
   return (
     <div className="number-widget">
       <Card className="number-widget-card">

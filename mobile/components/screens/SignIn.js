@@ -7,34 +7,38 @@ import CAButton from '../core/CAButton';
 import Spacer from '../core/Spacer';
 import logInImg from '../../assets/images/drawkit_login.jpg';
 
-export default function SignIn() {
-  const createAccountMsg = "Don't have an account? Create one ";
+const text = {
+  createAccountMessage: `Don't have an account? Create one `
+}
+
+export default function SignIn({ navigation }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const loginRequest = () => {
-    // TODO send API request to authenticate
-    // If authenticated, navigate to SelectView
+    // Optional: TODO send API request to authenticate
+    // For POC/Demo purposes, authentication can be left out as the app's functionality is more important to showcase
     console.log(username);
     console.log(password);
+    navigation.navigate('SelectView');
   }
 
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={{ flex: 1 }}
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={styles.container}>
           <Image source={logInImg} style={styles.splash}/>
-          <Spacer size="lg"/>
-          <CAText size="xlg">Sign In</CAText>
-          <Spacer size="md"/>
+          <Spacer size='lg'/>
+          <CAText size='xlg'>Sign In</CAText>
+          <Spacer size='md'/>
           <View style={styles.inputContainer}>
             <TextInput
               style={styles.input}
               placeholderTextColor='#A9A9A9'
-              placeholder="Username"
+              placeholder='Username'
               onChangeText={text => setUsername(text)}/>
           </View>
           <View style={styles.inputContainer}>
@@ -43,20 +47,20 @@ export default function SignIn() {
               style={styles.input}
               placeholderTextColor='#A9A9A9'
               text
-              placeholder="Password"
+              placeholder='Password'
               onChangeText={text => setPassword(text)}/>
           </View>
           <CAButton
-            size="sm"
-            title="Log in"
+            size='sm'
+            title='Log in'
             onPress={loginRequest}
           />
-          <Spacer size=""/>
-          <CAText style={{ color: '#A9A9A9' }} size="xsm">
-            {createAccountMsg}
+          <Spacer size='md' />
+          <CAText style={{ color: '#A9A9A9' }} size='xsm'>
+            {text.createAccountMessage}
             <CAText
               style={{ textDecorationLine: 'underline'}}
-              size="xsm">here</CAText>
+              size='xsm'>here</CAText>
             </CAText>
         </View>
       </TouchableWithoutFeedback>
@@ -77,15 +81,16 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     height:55,
     marginBottom:20,
-    justifyContent:"center",
+    justifyContent: 'center',
     padding:20
   },
   splash: {
-    height: "18%",
+    height: '18%',
     resizeMode: 'contain'
   },
   container: {
     flex: 1,
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center'
   }

@@ -30,7 +30,11 @@ For categorized Pull Requests you can filter by labels on Github. For example, i
 See project located under `/website` for all of our web based development. For a more detailed look at this part of the project, please see [`/website/README.md`](website/README.md).
 
 ### Mobile Application
+<<<<<<< HEAD
 See project located under `/mobile` for all of our web based development. For a more detailed look at this part of the project, please see [`/mobile/README.md`](mobile/README.md).
+=======
+See project located under `/mobile` for all of our mobile based development. For a more detailed look at this part of the project, please see [`/mobile/README.md`](mobile/README.md).
+>>>>>>> origin/master
 
 ### Backend Services
 **QR Code Management System**
