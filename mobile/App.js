@@ -1,8 +1,8 @@
 import React from 'react';
-import Landing from './components/screens/Landing';
-import SignIn from './components/screens/SignIn';
-import SelectView from './components/screens/SelectView';
-import { AttendeeHome, OrganizerHome } from './tabs/BottomTab';
+import Landing from '@screens/Landing';
+import SignIn from '@screens/SignIn';
+import SelectView from '@screens/SelectView';
+import { AttendeeHome, OrganizerHome } from '@tabs/BottomTab';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';

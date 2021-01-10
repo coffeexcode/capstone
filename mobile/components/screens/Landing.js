@@ -1,18 +1,18 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Image, View } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 
-// Fix relative imports
-import CAButton from '../core/CAButton';
-import CAText from '../core/CAText';
-import Spacer from '../core/Spacer';
-import landingImg from '../../assets/images/undraw_conference_speaker.png';
+import CAButton from '@core/CAButton';
+import CAText from '@core/CAText';
+import Spacer from '@core/Spacer';
+import landingImg from '@images/undraw_conference_speaker.png';
 
 export default function Landing({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar style='auto'/>
-      <CAText size='xlg'>ConAssist</CAText>
+      <CAText size='xlg'><MaterialIcons name="donut-small" size={28} color="black" /> ConAssist</CAText>
       <Image source={landingImg} style={styles.splash} />
       <Spacer size='xlg' />
       <CAButton 
