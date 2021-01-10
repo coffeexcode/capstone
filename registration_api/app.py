@@ -2,7 +2,9 @@ import werkzeug
 werkzeug.cached_property = werkzeug.utils.cached_property
 from flask import Flask, Blueprint
 from flask_restplus import Resource, Api
-from flask import request
+from flask import request, jsonify, make_response
+import firebase_admin
+from firebase_admin import credentials, firestore
 
 app = Flask(__name__)
 api = Api(version='1.0', title='Registration API',
@@ -10,13 +12,20 @@ api = Api(version='1.0', title='Registration API',
 
 namespace = api.namespace('users', description='Operations on user resources')
 
+# initialize sdk
+cred = credentials.Certificate("capstone-90db7-firebase-adminsdk-fgtvl-f294022ef1.json")
+firebase_admin.initialize_app(cred)
+# initialize firestore instance
+firestore_db = firestore.client()
+
 @namespace.route('/')
 class UserCollection(Resource):
     def get(self):
         """
         Returns a list of users
         """
-        return get_users_list()
+        l = get_users_list()
+        return make_response(jsonify(l), 200)
     
     @api.response(201, "User successfully created")
     def post(self):
@@ -28,11 +37,14 @@ class UserCollection(Resource):
 
 
 def get_users_list():
-    print("PRINTING")
+    snapshots = list(firestore_db.collection(u'users').get())
+    li = []
+    for snapshot in snapshots:
+        li.append(snapshot.to_dict())
+    return li
 
 def create_user(data):
-    name = data.get('name')
-    print(name)
+    firestore_db.collection(u'users').add(data)
 
 def start_app(app):
     bp = Blueprint('api', __name__, url_prefix='/api')
