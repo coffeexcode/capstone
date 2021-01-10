@@ -13,7 +13,7 @@ export default function CAText({ appColor, style, size, children }) {
 const styles = StyleSheet.create({
   default: {
     fontSize: 26,
-    fontWeight: '500'
+    fontWeight: '300'
   },
   appColor: {
     color: '#4F49BB'
