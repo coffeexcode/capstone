@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, SafeAreaView, View, TouchableOpacity } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-import CAText from '../core/CAText';
-import CAButton from '../core/CAButton';
+import CAText from '@core/CAText';
+import CAButton from '@core/CAButton';
 
-import data from '../../assets/data/data.json';
+import data from '@data/data.json';
 
 const text = {
   conferenceID: 'Conference ID: ',
@@ -32,20 +32,20 @@ export default function Profile({ navigation }) {
       </View>
       <View style={styles.infoContainer}>
         <CAText style={styles.info}>{profileData.name}</CAText>
-        <CAText size='md' style={styles.info} appColor>{profileData.email}</CAText>
-        <CAText size='md' style={[styles.info, styles.phone]}>{profileData.phone}</CAText>
+        <CAText size='md' style={styles.info}>{profileData.email}</CAText>
+        <CAText size='md' style={styles.info} appColor>{profileData.phone}</CAText>
       </View>
       <View style={styles.horizontalRule} />
       <View>
-        <CAText size='sm' style={{ padding: 10 }}>
+        <CAText size='sm' style={styles.description}>
           {text.conferenceID}
-          <CAText size="sm" style={{ fontWeight: '400'}}>
+          <CAText size="sm" style={styles.bolded}>
             {instanceData.id}
           </CAText>
         </CAText>
-        <CAText size='sm' style={{ padding: 10 }}>
+        <CAText size='sm' style={styles.description}>
           {text.register}
-          <CAText size='sm' style={{ fontWeight: '400'}}>
+          <CAText size='sm' style={styles.bolded}>
             {instanceData.role}
           </CAText>
         </CAText>
@@ -70,6 +70,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-end'
   },
+  bolded: {
+    fontWeight: '400'
+  },
   horizontalRule: {
     alignSelf: 'center',
     borderBottomColor: 'black',
@@ -84,12 +87,12 @@ const styles = StyleSheet.create({
   info: {
     marginBottom: 10
   },
+  description: {
+    padding: 10
+  },
   infoContainer: {
     alignItems: 'center',
     marginBottom: 10
-  },
-  phone: {
-    color: '#A9A9A9',
   },
   loadButton: {
     margin: 30,

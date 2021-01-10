@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import CAText from '../core/CAText';
+import CAText from '@core/CAText';
 
 export default function Contact({ route }) {
   const { 

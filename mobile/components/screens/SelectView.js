@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import CAText from '../core/CAText';
-import CAButton from '../core/CAButton';
-import Spacer from '../core/Spacer';
+import CAText from '@core/CAText';
+import CAButton from '@core/CAButton';
+import Spacer from '@core/Spacer';
 
 export default function SelectView({ navigation }) {
   // For POC Purposes, the type of view is selected from the selection made on the screen

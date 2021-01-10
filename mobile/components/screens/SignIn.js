@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { KeyboardAvoidingView, StyleSheet, Image, TextInput, View, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native';
 
-// Fix relative imports
-import CAText from '../core/CAText';
-import CAButton from '../core/CAButton';
-import Spacer from '../core/Spacer';
-import logInImg from '../../assets/images/drawkit_login.jpg';
+import CAText from '@core/CAText';
+import CAButton from '@core/CAButton';
+import Spacer from '@core/Spacer';
+import logInImg from '@images/drawkit_login.jpg';
 
 const text = {
   createAccountMessage: `Don't have an account? Create one `
@@ -14,14 +13,6 @@ const text = {
 export default function SignIn({ navigation }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
-  const loginRequest = () => {
-    // Optional: TODO send API request to authenticate
-    // For POC/Demo purposes, authentication can be left out as the app's functionality is more important to showcase
-    console.log(username);
-    console.log(password);
-    navigation.navigate('SelectView');
-  }
 
   return (
     <KeyboardAvoidingView
@@ -53,7 +44,7 @@ export default function SignIn({ navigation }) {
           <CAButton
             size='sm'
             title='Log in'
-            onPress={loginRequest}
+            onPress={() => navigation.navigate('SelectView')}
           />
           <Spacer size='md' />
           <CAText style={{ color: '#A9A9A9' }} size='xsm'>

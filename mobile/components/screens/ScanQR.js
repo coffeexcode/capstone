@@ -3,9 +3,9 @@ import { StyleSheet, View, Modal } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import * as Permissions from 'expo-permissions';
 
-import CAText from '../core/CAText';
-import Spacer from '../core/Spacer';
-import CAButton from '../core/CAButton';
+import CAText from '@core/CAText';
+import Spacer from '@core/Spacer';
+import CAButton from '@core/CAButton';
 
 const text = {
   qrTitle: 'Scan QR Code',

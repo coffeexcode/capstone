@@ -2,13 +2,13 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Schedule from '../components/screens/Schedule';
-import Profile from '../components/screens/Profile';
-import PresentQR from '../components/screens/PresentQR';
-import ScanQR from '../components/screens/ScanQR';
-import About from '../components/screens/About';
-import Sponsors from '../components/screens/Sponsors';
-import Contact from '../components/screens/Contact';
+import Schedule from '@screens/Schedule';
+import Profile from '@screens/Profile';
+import PresentQR from '@screens/PresentQR';
+import ScanQR from '@screens/ScanQR';
+import About from '@screens/About';
+import Sponsors from '@screens/Sponsors';
+import Contact from '@screens/Contact';
 
 import { Feather } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';

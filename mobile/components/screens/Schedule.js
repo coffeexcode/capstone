@@ -3,11 +3,11 @@ import { StyleSheet, View, Image, TouchableOpacity, SafeAreaView } from 'react-n
 import { Agenda } from 'react-native-calendars';
 import { Entypo, FontAwesome, FontAwesome5, Ionicons } from '@expo/vector-icons'; 
 
-import CAText from '../core/CAText';
-import Spacer from '../core/Spacer';
-import noEventsImg from '../../assets/images/undraw_no_events.png';
+import CAText from '@core/CAText';
+import Spacer from '@core/Spacer';
+import noEventsImg from '@images/undraw_no_events.png';
 
-import mockData from '../../assets/data/schedule.json';
+import data from '@data/schedule.json';
 
 const APP_THEME_COLOR = '#9892fe';
 const text = {
@@ -21,7 +21,7 @@ export default function Schedule() {
   useEffect(() => {
     const now = (new Date()).toISOString().split('T')[0];
     setCurrentDate(now);
-    setItems(mockData[0]);
+    setItems(data[0]);
   }, []);
 
   const renderIcon = type => {

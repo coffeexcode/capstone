@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { FlatList, StyleSheet, TouchableOpacity, View, Modal } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import CAText from '../core/CAText';
+import CAText from '@core/CAText';
 
-import data from '../../assets/data/data.json';
+import data from '@data/data.json';
 
 const text = {
   sponsorTitle: 'SPONSORS',

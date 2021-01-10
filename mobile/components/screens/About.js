@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import {StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-import CAText from '../core/CAText';
-import CAButton from '../core/CAButton';
+import CAText from '@core/CAText';
+import CAButton from '@core/CAButton';
 
-import data from '../../assets/data/data.json';
+import data from '@data/data.json';
 
 const text = {
   numAttendees: ' Attendee count: ',

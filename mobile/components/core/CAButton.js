@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import CAText from './CAText';
+import CAText from '@core/CAText';
 
 export default function CAButton({ onPress, style, title }) {
   return (
