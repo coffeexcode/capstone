@@ -3,6 +3,7 @@ import { Container, Grid, Typography } from "@material-ui/core";
 import { Sidebar } from "@admin/common/Sidebar";
 import { NumberWidget } from "@admin/common/NumberWidget";
 import { NavigationPanel } from "./NavigationPanel";
+import { PieChartWidget } from "@admin/common/PieChartWidget";
 import "./dashboard.css";
 
 /**
@@ -11,6 +12,26 @@ import "./dashboard.css";
  * @param {*} props
  */
 export const Dashboard = (props) => {
+
+  const applicationsData = {
+    labels: ['Pending', 'Accepted'],
+    datasets: [
+      {
+        label: '# of Votes',
+        data: [156, 680],
+        backgroundColor: [
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)'
+        ],
+        borderWidth: 1,
+      },
+    ],
+  }
+
   return (
     <Container className="dashboard" maxWidth="lg">
       <Grid container spacing={5}>
@@ -39,7 +60,7 @@ export const Dashboard = (props) => {
             </Grid>
             {/* Ticket Type Distribution and Call to Action */}
             <Grid item xs={8}>
-              PIE CHART HERE
+              <PieChartWidget heading="Application Overview" data={applicationsData}/>
             </Grid>
             <Grid item xs={4}>
               <NavigationPanel/>
