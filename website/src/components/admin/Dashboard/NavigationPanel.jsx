@@ -12,9 +12,8 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import './dashboard.css';
 
 /**
- * Generic component to display live feed of an integer based statistics
- * (i.e. the current total attendees registered for an event)
- * @param {*} props 
+ * Component for the panel on landing admin dashboard that provides a button
+ * to redirect to the statistics page. A call-to-action element. 
  */
 export const NavigationPanel = (props) => {
   const history = useHistory();
