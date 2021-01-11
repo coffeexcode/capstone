@@ -1,8 +1,5 @@
 **What this Pull Request is for:**
 
-* Add page for managing applications/registrations and related data
-* Add feature in this page for exporting this data to a csv file
-* Create UI elements necessary for updating an applications status
 
 **Does this PR relate to requirements in our SRS? If so link the relevant Product Use Case.**
 <!-- 
