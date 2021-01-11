@@ -71,6 +71,11 @@ namespace EventManagementApi
             services.AddScoped<IInstructorRepository, InstructorRepository>();
             services.AddScoped<ITimeslotRepository, TimeslotRepository>();
             services.AddScoped<ISponsorRepository, SponsorRepository>();
+            services.AddScoped<IEventOfferingRepository, EventOfferingRepository>();
+            services.AddScoped<IEventOfferingRegistrationRepository, EventOfferingRegistrationRepository>();
+            services.AddScoped<ICourseOfferingRepository, CourseOfferingRepository>();
+            services.AddScoped<ICourseOfferingRegistrationRepository, CourseOfferingRegistrationRepository>();
+
 
             // Add Services
             services.AddScoped<ILocationService, LocationService>();
@@ -80,6 +85,10 @@ namespace EventManagementApi
             services.AddScoped<IInstructorService, InstructorService>();
             services.AddScoped<ITimeslotService, TimeslotService>();
             services.AddScoped<ISponsorService, SponsorService>();
+            services.AddScoped<IEventOfferingService, EventOfferingService>();
+            services.AddScoped<ICourseOfferingService, CourseOfferingService>();
+            services.AddScoped<IEventOfferingRegistrationService, EventOfferingRegistrationService>();
+            services.AddScoped<ICourseOfferingRegistrationService, CourseOfferingRegistrationService>();
 
             // Automapper
             services.AddAutoMapper(typeof(Startup));
