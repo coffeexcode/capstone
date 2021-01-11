@@ -44,6 +44,10 @@ See project located under `/mobile` for all of our mobile based development. For
 
 See project located in repository [`github.com/coffeexcode/RestfulQr`](https://github.com/coffeexcode/RestfulQr), or through the submodule here located under `/restfulqr`.
 
+**Registration System**
+
+See project located in repository [`github.com/Jailoodu/RestfulRegistration`](https://github.com/Jailoodu/RestfulRegistration).
+
 ### Scripts
 
 The scripts directory contains individual scripts for purpose in any projects *development* or *testing*. Each script should be in it's own directory with a corresponding README.md file to explain it's purpose and usage. This, as opposed to inline documention in comments, allows for node or python scripts with dependency folders.
