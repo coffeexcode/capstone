@@ -21,6 +21,7 @@ namespace EventManagementApi.Controllers.Api.V1
     {
         private readonly ILogger<CourseController> logger;
         private readonly ICourseService courseService;
+
         public CourseController(
             ILogger<CourseController> logger,
             ICourseService courseService)

@@ -23,6 +23,14 @@ namespace EventManagementApi.Entities
 
         public DbSet<Event> Events { get; set; }
 
+        public DbSet<EventOffering> EventOfferings { get; set; }
+
+        public DbSet<CourseOffering> CourseOfferings { get; set; }
+
+        public DbSet<CourseOfferingRegistration> CourseOfferingRegistrations { get; set; }
+
+        public DbSet<EventOfferingRegistration> EventOfferingRegistrations { get; set; }
+
         public EventManagementDbContext(DbContextOptions<EventManagementDbContext> options)
             : base(options)
         {
@@ -74,6 +82,30 @@ namespace EventManagementApi.Entities
             modelBuilder.Entity<Sponsor>(sponsor =>
             {
                 sponsor.Property(s => s.Id).ValueGeneratedOnAdd();
+            });
+
+            // Course Offering
+            modelBuilder.Entity<CourseOffering>(co =>
+            {
+                co.Property(c => c.Id).ValueGeneratedOnAdd();
+            });
+
+            // Event Offering
+            modelBuilder.Entity<EventOffering>(eo =>
+            {
+                eo.Property(eo => eo.Id).ValueGeneratedOnAdd();
+            });
+
+            // CourseOfferingRegistration
+            modelBuilder.Entity<CourseOfferingRegistration>(cor =>
+            {
+                cor.Property(co => co.Id).ValueGeneratedOnAdd();
+            });
+
+            // EventOfferingRegistration
+            modelBuilder.Entity<EventOfferingRegistration>(eor =>
+            {
+                eor.Property(eo => eo.Id).ValueGeneratedOnAdd();
             });
         }
     }
