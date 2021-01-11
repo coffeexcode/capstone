@@ -22,5 +22,7 @@ All notable changes to this project will be documented in this file.
 - Added mobile screen to view the schedule of a conference ([4ffa223](https://github.com/coffeexcode/capstone/commit/4ffa2238b79ee4b5540eabbee2a511331ff47d6f))
 - Added mobile screen to view profile ([#1](https://github.com/coffeexcode/capstone/pull/1))
 - Added website page for managing event applications or registrations ([#4](https://github.com/coffeexcode/capstone/pull/4))
+- Added organizer/sponsor/attendee views with their respective functions via bottom tab bar ([#3](https://github.com/coffeexcode/capstone/pull/3))
+- Added About page to view conference information and sponsors ([#5](https://github.com/coffeexcode/capstone/pull/5))
 
 ### Changed

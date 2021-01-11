@@ -4,6 +4,7 @@ import { Sidebar } from "@admin/common/Sidebar";
 import { NumberWidget } from "@admin/common/NumberWidget";
 import { NavigationPanel } from "./NavigationPanel";
 import { getAttendees } from "@utils/data";
+import { PieChartWidget } from "@admin/common/PieChartWidget";
 import "./dashboard.css";
 
 /**
@@ -22,6 +23,25 @@ export const Dashboard = (props) => {
     getData();
   }, []);
 
+
+  const applicationsData = {
+    labels: ['Pending', 'Accepted'],
+    datasets: [
+      {
+        label: '# of Votes',
+        data: [156, 680],
+        backgroundColor: [
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)'
+        ],
+        borderWidth: 1,
+      },
+    ],
+  }
 
   return (
     <Container className="dashboard" maxWidth="lg">
@@ -51,7 +71,7 @@ export const Dashboard = (props) => {
             </Grid>
             {/* Ticket Type Distribution and Call to Action */}
             <Grid item xs={8}>
-              PIE CHART HERE
+              <PieChartWidget heading="Application Overview" data={applicationsData}/>
             </Grid>
             <Grid item xs={4}>
               <NavigationPanel/>
