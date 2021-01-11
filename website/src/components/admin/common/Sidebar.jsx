@@ -2,7 +2,6 @@ import React from "react";
 import {
   List,
   ListItem,
-  ListItemIcon,
   ListItemText,
   Divider,
 } from "@material-ui/core";
@@ -11,7 +10,6 @@ import './common.css';
 
 /**
  * Component for sidebar navigation on admin side of the website.
- * @param {*} props 
  */
 export const Sidebar = (props) => {
   const history = useHistory();
