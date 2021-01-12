@@ -19,8 +19,8 @@ export const PieChartWidget = (props) => {
     <div className="pie-chart-widget">
       <Card className="pie-chart-widget-card">
         <CardContent>
-            <Typography color="textSecondary" component="h6" variant="h6">{props.heading}</Typography>
-            <Pie data={props.data}></Pie>
+          <Typography color="textSecondary" component="h6" variant="h6">{props.heading}</Typography>
+          <Pie data={props.data}></Pie>
         </CardContent>
       </Card>
     </div>
