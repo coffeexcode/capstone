@@ -18,6 +18,12 @@ import data from '@data/data.json';
 
 const APP_THEME_COLOR = '#9892fe';
 
+/**
+ * Returns the Schedule screen
+ * 
+ * This screen is used to view view all of the events of a conference with an Agenda view
+ * Allows navigation to see additional Event information
+ */
 export default function Schedule({ navigation }) {
   const [events, setEvents] = useState({});
   const [currentDate, setCurrentDate] = useState('');

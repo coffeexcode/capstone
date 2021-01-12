@@ -5,9 +5,14 @@ import CAText from '@core/CAText';
 import CAButton from '@core/CAButton';
 import Spacer from '@core/Spacer';
 
+/**
+ * Returns the SelectView screen
+ * 
+ * For POC Purposes, the type of view is selected from the selection made on the screen
+ * This will make it easier for us to display the different role's use cases for the app
+ * This allows navigation into Attendee/Sponsor/Organizer Home
+ */
 export default function SelectView({ navigation }) {
-  // For POC Purposes, the type of view is selected from the selection made on the screen
-  // This will make it easier for us to display the different role's use cases for the app
   const navigateAsAttendee = () => navigation.navigate('AttendeeHome')
   const navigateAsOrganizer = () => navigation.navigate('OrganizerHome')
 

@@ -7,6 +7,11 @@ import appText from '@utils/text';
 
 import CAText from '@core/CAText';
 
+/**
+ * Returns the Event screen
+ * 
+ * This screen is used to view full event information as well as register/withdraw from the event
+ */
 export default function Event({ route }) {
   const [eventData, setEventData] = useState({});
    

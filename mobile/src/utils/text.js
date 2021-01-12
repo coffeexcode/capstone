@@ -1,3 +1,4 @@
+// App text that is displayed in screens/tabs
 export default appText = {
   createAccountMessage: `Don't have an account? Create one `,
   conferenceID: 'Conference ID: ',
@@ -21,7 +22,7 @@ export default appText = {
   gold: 'Gold - ',
   REGISTERED: 'REGISTERED',
   UNREGISTERED: 'NOT REGISTERED',
-  ended: 'THIS EVENT IS ENDED',
+  ended: 'THIS EVENT HAS ENDED',
   emptyDateMessage: 'There are no events scheduled for this day',
   registerButton: 'Click to view status of registration'
 }

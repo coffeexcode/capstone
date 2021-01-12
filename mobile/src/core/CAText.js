@@ -1,6 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 
+/**
+ * Returns a resusable Text component used by screens
+ */
 export default function CAText({ appColor, style, size, children }) {
   const applyAppColor = appColor ? styles.appColor : null;
   return (

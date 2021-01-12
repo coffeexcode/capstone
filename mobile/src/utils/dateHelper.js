@@ -1,12 +1,14 @@
 const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
+// Function to verify if an event has ended
 const eventHasEnded = startDate => {
   const now = new Date();
   const eventDate = new Date(startDate);
   return eventDate < now;
 }
 
+// Function to format a JS Date into a YYYY-MM-DD format used by react-native-calendars
 const agendaFormatDate = date => date.toISOString().split('T')[0];
 
 const formatDate = (date, startTime, endTime) => {
@@ -16,6 +18,7 @@ const formatDate = (date, startTime, endTime) => {
   return `${months[monthNum]}, ${days[dayNum]} ${startTime} - ${endTime}`
 }
 
+// Function to format an event into a format used by react-native-calendars
 const agendaFormattedEvents = eventData => {
   return eventData.map(event => {
     const { name, description, roomId, type, status, start, end } = event;
@@ -42,6 +45,7 @@ const agendaFormattedEvents = eventData => {
   });
 }
 
+// Function to organize the events into an object categorized by YYYY-MM-DD format used by react-native-calendars
 const categorizeAgenda = eventData => {
   const categories = {};
     

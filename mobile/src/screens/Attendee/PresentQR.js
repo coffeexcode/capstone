@@ -4,8 +4,14 @@ import { Image, StyleSheet, View } from 'react-native';
 import CAText from '@core/CAText';
 import Spacer from '@core/Spacer';
 import appText from '@utils/text';
+
 import testQR from '@images/testQR.png';
 
+/**
+ * Returns the PresentQR screen
+ * 
+ * This screen presents an attendee's QR Code for the purpose of verifying identification
+ */
 export default function PresentQR() {
   return (
     <View style={styles.container}>
@@ -14,7 +20,7 @@ export default function PresentQR() {
       <Image source={testQR} style={styles.displayQR}/>
       <Spacer size='xlg'/>
       <View style={styles.msgContainer}>
-        <CAText style={{ color: '#A9A9A9' }} size='xsm'>
+        <CAText style={styles.subtitle} size='xsm'>
           {appText.qrMessage}
         </CAText>
       </View>
@@ -26,6 +32,9 @@ const styles = StyleSheet.create({
   displayQR: {
     height: '36%',
     resizeMode: 'contain'
+  },
+  subtitle: {
+    color: '#A9A9A9'
   },
   container: {
     flex: 1,

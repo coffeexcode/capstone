@@ -8,6 +8,13 @@ import CAText from '@core/CAText';
 import Spacer from '@core/Spacer';
 import landingImg from '@images/undraw_conference_speaker.png';
 
+/**
+ * Returns the Landing screen
+ * 
+ * This is the first screen that is presented when the app is opened
+ * Logo, App name, splash art are displayed here
+ * Allows navigation to sign in
+ */
 export default function Landing({ navigation }) {
   return (
     <View style={styles.container}>

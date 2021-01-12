@@ -9,6 +9,11 @@ import CAButton from '@core/CAButton';
 
 import appText from '@utils/text';
 
+/**
+ * Returns the ScanQR screen
+ * 
+ * This screen is used to scan attendee's QR Codes for the purpose of verifying identification, resource consumption
+ */
 export default function ScanQR() {
   const [hasScanned, setHasScanned] = useState(false);
   const [hasCameraPermission, setHasCameraPermission] = useState(false);

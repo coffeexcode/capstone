@@ -7,6 +7,12 @@ import appText from '@utils/text';
 
 import data from '@data/data.json';
 
+/**
+ * Returns the Sponsors screen
+ * 
+ * This screen presents the sponsors attending a conference and it's type of sponsorship
+ * Allows navigation to the Contact page to view additional contact information
+ */
 export default function Sponsors({ navigation }) {
   const [sponsors, setSponsors] = useState([]);
 

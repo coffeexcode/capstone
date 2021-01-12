@@ -3,6 +3,11 @@ import { StyleSheet, View } from 'react-native';
 
 import CAText from '@core/CAText';
 
+/**
+ * Returns the Contact screen
+ * 
+ * This screen presents selected sponsor contact information
+ */
 export default function Contact({ route }) {
   const { 
     name,
