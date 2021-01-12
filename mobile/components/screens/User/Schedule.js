@@ -24,7 +24,7 @@ export default function Schedule({ navigation }) {
   // Move into a new helpers/ folder
   const sanitizeEvents = (eventData) => {
     return eventData.map(event => {
-      const { name, description, roomId, type, start, end } = event;
+      const { name, description, roomId, type, status, start, end } = event;
       
       const startDate = new Date(start);
       const endDate = new Date(end);
@@ -38,6 +38,8 @@ export default function Schedule({ navigation }) {
         description,
         roomId,
         type,
+        status,
+        start,
         startDay,
         startTime,
         endDay,
@@ -84,7 +86,10 @@ export default function Schedule({ navigation }) {
   }
 
   const renderItem = item => (
-    <TouchableOpacity onPress={() => navigation.navigate('Event', { item: item })} style={[styles.item]}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate('Event', { item: item })} 
+      style={[styles.item]}
+    >
       <CAText style={{ color: '#A9A9A9' }} size="sm">
         {item.startTime} - {item.endTime}
       </CAText>
