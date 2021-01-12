@@ -24,5 +24,6 @@ All notable changes to this project will be documented in this file.
 - Added website page for managing event applications or registrations ([#4](https://github.com/coffeexcode/capstone/pull/4))
 - Added organizer/sponsor/attendee views with their respective functions via bottom tab bar ([#3](https://github.com/coffeexcode/capstone/pull/3))
 - Added About page to view conference information and sponsors ([#5](https://github.com/coffeexcode/capstone/pull/5))
+- Added statistics page to display graphs and visual statistics ([#9](https://github.com/coffeexcode/capstone/pull/9))
 
 ### Changed
