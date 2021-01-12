@@ -2,19 +2,21 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Schedule from '@screens/Schedule';
-import Profile from '@screens/Profile';
-import PresentQR from '@screens/PresentQR';
-import ScanQR from '@screens/ScanQR';
-import About from '@screens/About';
-import Sponsors from '@screens/Sponsors';
-import Contact from '@screens/Contact';
+import Schedule from '@screens/User/Schedule';
+import Profile from '@screens/User/Profile';
+import PresentQR from '@screens/Attendee/PresentQR';
+import ScanQR from '@screens/Organizer/ScanQR';
+import About from '@screens/Attendee/About';
+import Sponsors from '@screens/Attendee/Sponsors';
+import Contact from '@screens/Attendee/Contact';
+import Event from '@screens/Attendee/Event';
 
 import { Feather } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
+const ScheduleStack = createStackNavigator();
 const ScanQRStack = createStackNavigator();
 const AboutStack = createStackNavigator();
 
@@ -24,13 +26,19 @@ const createPresentQRIcon = ({ color, focused }) => (<Ionicons name="qr-code-out
 const createAboutIcon = ({ color, focused }) => (<Ionicons name="information-circle-outline" size={24} color={focused ? color : "black"} />);
 const createScanQRIcon = ({ color, focused }) => (<AntDesign name="scan1" size={24} color={focused ? color : "black"} />);
 
-const ScanQRScreen = () => (
+const ScheduleStackScreens = () => (
+  <ScheduleStack.Navigator initialRouteName="Schedule">
+    <ScheduleStack.Screen name="Schedule" component={Schedule} />
+    <ScheduleStack.Screen name="Event" component={Event} />
+  </ScheduleStack.Navigator>
+)
+const ScanQRStackScreens = () => (
   <ScanQRStack.Navigator initialRouteName="ScanQR">
     <ScanQRStack.Screen name="ScanQR" component={ScanQR} />
   </ScanQRStack.Navigator>
 );
 
-const AboutScreen = () => (
+const AboutStackScreens = () => (
   <AboutStack.Navigator initialRouteName="About">
     <AboutStack.Screen name="About" component={About} />
     <AboutStack.Screen name="Sponsors" component={Sponsors} />
@@ -50,9 +58,9 @@ const AttendeeHome = () => (
   <Tab.Navigator
     tabBarOptions={{ activeTintColor: '#6C63FF' }}
   >
-    {createTab('Schedule', Schedule, createScheduleIcon)}
+    {createTab('Schedule', ScheduleStackScreens, createScheduleIcon)}
     {createTab('QR Code', PresentQR, createPresentQRIcon)}
-    {createTab('About', AboutScreen, createAboutIcon)}
+    {createTab('About', AboutStackScreens, createAboutIcon)}
     {createTab('Profile', Profile, createProfileIcon)}
   </Tab.Navigator>
 );
@@ -61,8 +69,8 @@ const OrganizerHome = () => (
   <Tab.Navigator
     tabBarOptions={{ activeTintColor: '#6C63FF' }}
   >
-    {createTab('Schedule', Schedule, createScheduleIcon)}
-    {createTab('Scan', ScanQRScreen, createScanQRIcon)}
+    {createTab('Schedule', ScheduleStackScreens, createScheduleIcon)}
+    {createTab('Scan', ScanQRStackScreens, createScanQRIcon)}
     {createTab('Profile', Profile, createProfileIcon)}
   </Tab.Navigator>
 );

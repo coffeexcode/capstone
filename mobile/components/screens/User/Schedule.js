@@ -7,21 +7,65 @@ import CAText from '@core/CAText';
 import Spacer from '@core/Spacer';
 import noEventsImg from '@images/undraw_no_events.png';
 
-import data from '@data/schedule.json';
+// import data from '@data/schedule.json';
+
+import data from '@data/data.json';
 
 const APP_THEME_COLOR = '#9892fe';
 const text = {
-  emptyDateMessage: 'There are no events scheduled for this day'
+  emptyDateMessage: 'There are no events scheduled for this day',
+  registerButton: 'Click to view status of registration'
 }
 
-export default function Schedule() {
-  const [items, setItems] = useState({});
+export default function Schedule({ navigation }) {
+  const [events, setEvents] = useState({});
   const [currentDate, setCurrentDate] = useState('');
+
+  // Move into a new helpers/ folder
+  const sanitizeEvents = (eventData) => {
+    return eventData.map(event => {
+      const { name, description, roomId, type, start, end } = event;
+      
+      const startDate = new Date(start);
+      const endDate = new Date(end);
+      const startDay = startDate.toISOString().split('T')[0];
+      const endDay = endDate.toISOString().split('T')[0];
+      const startTime = startDate.toLocaleString('en-US', { hour: 'numeric', hour12: true });
+      const endTime = endDate.toLocaleString('en-US', { hour: 'numeric', hour12: true });
+
+      return {
+        name,
+        description,
+        roomId,
+        type,
+        startDay,
+        startTime,
+        endDay,
+        endTime
+      }
+    });
+  };
+
+  // Move into a new helpers/ folder
+  const categorizeEvents = (eventData) => {
+    const categories = {};
+    
+    for (let i = 0; i < eventData.length; i++) {
+      if (eventData[i].startDay in categories) {
+        categories[eventData[i].startDay].push(eventData[i]);
+      }
+      else {
+        categories[eventData[i].startDay] = [eventData[i]];
+      }
+    }
+    return categories;
+  }
 
   useEffect(() => {
     const now = (new Date()).toISOString().split('T')[0];
     setCurrentDate(now);
-    setItems(data[0]);
+    const sanitizedEvents = sanitizeEvents(data['events']);
+    setEvents(categorizeEvents(sanitizedEvents));
   }, []);
 
   const renderIcon = type => {
@@ -38,26 +82,23 @@ export default function Schedule() {
         return <FontAwesome5 name="calendar" size={36} color="black" />
     }
   }
+
   const renderItem = item => (
-    <TouchableOpacity onPress={() => alert(item.startTime)} style={[styles.item]}>
-      {item.startTime ?
-        <CAText style={{ color: '#A9A9A9' }} size="sm">
-          {item.startTime} - {item.endTime}
-        </CAText>
-      : null}
-      <CAText appColor size='xsm'>{item.location}</CAText>
+    <TouchableOpacity onPress={() => navigation.navigate('Event', { item: item })} style={[styles.item]}>
+      <CAText style={{ color: '#A9A9A9' }} size="sm">
+        {item.startTime} - {item.endTime}
+      </CAText>
       <CAText size='md'>{item.name}</CAText>
-      {item.blurb ? 
-        <View
-          style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
-          <CAText
-            style={{ width: '80%', color: '#A9A9A9' }} size='xsm'
+      <View
+        style={styles.descriptionContainer}>
+        <CAText
+          style={styles.description} size='xsm'
           >
-            {item.blurb}
-          </CAText>
-          <CAText>{renderIcon(item.type)}</CAText>
-        </View>
-      : null}
+          {item.description}
+        </CAText>
+        <CAText>{renderIcon(item.type)}</CAText>
+      </View>
+      <CAText appColor size='xsm' style={styles.register}>{text.registerButton}</CAText>
     </TouchableOpacity>
   );
 
@@ -72,14 +113,16 @@ export default function Schedule() {
     <SafeAreaView style={styles.container}>
       <Spacer size='sm'/>
       <Agenda
-        items={items}
+        items={events}
         selected={currentDate}
         renderItem={renderItem}
         renderEmptyDate={renderEmptyDate}
-        renderEmptyData={renderEmptyDate}
-        rowHasChanged={(r1, r2) => r1.name !== r2.name}
         pastScrollRange={1}
         futureScrollRange={1}
+        renderEmptyData={renderEmptyDate}
+        rowHasChanged={(r1, r2) => { return r1.id !== r2.id }}
+        pastScrollRange={2}
+        futureScrollRange={2}
         theme={{
           agendaDayNumColor: 'black',
           agendaDayTextColor: 'black',
@@ -100,6 +143,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     flex: 1
   },
+  descriptionContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  description: {
+    width: '80%',
+    color: '#A9A9A9'
+  },
   item: {
     backgroundColor: 'white',
     flex: 1,
@@ -107,7 +158,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 30,
     paddingTop: 20,
-    paddingBottom: 40,
+    paddingBottom: 10,
     marginRight: 10,
     marginTop: 17
   },
@@ -118,7 +169,9 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 30
   },
-
+  register: {
+    paddingTop: 20
+  },
   splash: {
     height: "40%",
     resizeMode: 'contain',
