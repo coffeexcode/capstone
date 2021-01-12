@@ -17,7 +17,7 @@ const getTicketType = () => {
 
 const getApplicationStatus = () => {
   const num = faker.random.number(2);
-  return ['Accepted', 'Pending', 'Confirmed'][num];
+  return ['Accepted', 'Pending', 'Rejected'][num];
 }
 
 
