@@ -23,6 +23,9 @@ import {
 } from "@material-ui/icons";
 import "./applicants.css";
 
+// Object that provides table mapping of which icons we want to represent
+// the defined icons they have provided in their component.
+// See https://material-table.com/#/ for details
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
   Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
@@ -43,11 +46,11 @@ const tableIcons = {
 
 
 /**
- * Component for the /admin/applicants page
+ * Component for the /admin/registrations page
  * See README for figma links to mockup design
  * @param {*} props
  */
-export const Applicants = (props) => {
+export const Registrations = (props) => {
   const [attendees, setAttendees] = useState([]);
   const fields = ["id", "name", "status"];
   const options = { fields };
