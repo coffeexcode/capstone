@@ -3,71 +3,30 @@ import { StyleSheet, View, Image, TouchableOpacity, SafeAreaView } from 'react-n
 import { Agenda } from 'react-native-calendars';
 import { Entypo, FontAwesome, FontAwesome5, Ionicons } from '@expo/vector-icons'; 
 
+import {
+  agendaFormatDate,
+  agendaFormattedEvents,
+  categorizeAgenda
+} from '@utils/dateHelper';
+
 import CAText from '@core/CAText';
 import Spacer from '@core/Spacer';
 import noEventsImg from '@images/undraw_no_events.png';
-
-// import data from '@data/schedule.json';
+import appText from '@utils/text';
 
 import data from '@data/data.json';
 
 const APP_THEME_COLOR = '#9892fe';
-const text = {
-  emptyDateMessage: 'There are no events scheduled for this day',
-  registerButton: 'Click to view status of registration'
-}
 
 export default function Schedule({ navigation }) {
   const [events, setEvents] = useState({});
   const [currentDate, setCurrentDate] = useState('');
 
-  // Move into a new helpers/ folder
-  const sanitizeEvents = (eventData) => {
-    return eventData.map(event => {
-      const { name, description, roomId, type, status, start, end } = event;
-      
-      const startDate = new Date(start);
-      const endDate = new Date(end);
-      const startDay = startDate.toISOString().split('T')[0];
-      const endDay = endDate.toISOString().split('T')[0];
-      const startTime = startDate.toLocaleString('en-US', { hour: 'numeric', hour12: true });
-      const endTime = endDate.toLocaleString('en-US', { hour: 'numeric', hour12: true });
-
-      return {
-        name,
-        description,
-        roomId,
-        type,
-        status,
-        start,
-        startDay,
-        startTime,
-        endDay,
-        endTime
-      }
-    });
-  };
-
-  // Move into a new helpers/ folder
-  const categorizeEvents = (eventData) => {
-    const categories = {};
-    
-    for (let i = 0; i < eventData.length; i++) {
-      if (eventData[i].startDay in categories) {
-        categories[eventData[i].startDay].push(eventData[i]);
-      }
-      else {
-        categories[eventData[i].startDay] = [eventData[i]];
-      }
-    }
-    return categories;
-  }
-
   useEffect(() => {
-    const now = (new Date()).toISOString().split('T')[0];
+    const now = agendaFormatDate(new Date());
     setCurrentDate(now);
-    const sanitizedEvents = sanitizeEvents(data['events']);
-    setEvents(categorizeEvents(sanitizedEvents));
+    const agendaEvents = agendaFormattedEvents(data['events']);
+    setEvents(categorizeAgenda(agendaEvents));
   }, []);
 
   const renderIcon = type => {
@@ -103,13 +62,13 @@ export default function Schedule({ navigation }) {
         </CAText>
         <CAText>{renderIcon(item.type)}</CAText>
       </View>
-      <CAText appColor size='xsm' style={styles.register}>{text.registerButton}</CAText>
+      <CAText appColor size='xsm' style={styles.register}>{appText.registerButton}</CAText>
     </TouchableOpacity>
   );
 
   const renderEmptyDate = () => (
     <View style={styles.emptyDate}>
-       <CAText size='sm'>{text.emptyDateMessage}</CAText>
+       <CAText size='sm'>{appText.emptyDateMessage}</CAText>
         <Image source={noEventsImg} style={styles.splash} />
     </View>
   );

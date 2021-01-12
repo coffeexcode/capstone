@@ -2,45 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Entypo, FontAwesome, FontAwesome5, Ionicons } from '@expo/vector-icons'; 
 
+import { eventHasEnded, formatDate } from '@utils/dateHelper';
+import appText from '@utils/text';
+
 import CAText from '@core/CAText';
 
-const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-
-const text = {
-  status: 'Your registration status: ',
-  registerToggle: 'Click to register/unregister',
-  REGISTERED: 'REGISTERED',
-  UNREGISTERED: 'NOT REGISTERED',
-  ended: 'THIS EVENT IS ENDED'
-}
 export default function Event({ route }) {
   const [eventData, setEventData] = useState({});
    
-  const eventHasEnded = startDate => {
-    const now = new Date();
-    const eventDate = new Date(startDate);
-    return eventDate < now;
-  };
   useEffect(() => {
     setEventData({...route.params.item});
   },[]);
 
-  // Move into a new helpers/ folder
-  const getFormattedDate = (date, startTime, endTime) => {
-    const convDate = new Date(date);
-    const dayNum = convDate.getDay();
-    const monthNum = convDate.getMonth();
-    return `${months[monthNum]}, ${days[dayNum]} ${startTime} - ${endTime}`
-  }
-
   const toggleRegistration = () => {
     if (eventHasEnded(eventData.start)) return;
-    const newStatus = eventData.status === text.REGISTERED ? text.UNREGISTERED : text.REGISTERED;
+    const newStatus = eventData.status === appText.REGISTERED ? appText.UNREGISTERED : appText.REGISTERED;
     setEventData({...eventData, status: newStatus });
   }
 
-  // Move into a new helpers/ folder
   const renderIcon = type => {
     switch (type) {
       case 'opening':
@@ -65,7 +44,7 @@ export default function Event({ route }) {
       <View style={styles.descriptionContainer}>
         <CAText size='md' style={[styles.text, styles.line]}>
           <Ionicons name="time-outline" size={24} color="black" />
-          {getFormattedDate(eventData.start, eventData.startTime, eventData.endTime)}
+          {formatDate(eventData.start, eventData.startTime, eventData.endTime)}
         </CAText>
         <CAText size='md' style={[styles.text, styles.line]}>
           <Ionicons name="location-outline" size={24} color="black" />
@@ -76,18 +55,18 @@ export default function Event({ route }) {
         </CAText>
       </View>
       <View style={styles.registrationContainer}>
-        <CAText style={styles.text} appColor>{text.status}</CAText>
+        <CAText style={styles.text} appColor>{appText.status}</CAText>
         <TouchableOpacity
           onPress={toggleRegistration}
           style={[styles.status, 
-            eventData.status === text.REGISTERED ? styles.registered : styles.unregistered
+            eventData.status === appText.REGISTERED ? styles.registered : styles.unregistered
           ]}>
           <CAText style={styles.statusText}>
-            {!eventHasEnded(eventData.start) ? eventData.status : text.ended}
+            {!eventHasEnded(eventData.start) ? eventData.status : appText.ended}
           </CAText>
         </TouchableOpacity>
         <CAText style={styles.registerToggle} size='sm'>
-          {text.registerToggle}
+          {appText.registerToggle}
         </CAText>
       </View>
     </View>

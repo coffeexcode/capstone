@@ -3,16 +3,9 @@ import { FlatList, StyleSheet, TouchableOpacity, View, Modal } from 'react-nativ
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import CAText from '@core/CAText';
+import appText from '@utils/text';
 
 import data from '@data/data.json';
-
-const text = {
-  sponsorTitle: 'SPONSORS',
-  sponsorType: 'Type of sponsorship*',
-  bronze: 'Bronze - ',
-  silver: 'Silver - ',
-  gold: 'Gold - '
-};
 
 export default function Sponsors({ navigation }) {
   const [sponsors, setSponsors] = useState([]);
@@ -49,24 +42,24 @@ export default function Sponsors({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.heading}>
-        <CAText size='sm'>{text.sponsorType}</CAText>
+        <CAText size='sm'>{appText.sponsorType}</CAText>
       </View>
       <View style={styles.infoContainer}>
         <View style={{ width: '25%'}}>
           <CAText size='xsm'>
-            {text.bronze}
+            {appText.bronze}
             <MaterialCommunityIcons name="podium-bronze" size={24} color="#cd7f32" />
           </CAText>
         </View>
         <View style={{ width: '25%'}}>
           <CAText size='xsm'>
-            {text.silver}
+            {appText.silver}
             <MaterialCommunityIcons name="podium-silver" size={24} color="#C0C0C0" />
           </CAText>
         </View>
         <View style={{ width: '25%'}}>
           <CAText size='xsm'>
-            {text.gold}
+            {appText.gold}
             <MaterialCommunityIcons name="podium-gold" size={24} color="#FFD700" />
           </CAText>
         </View>
