@@ -46,7 +46,7 @@ See project located in repository [`github.com/coffeexcode/RestfulQr`](https://g
 
 **Registration System**
 
-See project located in repository [`github.com/Jailoodu/RestfulRegistration`](https://github.com/Jailoodu/RestfulRegistration).
+See project located in repository [`github.com/Jailoodu/RestfulRegistration`](https://github.com/Jailoodu/RestfulRegistration), or through the submodule here located under `/registration`.
 
 ### Scripts
 
