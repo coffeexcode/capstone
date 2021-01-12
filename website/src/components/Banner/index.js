@@ -42,14 +42,19 @@ export const Banner = (props) => {
           <div className="navigation">
             <Grid container spacing={0.2}>
               <Grid item xs={3}>
-                <span className="link" onClick={() => redirect("/admin")}>Dashboard</span>
+                <span className="link" onClick={() => redirect("/admin")}>
+                  Dashboard
+                </span>
               </Grid>
               <Grid item xs={1}>
                 <Divider orientation="vertical" />
               </Grid>
               <Grid item xs={3}>
                 <span className="link">
-                  <span className="login">John Doe</span> <span className="loginIcon"><AccountCircleIcon /></span>
+                  <span className="login">John Doe</span>{" "}
+                  <span className="loginIcon">
+                    <AccountCircleIcon />
+                  </span>
                 </span>
               </Grid>
             </Grid>
