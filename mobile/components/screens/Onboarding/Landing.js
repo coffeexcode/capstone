@@ -12,7 +12,7 @@ export default function Landing({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar style='auto'/>
-      <CAText size='xlg'><MaterialIcons name="donut-small" size={28} color="black" /> ConAssist</CAText>
+      <CAText size='xlg'><MaterialIcons name="donut-small" size={28} color="#3f51b5" /> ConAssist</CAText>
       <Image source={landingImg} style={styles.splash} />
       <Spacer size='xlg' />
       <CAButton 
