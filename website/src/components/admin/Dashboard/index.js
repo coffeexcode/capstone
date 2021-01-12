@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Grid, Typography } from "@material-ui/core";
 import { Sidebar } from "@admin/common/Sidebar";
 import { NumberWidget } from "@admin/common/NumberWidget";
 import { NavigationPanel } from "./NavigationPanel";
+import { getAttendees } from "@utils/data";
 import { PieChartWidget } from "@admin/common/PieChartWidget";
 import "./dashboard.css";
 
 /**
  * Component for the /admin landing page
- * See README for figma links to mockup design
- * @param {*} props
+ * See README for figma links to mockup design and purpose
  */
 export const Dashboard = (props) => {
 
@@ -26,12 +26,21 @@ export const Dashboard = (props) => {
         borderColor: [
           'rgba(255, 206, 86, 1)',
           'rgba(75, 192, 192, 1)',
-          'rgba(255, 99, 132, 1)'
-        ],
-        borderWidth: 1,
-      },
-    ],
-  }
+          'rgba(255, 99, 132, 1)'],
+          borderWidth: 1,
+        },
+      ],
+    }
+  const [attendees, setAttendees] = useState([]);
+  
+  const getData = async () => {
+    const { users: rows } = await getAttendees();
+    setAttendees(rows);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <Container className="dashboard" maxWidth="lg">

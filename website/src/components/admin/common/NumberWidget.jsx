@@ -8,9 +8,10 @@ import {
 import './common.css';
 
 /**
- * Generic component to display live feed of an integer based statistics
+ * Generic component to display integer based statistics
  * (i.e. the current total attendees registered for an event)
- * @param {*} props 
+ * @param {string} props.value The number to display in the integer data widget
+ * @param {string} props.heading The label for this data point
  */
 export const NumberWidget = (props) => {
 

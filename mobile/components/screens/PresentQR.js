@@ -1,9 +1,9 @@
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
-import CAText from '../core/CAText';
-import Spacer from '../core/Spacer';
-import testQR from '../../assets/images/testQR.png';
+import CAText from '@core/CAText';
+import Spacer from '@core/Spacer';
+import testQR from '@images/testQR.png';
 
 const text = {
   qrHeader: 'Your QR Code',
@@ -11,12 +11,10 @@ const text = {
 };
 
 export default function PresentQR() {
-  
   return (
     <View style={styles.container}>
       <CAText appColor size='xlg'>{text.qrHeader}</CAText>
       <Spacer size='xlg'/>
-      {/* TODO: Get QR Code from API based on current user */}
       <Image source={testQR} style={styles.displayQR}/>
       <Spacer size='xlg'/>
       <View style={styles.msgContainer}>

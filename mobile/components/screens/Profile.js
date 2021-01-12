@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, SafeAreaView, View, TouchableOpacity } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-import CAText from '../core/CAText';
-import CAButton from '../core/CAButton';
+import CAText from '@core/CAText';
+import CAButton from '@core/CAButton';
 
-import mockUserData from '../../assets/testData/user.json';
-import mockInstanceData from '../../assets/testData/instance.json';
+import data from '@data/data.json';
 
 const text = {
   conferenceID: 'Conference ID: ',
@@ -20,8 +19,8 @@ export default function Profile({ navigation }) {
   const [instanceData, setInstanceData] = useState({});
 
   useEffect(() => {
-    setProfileData(mockUserData[0]);
-    setInstanceData(mockInstanceData[0]);
+    setProfileData(data["user"][0]);
+    setInstanceData(data["instance"][0]);
   }, []);
 
   const logout = () => navigation.navigate('SignIn');
@@ -32,20 +31,21 @@ export default function Profile({ navigation }) {
         <FontAwesome5 style={styles.profileIcon} name='user-circle' size={120} color='black' />
       </View>
       <View style={styles.infoContainer}>
-        <CAText>{profileData.name}</CAText>
-        <CAText style={styles.email} size='md'>{profileData.email}</CAText>
+        <CAText style={styles.info}>{profileData.name}</CAText>
+        <CAText size='md' style={styles.info}>{profileData.email}</CAText>
+        <CAText size='md' style={styles.info} appColor>{profileData.phone}</CAText>
       </View>
       <View style={styles.horizontalRule} />
-      <View style={{ padding: 20 }}>
-        <CAText size='sm' style={{ padding: 10 }}>
+      <View>
+        <CAText size='sm' style={styles.description}>
           {text.conferenceID}
-          <CAText size="sm" style={{ fontWeight: '400'}}>
+          <CAText size="sm" style={styles.bolded}>
             {instanceData.id}
           </CAText>
         </CAText>
-        <CAText size='sm' style={{ padding: 10 }}>
+        <CAText size='sm' style={styles.description}>
           {text.register}
-          <CAText size='sm' style={{ fontWeight: '400'}}>
+          <CAText size='sm' style={styles.bolded}>
             {instanceData.role}
           </CAText>
         </CAText>
@@ -70,6 +70,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-end'
   },
+  bolded: {
+    fontWeight: '400'
+  },
   horizontalRule: {
     alignSelf: 'center',
     borderBottomColor: 'black',
@@ -79,15 +82,17 @@ const styles = StyleSheet.create({
   iconContainer: {
     alignSelf: 'center',
     marginTop: 60,
-    marginBottom: 30
+    marginBottom: 20
+  },
+  info: {
+    marginBottom: 10
+  },
+  description: {
+    padding: 10
   },
   infoContainer: {
     alignItems: 'center',
-    marginBottom: 30
-  },
-  email: {
-    color: '#A9A9A9',
-    fontWeight: '400'
+    marginBottom: 10
   },
   loadButton: {
     margin: 30,

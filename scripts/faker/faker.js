@@ -10,6 +10,8 @@ var data = {
   users: [],
 }
 
+// Custom data point generating functions
+
 const getTicketType = () => {
   const num = faker.random.number(2);
   return ['Standard', 'Full-Access', 'VIP'][num];
@@ -20,6 +22,7 @@ const getApplicationStatus = () => {
   return ['Accepted', 'Pending', 'Rejected'][num];
 }
 
+// Genereate data and append to data.users above
 
 for (let i = 0; i < 2000; i++) {
   // Feel free to ammend this USER type as needed during development

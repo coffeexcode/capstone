@@ -14,12 +14,19 @@
 **Course:** COMPSCI 4ZP6
 
 **Year:** 2020/21
+
 ## About
 This repository contains, or references, all source code relevant to the ConAssist Capstone project for group Big Yikes.
 
 ## Roadmap
 
 For references from SRS to relevant code, see [`CHANGELOG.md`](CHANGELOG.md). Our group determined that the most sane option for a full-stack web and mobile service like ConAssist to meet the requirement of linking to our SRS document was through references from *all* Pull Requests to the section in the SRS document they are meant to address. 
+
+### Direct Querying
+
+Optionally, if you wish to go from SRS to corresponding code changes, you can navigate to the `Pull Requests` tab in the GitHub repository and change the search query to the following: `is:pr F-1`. This will pull up all related Pull Requests for functional requirement #1.
+
+**NOTE**: Modules that are contained in their own repository, as a submodule here, will not have Pull Requests here. For these changes you *must* use the CHANGELOG.md file or the commit history in that repository.
 
 ### Labels
 
@@ -30,16 +37,16 @@ For categorized Pull Requests you can filter by labels on Github. For example, i
 See project located under `/website` for all of our web based development. For a more detailed look at this part of the project, please see [`/website/README.md`](website/README.md).
 
 ### Mobile Application
-<<<<<<< HEAD
-See project located under `/mobile` for all of our web based development. For a more detailed look at this part of the project, please see [`/mobile/README.md`](mobile/README.md).
-=======
 See project located under `/mobile` for all of our mobile based development. For a more detailed look at this part of the project, please see [`/mobile/README.md`](mobile/README.md).
->>>>>>> origin/master
 
 ### Backend Services
 **QR Code Management System**
 
 See project located in repository [`github.com/coffeexcode/RestfulQr`](https://github.com/coffeexcode/RestfulQr), or through the submodule here located under `/restfulqr`.
+
+**Registration System**
+
+See project located in repository [`github.com/Jailoodu/RestfulRegistration`](https://github.com/Jailoodu/RestfulRegistration), or through the submodule here located under `/registration`.
 
 ### Scripts
 
