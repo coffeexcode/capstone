@@ -14,18 +14,19 @@ import "./dashboard.css";
 export const Dashboard = (props) => {
 
   const applicationsData = {
-    labels: ['Pending', 'Accepted'],
+    labels: ['Pending', 'Accepted', 'Rejected'],
     datasets: [
       {
-        label: '# of Votes',
-        data: [156, 680],
+        data: [680, 156, 78],
         backgroundColor: [
           'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)'
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(255, 99, 132, 0.2)'
         ],
         borderColor: [
           'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)'
+          'rgba(75, 192, 192, 1)',
+          'rgba(255, 99, 132, 1)'
         ],
         borderWidth: 1,
       },
