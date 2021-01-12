@@ -1,7 +1,7 @@
 import React from 'react';
-import Landing from '@screens/Landing';
-import SignIn from '@screens/SignIn';
-import SelectView from '@screens/SelectView';
+import Landing from '@screens/Onboarding/Landing';
+import SignIn from '@screens/Onboarding/SignIn';
+import SelectView from '@screens/Onboarding/SelectView';
 import { AttendeeHome, OrganizerHome } from '@tabs/BottomTab';
 
 import { NavigationContainer } from '@react-navigation/native';
