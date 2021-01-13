@@ -23,7 +23,8 @@ export const Statistics = (props) => {
   useEffect(() => {
     getData();
   }, []);
-  
+
+  // Data for application status pie chart and number cards
   const applicationsData = {
     labels: ['Pending', 'Accepted', 'Rejected'],
     datasets: [
@@ -45,6 +46,7 @@ export const Statistics = (props) => {
     ],
   }
 
+  // Data for ticket type bar chart
   const ticketTypeData = {
     labels: ['Standard', 'Full-Access', 'VIP'],
     datasets: [
@@ -67,6 +69,7 @@ export const Statistics = (props) => {
     ],
   }
 
+  // Data for age distribution line chart
   const ageData = {
     labels: ['', '18-25', '26-35', '36-45', '46-55', '56-65', '66+', ''],
     datasets: [
@@ -82,14 +85,17 @@ export const Statistics = (props) => {
       },
     ],
   }
-
+  
+  // locations object array: [{state : string, count : number}], array is sorted by count in descending order
   const locations = getTopLocations(attendees);
+
+  // Data for geographic distribution horizontal bar chart
   const locationData = {
-    labels: [locations[0].state, locations[1].state, locations[2].state, locations[3].state, locations[4].state, 'Other'],
+    labels: locations.slice(0,5).map(l  => l.state).concat(["Other"]),
     datasets: [
       {
         label: '# of applicants',
-        data: [locations[0].count, locations[1].count, locations[2].count, locations[3].count, locations[4].count, getSumOfLocationsCount(locations, 5)],
+        data: locations.slice(0,5).map(l => l.count).concat([getSumOfLocationsCount(locations, 5)]),
         backgroundColor: [
           'rgba(75, 192, 192, 0.2)',
           'rgba(255, 206, 86, 0.2)',

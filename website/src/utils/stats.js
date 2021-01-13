@@ -34,6 +34,8 @@ export const getCountRange = (data, field, value1, value2) => {
 export const getTopLocations = (data) => {
   var locations = [];
   var index;
+  /* For each entry in data, add it to the locations object array with a count of 0 (if it doesn't exist),
+     or increment the location's count by 1 */
   for (var i = 0; i < data.length; i++) {
     index = locations.map(function(l) { return l.state }).indexOf(data[i].address.state);
     if (index === -1) {
@@ -43,6 +45,7 @@ export const getTopLocations = (data) => {
       locations[index].count++;
     }
   }
+  // Sort the locations by count in descending order
   locations= locations.sort((a, b) => b.count - a.count)
   return locations;
 }
@@ -54,6 +57,7 @@ export const getTopLocations = (data) => {
  */
 export const getSumOfLocationsCount = (locations, start) => {
   var ans = 0;
+  // Sum all the locations' count starting from the specified index
   for (var i = start; i < locations.length; i++) {
     ans += locations[i].count;
   }
