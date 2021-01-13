@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Ethan Johnston",
+    "github": "https://github.com/edavidj",
+    "github_img": "https://avatars0.githubusercontent.com/u/28263917?v=4",
+    "role": "Developer"
+  },
+  {
+    "name": "Rico Florentino",
+    "github": "https://github.com/enricoflorentino",
+    "github_img": "https://avatars2.githubusercontent.com/u/33015189?v=4",
+    "role": "Developer"
+  },
+  {
+    "name": "Steven Luu",
+    "github": "https://github.com/stevenluu98",
+    "github_img": "https://avatars3.githubusercontent.com/u/37159322?v=4",
+    "role": "Developer"
+  },
+  {
+    "name": "Jaison Loodu",
+    "github": "https://github.com/Jailoodu",
+    "github_img": "https://avatars2.githubusercontent.com/u/21979292?v=4",
+    "role": "Developer"
+  },
+  {
+    "name": "Nathan Brown",
+    "github": "https://github.com/coffeexcode",
+    "github_img": "https://avatars1.githubusercontent.com/u/13461008?v=4",
+    "role": "Developer"
+  },
+  {
+    "name": "Gabriel Gebril",
+    "github": "https://github.com/Gabriel-Gebril",
+    "github_img": "https://avatars2.githubusercontent.com/u/16761051?v=4",
+    "role": "Developer"
+  }
+]
