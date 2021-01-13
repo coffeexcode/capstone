@@ -13,6 +13,9 @@ import { useHistory } from "react-router-dom";
 import { getDevelopers } from "@utils/data";
 import "./about.css";
 
+/**
+ *  Page for information on our team and our company
+ */
 export const About = (props) => {
   const [devs, setDevs] = useState([]);
 

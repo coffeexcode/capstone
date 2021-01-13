@@ -5,6 +5,9 @@ import DonutSmallIcon from "@material-ui/icons/DonutSmall";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import "./banner.css";
 
+/**
+ * Site-wide banner at top of the page
+ */
 export const Banner = (props) => {
   const history = useHistory();
   const redirect = (endpoint) => history.push(endpoint);
