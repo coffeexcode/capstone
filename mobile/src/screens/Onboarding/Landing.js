@@ -11,7 +11,7 @@ import landingImg from '@images/undraw_conference_speaker.png';
 /**
  * Returns the Landing screen
  * 
- * @param {object} props.navigation React Navigation navigation obtaining allowing for traversal to different screens
+ * @param {object} props.navigation React Navigation navigation object allowing for traversal to different screens
  * 
  * This is the first screen that is presented when the app is opened
  * Logo, App name, splash art are displayed here

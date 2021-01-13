@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Image, TouchableOpacity, SafeAreaView } from 'react-native';
 import { Agenda } from 'react-native-calendars';
-import { Entypo, FontAwesome, FontAwesome5, Ionicons } from '@expo/vector-icons'; 
 
 import {
   agendaFormatDate,
@@ -12,7 +11,9 @@ import {
 import CAText from '@core/CAText';
 import Spacer from '@core/Spacer';
 import noEventsImg from '@images/undraw_no_events.png';
+
 import appText from '@utils/text';
+import { renderEventIcon } from '@utils/iconSelector';
 
 import data from '@data/data.json';
 
@@ -21,7 +22,7 @@ const APP_THEME_COLOR = '#9892fe';
 /**
  * Returns the Schedule screen
  * 
- * @param {object} props.navigation React Navigation navigation obtaining allowing for traversal to different screens
+ * @param {object} props.navigation React Navigation object allowing for traversal to different screens
  * 
  * This screen is used to view view all of the events of a conference with an Agenda view
  * Allows navigation to see additional Event information
@@ -36,21 +37,6 @@ export default function Schedule({ navigation }) {
     const agendaEvents = agendaFormattedEvents(data['events']);
     setEvents(categorizeAgenda(agendaEvents));
   }, []);
-
-  const renderIcon = type => {
-    switch (type) {
-      case 'opening':
-        return <FontAwesome5 name="door-open" size={36} color='black' />
-      case 'speaker':
-        return <Entypo name="megaphone" size={36} color="black" />
-      case 'food':
-        return <Ionicons name="fast-food" size={36} color="black" />;
-      case 'meeting':
-        return <FontAwesome name="group" size={36} color="black" />
-      default:
-        return <FontAwesome5 name="calendar" size={36} color="black" />
-    }
-  }
 
   const renderItem = item => (
     <TouchableOpacity
@@ -68,7 +54,7 @@ export default function Schedule({ navigation }) {
           >
           {item.description}
         </CAText>
-        <CAText>{renderIcon(item.type)}</CAText>
+        <CAText>{renderEventIcon(item.type, 36)}</CAText>
       </View>
       <CAText appColor size='xsm' style={styles.register}>{appText.registerButton}</CAText>
     </TouchableOpacity>

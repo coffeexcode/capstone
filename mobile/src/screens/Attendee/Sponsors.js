@@ -7,10 +7,12 @@ import appText from '@utils/text';
 
 import data from '@data/data.json';
 
+import { renderSponsorshipIcon } from '@utils/iconSelector';
+
 /**
  * Returns the Sponsors screen
  * 
- * @param {object} props.navigation React Navigation navigation obtaining allowing for traversal to different screens
+ * @param {object} props.navigation React Navigation navigation object allowing for traversal to different screens
  * 
  * This screen presents the sponsors attending a conference and it's type of sponsorship
  * Allows navigation to the Contact page to view additional contact information
@@ -22,19 +24,6 @@ export default function Sponsors({ navigation }) {
     setSponsors(data['sponsors']);
   });
 
-  const renderIcon = type => {
-    switch (type) {
-      case 'Bronze':
-        return <MaterialCommunityIcons name="podium-bronze" size={24} color="#cd7f32" />
-      case 'Silver':
-       return <MaterialCommunityIcons name="podium-silver" size={24} color="#C0C0C0" />
-      case 'Gold':
-        return <MaterialCommunityIcons name="podium-gold" size={24} color="#FFD700" />
-      default:
-        return <MaterialCommunityIcons name="border-none-variant" size={24} color="black" />
-    }
-  }
-
   const renderItem = ({ item }) => (
     <TouchableOpacity
       style={styles.sponsorItem}
@@ -42,7 +31,7 @@ export default function Sponsors({ navigation }) {
       >
       <View style={{ flexDirection: 'row', justifyContent: 'center'}}>
         <CAText size='md' style={styles.sponsorName}>{item.name} </CAText>
-        {renderIcon(item.type)}
+        {renderSponsorshipIcon(item.type)}
       </View>
     </TouchableOpacity>
   );

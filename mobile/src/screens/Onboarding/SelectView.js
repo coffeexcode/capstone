@@ -8,7 +8,7 @@ import Spacer from '@core/Spacer';
 /**
  * Returns the SelectView screen
  * 
- * @param {object} props.navigation React Navigation navigation obtaining allowing for traversal to different screens
+ * @param {object} props.navigation React Navigation navigation object allowing for traversal to different screens
  * 
  * For POC Purposes, the type of view is selected from the selection made on the screen
  * This will make it easier for us to display the different role's use cases for the app
