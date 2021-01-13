@@ -8,11 +8,20 @@ import CAText from '@core/CAText';
 import Spacer from '@core/Spacer';
 import landingImg from '@images/undraw_conference_speaker.png';
 
+/**
+ * Returns the Landing screen
+ * 
+ * @param {object} props.navigation React Navigation navigation obtaining allowing for traversal to different screens
+ * 
+ * This is the first screen that is presented when the app is opened
+ * Logo, App name, splash art are displayed here
+ * Allows navigation to sign in
+ */
 export default function Landing({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar style='auto'/>
-      <CAText size='xlg'><MaterialIcons name="donut-small" size={28} color="black" /> ConAssist</CAText>
+      <CAText size='xlg'><MaterialIcons name="donut-small" size={28} color="#3f51b5" /> ConAssist</CAText>
       <Image source={landingImg} style={styles.splash} />
       <Spacer size='xlg' />
       <CAButton 

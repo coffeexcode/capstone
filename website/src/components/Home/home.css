@@ -1,13 +1,29 @@
-.admin-home {
-  padding-top: 15%;
+.home-row {
+  padding-top: 40px !important;
+}
+.browse-row {
+  padding-top: 100px !important;
 }
 .event-img {
   width: 60%;
   height: auto;
+}
+.browse-img {
+  width: 70%;
+  height: auto;
+  float: right;
 }
 .landing-call {
   font-family: 'Red Hat Display', sans-serif;
   font-weight: normal;
   width: 450px;
   float: right;
+}
+.bg-color {
+  position: absolute;
+  top: 50%;
+  height: 50%;
+  width: 100%;
+  background-color: #f0efff8f;
+  z-index: -1;
 }

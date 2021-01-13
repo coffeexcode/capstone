@@ -4,11 +4,17 @@ import { KeyboardAvoidingView, StyleSheet, Image, TextInput, View, Platform, Tou
 import CAText from '@core/CAText';
 import CAButton from '@core/CAButton';
 import Spacer from '@core/Spacer';
+import appText from '@utils/text';
+
 import logInImg from '@images/drawkit_login.jpg';
 
-const text = {
-  createAccountMessage: `Don't have an account? Create one `
-}
+/**
+ * Returns the SignIn screen
+ * 
+ * @param {object} props.navigation React Navigation navigation obtaining allowing for traversal to different screens
+ * 
+ * Screen to authenticate the user
+ */
 export default function SignIn({ navigation }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -47,7 +53,7 @@ export default function SignIn({ navigation }) {
           />
           <Spacer size='md' />
           <CAText style={{ color: '#A9A9A9' }} size='xsm'>
-            {text.createAccountMessage}
+            {appText.createAccountMessage}
             <CAText
               style={{ textDecorationLine: 'underline'}}
               size='xsm'>here</CAText>

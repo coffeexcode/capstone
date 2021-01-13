@@ -7,13 +7,13 @@ import CAText from '@core/CAText';
 import Spacer from '@core/Spacer';
 import CAButton from '@core/CAButton';
 
-const text = {
-  qrTitle: 'Scan QR Code',
-  qrMessage: `Use this to scan attendee's QR Codes`,
-  requestPermissionsMessage: 'Requesting for camera permissions',
-  deniedPermissionsMessage: 'Camera permissions denied'
-};
+import appText from '@utils/text';
 
+/**
+ * Returns the ScanQR screen
+ * 
+ * This screen is used to scan attendee's QR Codes for the purpose of verifying identification, resource consumption
+ */
 export default function ScanQR() {
   const [hasScanned, setHasScanned] = useState(false);
   const [hasCameraPermission, setHasCameraPermission] = useState(false);
@@ -44,9 +44,9 @@ export default function ScanQR() {
   const renderQRCodeScanner = () => {
     switch (hasCameraPermission) {
       case undefined:
-        return <CAText>{text.requestPermissionsMessage}</CAText>;
+        return <CAText>{appText.requestPermissionsMessage}</CAText>;
       case false:
-        return <CAText>{text.deniedPermissionsMessage}</CAText>;
+        return <CAText>{appText.deniedPermissionsMessage}</CAText>;
       default:
         return QRCodeScanner;
     }
@@ -72,11 +72,11 @@ export default function ScanQR() {
   return (
     <View style={styles.container}>
         {renderPromptModal()}
-        <CAText appColor size='xlg'>{text.qrTitle}</CAText>
+        <CAText appColor size='xlg'>{appText.qrTitle}</CAText>
         {renderQRCodeScanner()}
         <View style={styles.msgContainer}>
           <CAText style={{ color: '#A9A9A9'}} size='xsm'>
-            {text.qrMessage}
+            {appText.qrMessage}
           </CAText>
         </View>
     </View>
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     elevation: 3
   },
   msgContainer: {
-    width: "65%"
+    width: "75%"
   },
   scanner: {
     width: '90%',

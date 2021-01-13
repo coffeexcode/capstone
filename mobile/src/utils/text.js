@@ -1,0 +1,28 @@
+// App text that is displayed in screens/tabs
+export default appText = {
+  createAccountMessage: `Don't have an account? Create one `,
+  conferenceID: 'Conference ID: ',
+  register: 'You are registered as a(n): ',
+  loadNewConferenceTitle: 'Load New Conference',
+  loadNewConferenceMsg: 'You are using the app with the above conference loaded. You can change this by loading a new conference that you are registered to!',
+  qrTitle: 'Scan QR Code',
+  qrMessage: `Use this to scan attendee's QR Codes`,
+  requestPermissionsMessage: 'Requesting for camera permissions',
+  deniedPermissionsMessage: 'Camera permissions denied',
+  qrHeader: 'Your QR Code',
+  qrMessage: 'Expect to be asked to present your QR Code when checking in, getting food/snacks, and winning prizes!',
+  numAttendees: ' Attendee count: ',
+  sponsorButton: 'View our Sponsors',
+  status: 'Your registration status: ',
+  registerToggle: 'Click to register/unregister',
+  sponsorTitle: 'SPONSORS',
+  sponsorType: 'Type of sponsorship*',
+  bronze: 'Bronze - ',
+  silver: 'Silver - ',
+  gold: 'Gold - ',
+  REGISTERED: 'REGISTERED',
+  UNREGISTERED: 'NOT REGISTERED',
+  ended: 'THIS EVENT IS ENDED',
+  emptyDateMessage: 'There are no events scheduled for this day',
+  registerButton: 'Click to view status of registration'
+}
