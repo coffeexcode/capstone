@@ -12,6 +12,7 @@ import './common.css';
  * (i.e. the current total attendees registered for an event)
  * @param {string} props.value The number to display in the integer data widget
  * @param {string} props.heading The label for this data point
+ * @param {object} props.data The statistical data and formatting for the chart.
  */
 export const NumberWidget = (props) => {
 
@@ -19,8 +20,8 @@ export const NumberWidget = (props) => {
     <div className="number-widget">
       <Card className="number-widget-card">
         <CardContent>
-          <Typography color="textSecondary" component="h6" variant="h6">{props.heading}</Typography>
-          <Typography color="textPrimary" component="h2" variant="h2">
+          <Typography color="textSecondary" component="h7" variant="h7">{props.heading}</Typography>
+          <Typography color="textPrimary" component="h3" variant="h3">
             {props.value}
           </Typography>
         </CardContent>
