@@ -25,7 +25,7 @@ export const Sidebar = (props) => {
           <ListItemText primary="Statistics" />
         </ListItem>
         <Divider/>
-        <ListItem onClick={() => redirect("registration")} button>
+        <ListItem onClick={() => redirect("registrations")} button>
           <ListItemText primary="Manage Registration" />
         </ListItem>
         <Divider/>
