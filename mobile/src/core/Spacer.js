@@ -1,9 +1,13 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-export default function Spacer({ size, style }) {
+/**
+ * Returns a resusable Spacer component used by screens
+ * @param {string} props.size specified size of the spacer
+ */
+export default function Spacer({ size }) {
   return (
-    <View style={[styles.default, style, styles[`${size}`]]}>
+    <View style={[styles.default, styles[`${size}`]]}>
     </View>
   )
 }

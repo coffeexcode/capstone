@@ -2,11 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Entypo, FontAwesome, FontAwesome5, Ionicons } from '@expo/vector-icons'; 
 
-import { eventHasEnded, formatDate } from '@utils/dateHelper';
+import { eventHasEnded, formatDate } from '@utils/dateHelpers';
 import appText from '@utils/text';
 
 import CAText from '@core/CAText';
 
+/**
+ * Returns the Event screen
+ * 
+ * @param {object} props.route React Navigation route object containing information passed from previous screen
+ * 
+ * This screen is used to view full event information as well as register/withdraw from the event
+ */
 export default function Event({ route }) {
   const [eventData, setEventData] = useState({});
    

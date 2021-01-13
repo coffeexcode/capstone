@@ -1,3 +1,4 @@
+// App text that is displayed in screens/tabs
 export default appText = {
   createAccountMessage: `Don't have an account? Create one `,
   conferenceID: 'Conference ID: ',
