@@ -8,6 +8,13 @@ import appText from '@utils/text';
 
 import logInImg from '@images/drawkit_login.jpg';
 
+/**
+ * Returns the SignIn screen
+ * 
+ * @param {object} props.navigation React Navigation navigation obtaining allowing for traversal to different screens
+ * 
+ * Screen to authenticate the user
+ */
 export default function SignIn({ navigation }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

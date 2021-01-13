@@ -7,7 +7,7 @@ import {
   agendaFormatDate,
   agendaFormattedEvents,
   categorizeAgenda
-} from '@utils/dateHelper';
+} from '@utils/dateHelpers';
 
 import CAText from '@core/CAText';
 import Spacer from '@core/Spacer';
@@ -18,6 +18,14 @@ import data from '@data/data.json';
 
 const APP_THEME_COLOR = '#9892fe';
 
+/**
+ * Returns the Schedule screen
+ * 
+ * @param {object} props.navigation React Navigation navigation obtaining allowing for traversal to different screens
+ * 
+ * This screen is used to view view all of the events of a conference with an Agenda view
+ * Allows navigation to see additional Event information
+ */
 export default function Schedule({ navigation }) {
   const [events, setEvents] = useState({});
   const [currentDate, setCurrentDate] = useState('');

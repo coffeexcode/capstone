@@ -9,6 +9,13 @@ import appText from '@utils/text';
 
 import data from '@data/data.json';
 
+/**
+ * Returns the Profile screen
+ * 
+ * @param {object} props.navigation React Navigation navigation obtaining allowing for traversal to different screens
+ * 
+ * Displays the currently logged in user's contact information as well as the currently loaded conference instance
+ */
 export default function Profile({ navigation }) {
   const [profileData, setProfileData] = useState({});
   const [instanceData, setInstanceData] = useState({});
