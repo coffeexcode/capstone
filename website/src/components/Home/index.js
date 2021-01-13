@@ -3,6 +3,9 @@ import { Button, Container, Grid } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import "./home.css";
 
+/**
+ * Landing page for the entire website
+ */
 export const Home = (props) => {
   const history = useHistory();
   const redirect = (endpoint) => history.push(endpoint);
