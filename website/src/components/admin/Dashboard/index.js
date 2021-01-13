@@ -4,6 +4,7 @@ import { Sidebar } from "@admin/common/Sidebar";
 import { NumberWidget } from "@admin/common/NumberWidget";
 import { NavigationPanel } from "./NavigationPanel";
 import { getAttendees } from "@utils/data";
+import { getCount } from "@utils/stats";
 import { PieChartWidget } from "@admin/common/PieChartWidget";
 import "./dashboard.css";
 
@@ -13,11 +14,22 @@ import "./dashboard.css";
  */
 export const Dashboard = (props) => {
 
+  const [attendees, setAttendees] = useState([]);
+  
+  const getData = async () => {
+    const { users: rows } = await getAttendees();
+    setAttendees(rows);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   const applicationsData = {
     labels: ['Pending', 'Accepted', 'Rejected'],
     datasets: [
       {
-        data: [680, 156, 78],
+        data: [getCount(attendees, "status", "Pending"), getCount(attendees, "status", "Accepted"), getCount(attendees, "status", "Rejected")],
         backgroundColor: [
           'rgba(255, 206, 86, 0.2)',
           'rgba(75, 192, 192, 0.2)',
@@ -31,17 +43,7 @@ export const Dashboard = (props) => {
         },
       ],
     }
-  const [attendees, setAttendees] = useState([]);
   
-  const getData = async () => {
-    const { users: rows } = await getAttendees();
-    setAttendees(rows);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
   return (
     <Container className="dashboard" maxWidth="lg">
       <Grid container spacing={5}>
@@ -60,13 +62,13 @@ export const Dashboard = (props) => {
           <Grid container spacing={2}>
             {/* Application/Event Traffic overview */}
             <Grid className="application-metric" item xs={4}>
-              <NumberWidget heading="Pending Applications" value="680" />
+              <NumberWidget heading="Pending Applications" value={getCount(attendees, "status", "Pending")} />
             </Grid>
             <Grid className="application-metric" item xs={4}>
               <NumberWidget heading="Event Views" value="2670" />
             </Grid>
             <Grid className="application-metric" item xs={4}>
-              <NumberWidget heading="Accepted Applications" value="156" />
+              <NumberWidget heading="Accepted Applications" value={getCount(attendees, "status", "Accepted")} />
             </Grid>
             {/* Ticket Type Distribution and Call to Action */}
             <Grid item xs={8}>
