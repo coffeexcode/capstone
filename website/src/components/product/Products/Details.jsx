@@ -10,6 +10,9 @@ import {
 
 /**
  * Show details about our product offering for the about page
+ * @param {string} props.heading Title of the product offering
+ * @param {string} props.subheading Pricing of the product
+ * @param {string} props.product_description Details about that product tier
  */
 export const Details = (props) => {
   return (

@@ -2,6 +2,11 @@ import React from "react";
 import { Container, Grid } from "@material-ui/core";
 import { Details } from "./Details";
 
+/**
+ *  Public page to display the different product levels that we offer and
+ * illustrate the differences between each.
+ * TODO: Replace [ ] descriptions with feature comparison table below
+ */
 export const Products = (props) => {
   const products = [
     {
