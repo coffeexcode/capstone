@@ -41,6 +41,7 @@ for (let i = 0; i < 2000; i++) {
     age: faker.random.number({'min': 18, 'max': 90}),
     phone: faker.phone.phoneNumber(),
     status: getApplicationStatus(),
+    type: getTicketType(),
   }
   data.users = data.users.concat([user]);
 }
