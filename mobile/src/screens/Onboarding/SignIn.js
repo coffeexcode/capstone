@@ -11,7 +11,7 @@ import logInImg from '@images/drawkit_login.jpg';
 /**
  * Returns the SignIn screen
  * 
- * @param {object} props.navigation React Navigation navigation obtaining allowing for traversal to different screens
+ * @param {object} props.navigation React Navigation navigation object allowing for traversal to different screens
  * 
  * Screen to authenticate the user
  */

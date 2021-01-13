@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
-import { Entypo, FontAwesome, FontAwesome5, Ionicons } from '@expo/vector-icons'; 
-
-import { eventHasEnded, formatDate } from '@utils/dateHelpers';
-import appText from '@utils/text';
+import { Ionicons } from '@expo/vector-icons';
 
 import CAText from '@core/CAText';
+
+import appText from '@utils/text';
+import { eventHasEnded, formatDate } from '@utils/dateHelpers';
+import { renderEventIcon } from '@utils/iconSelector';
 
 /**
  * Returns the Event screen
@@ -27,26 +28,11 @@ export default function Event({ route }) {
     setEventData({...eventData, status: newStatus });
   }
 
-  const renderIcon = type => {
-    switch (type) {
-      case 'opening':
-        return <FontAwesome5 name="door-open" size={64} color='black' />
-      case 'speaker':
-        return <Entypo name="megaphone" size={64} color="black" />
-      case 'food':
-        return <Ionicons name="fast-food" size={64} color="black" />;
-      case 'meeting':
-        return <FontAwesome name="group" size={64} color="black" />
-      default:
-        return <FontAwesome5 name="calendar" size={64} color="black" />
-    }
-  }
-
   return (
     <View style={styles.container}>
       <View style={styles.headingContainer}>
         <CAText size='lg' style={styles.heading}>{eventData.name}</CAText>
-        <CAText style={styles.icon}>{renderIcon(eventData.type)}</CAText>
+        <CAText style={styles.icon}>{renderEventIcon(eventData.type, 64)}</CAText>
       </View>
       <View style={styles.descriptionContainer}>
         <CAText size='md' style={[styles.text, styles.line]}>

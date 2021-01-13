@@ -4,33 +4,28 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Schedule from '@screens/User/Schedule';
 import Profile from '@screens/User/Profile';
+import Event from '@screens/User/Event';
+
 import PresentQR from '@screens/Attendee/PresentQR';
-import ScanQR from '@screens/Organizer/ScanQR';
 import About from '@screens/Attendee/About';
 import Sponsors from '@screens/Attendee/Sponsors';
 import Contact from '@screens/Attendee/Contact';
-import Event from '@screens/Attendee/Event';
 
-import { Feather } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
+import ScanQR from '@screens/Organizer/ScanQR';
+
+import {
+  createAboutIcon,
+  createScanQRIcon,
+  createScheduleIcon,
+  createPresentQRIcon,
+  createProfileIcon
+} from '@utils/iconSelector';
 
 const Tab = createBottomTabNavigator();
 const ScheduleStack = createStackNavigator();
 const ScanQRStack = createStackNavigator();
 const AboutStack = createStackNavigator();
 
-/**
- * Icon callback functions to be created when the bottom tabs are created
- * 
- * @param {string} props.color icon colour to be presented
- * @param {boolean} props.focused whether the current tab is currently in focus
- */
-const createScheduleIcon = ({ color, focused }) => (<AntDesign name="calendar" size={24} color={focused ? color : "black"} />);
-const createProfileIcon = ({ color, focused }) => (<Feather name="user" size={24} color={focused ? color : "black"} />);
-const createPresentQRIcon = ({ color, focused }) => (<Ionicons name="qr-code-outline" size={24} color={focused ? color : "black"} />);
-const createAboutIcon = ({ color, focused }) => (<Ionicons name="information-circle-outline" size={24} color={focused ? color : "black"} />);
-const createScanQRIcon = ({ color, focused }) => (<AntDesign name="scan1" size={24} color={focused ? color : "black"} />);
 
 /**
  * Returns the The Schedule Stack Navigator 

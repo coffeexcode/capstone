@@ -24,5 +24,5 @@ export default appText = {
   UNREGISTERED: 'NOT REGISTERED',
   ended: 'THIS EVENT IS ENDED',
   emptyDateMessage: 'There are no events scheduled for this day',
-  registerButton: 'Click to view status of registration'
+  registerButton: 'Click to manage registration'
 }
