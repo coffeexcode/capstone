@@ -101,7 +101,11 @@ export const ConferenceWidget = (props) => {
 
           <CardMedia component="img" image={props.image} title="money" className="event-pic"/>
 
+<<<<<<< HEAD
           <Typography color="error" component="h6" variant="h6">
+=======
+          <Typography color="error" component="h8" variant="h8">
+>>>>>>> Added drilldown for conference widget. Added events list. Added Conference registration. Added sponsoring a conference. Added reminders.
             {props.date}
           </Typography>
 

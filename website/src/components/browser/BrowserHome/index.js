@@ -47,7 +47,6 @@ export const BrowserHome = (props) => {
             Conferences
           </Typography>
           <Grid container spacing={2}>
-<<<<<<< HEAD
             {/* Collection of conferences*/}
             <Grid className="application-metric" item xs={4}>
               <ConferenceWidget date="Thu, Jan 28, 2021 6:30 PM EST" image="money.jpg" title="Finance Workshop" desc={"Learn about money."} events={["Learn","Eat"]}/>
@@ -61,20 +60,6 @@ export const BrowserHome = (props) => {
             <ConferenceWidget date="Thu, Jan 28, 2021 6:30 PM EST" image="hack.png" title="Hackathon" desc={"Make apps and compete for prizes."} events={["Hack","Eat", "Hack"]}/>
             </Grid>
             
-=======
-            {/* Application/Event Traffic overview */}
-            <Grid className="application-metric" item xs={4}>
-              <EventWidget date="Thu, Jan 28, 2021 6:30 PM EST" image="money.jpg" title="Finance Workshop" />
-            </Grid>
-            <Grid className="application-metric" item xs={4}>
-            <EventWidget date="Thu, Jan 28, 2021 6:30 PM EST" image="money.jpg" title="Finance Workshop" />
-
-            </Grid>
-            <Grid className="application-metric" item xs={4}>
-            <EventWidget date="Thu, Jan 28, 2021 6:30 PM EST" image="money.jpg" title="Finance Workshop" />
-
-            </Grid>
->>>>>>> Added conference browser.
           </Grid>
         </Grid>
       </Grid>
