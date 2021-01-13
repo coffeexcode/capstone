@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState} from "react";
 import { Container, Grid, Typography } from "@material-ui/core";
 import { Sidebar } from "@admin/common/Sidebar";
 import "./statistics.css";
@@ -7,18 +7,28 @@ import { BarChartWidget } from "../common/BarChartWidget";
 import { NumberWidget } from "../common/NumberWidget";
 import { HorizontalBarChartWidget } from "../common/HorizontalBarChartWidget";
 import { LineChartWidget } from "../common/LineChartWidget";
+import { getAttendees } from "@utils/data";
+import { getCount, getCountRange, getTopLocations, getSumOfLocationsCount } from "@utils/stats";
 
-/**
- * Component for the /admin landing page
- * See README for figma links to mockup design
- * @param {*} props
- */
+/* Component for the /admin/statistics page */
 export const Statistics = (props) => {
+  
+  const [attendees, setAttendees] = useState([]);
+  
+  const getData = async () => {
+    const { users: rows } = await getAttendees();
+    setAttendees(rows);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+  
   const applicationsData = {
     labels: ['Pending', 'Accepted', 'Rejected'],
     datasets: [
       {
-        data: [680, 156, 78],
+        data: [getCount(attendees,"status", "Pending"), getCount(attendees,"status", "Accepted"), getCount(attendees,"status", "Rejected")],
         backgroundColor: [
           'rgba(255, 206, 86, 0.2)',
           'rgba(75, 192, 192, 0.2)',
@@ -40,7 +50,7 @@ export const Statistics = (props) => {
     datasets: [
       {
         label: '# of Applicants',
-        data: [103, 40, 13],
+        data: [getCount(attendees,"type", "Standard"), getCount(attendees,"type", "Full-Access"), getCount(attendees,"type", "VIP")],
         backgroundColor: [
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 159, 64, 0.2)',
@@ -58,11 +68,12 @@ export const Statistics = (props) => {
   }
 
   const ageData = {
-    labels: ['', '18', '26', '36', '46', '56', '66+', ''],
+    labels: ['', '18-25', '26-35', '36-45', '46-55', '56-65', '66+', ''],
     datasets: [
       {
         label: '# of applicants',
-        data: [null, 22, 37, 33, 27, 24, 13, null],
+        data: [null, getCountRange(attendees, "age", 18, 25), getCountRange(attendees, "age", 26, 35), getCountRange(attendees, "age", 36, 45),
+          getCountRange(attendees, "age", 46, 55), getCountRange(attendees, "age", 56, 65), getCountRange(attendees, "age", 66, 999), null],
         fill: false,
         backgroundColor: 'rgba(54, 162, 235, 1)',
         borderColor:'rgba(54, 162, 235, 0.2)',
@@ -72,12 +83,13 @@ export const Statistics = (props) => {
     ],
   }
 
+  const locations = getTopLocations(attendees);
   const locationData = {
-    labels: ['Boston', 'Chicago', 'New Jersey', 'New York', 'Toronto', 'Other'],
+    labels: [locations[0].state, locations[1].state, locations[2].state, locations[3].state, locations[4].state, 'Other'],
     datasets: [
       {
         label: '# of applicants',
-        data: [23, 16, 14, 29, 62, 12],
+        data: [locations[0].count, locations[1].count, locations[2].count, locations[3].count, locations[4].count, getSumOfLocationsCount(locations, 5)],
         backgroundColor: [
           'rgba(75, 192, 192, 0.2)',
           'rgba(255, 206, 86, 0.2)',
@@ -125,22 +137,22 @@ export const Statistics = (props) => {
           </Grid>
           <Grid container spacing={2}>
             <Grid item xs={2}>
-              <NumberWidget heading="Pending" value="680" />
+              <NumberWidget heading="Pending" value={getCount(attendees, "status", "Pending")} />
             </Grid>
             <Grid item xs={2}>
-              <NumberWidget heading="Accepted" value="156" />
+              <NumberWidget heading="Accepted" value={getCount(attendees, "status", "Accepted")} />
             </Grid>
             <Grid item xs={2}>
-              <NumberWidget heading="Rejected" value="78" />
+              <NumberWidget heading="Rejected" value={getCount(attendees, "status", "Rejected")} />
             </Grid>
             <Grid item xs={2}>
-              <NumberWidget heading="Standard" value="103" />
+              <NumberWidget heading="Standard" value={getCount(attendees, "type", "Standard")} />
             </Grid>
             <Grid item xs={2}>
-              <NumberWidget heading="Full-Access" value="40" />
+              <NumberWidget heading="Full-Access" value={getCount(attendees, "type", "Full-Access")} />
             </Grid>
             <Grid item xs={2}>
-              <NumberWidget heading="VIP" value="13" />
+              <NumberWidget heading="VIP" value={getCount(attendees, "type", "VIP")} />
             </Grid>
           </Grid>
           <Grid container spacing={2}>
