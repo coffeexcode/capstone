@@ -12,3 +12,13 @@ export const getAttendees = async (...ids) => {
   // return only request items
   return attendees.filter(v => ids.indexOf(v.id) !== -1)
 };
+
+export const getDevelopers = async (...ids) => {
+  const res = await fetch("/data/team.json", options);
+
+  const attendees = await res.json();
+  if (ids.length === 0) return attendees;
+
+  // return only request items
+  return attendees.filter(v => ids.indexOf(v.id) !== -1)
+}

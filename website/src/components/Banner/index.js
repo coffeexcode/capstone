@@ -27,13 +27,13 @@ export const Banner = (props) => {
           <div className="navigation">
             <Grid container spacing={0.2}>
               <Grid item xs={3}>
-                <span className="link">About</span>
+                <span onClick={() => redirect("/about")} className="link">About</span>
               </Grid>
               <Grid item xs={3}>
-                <span className="link">Products</span>
+                <span onClick={() => redirect("/products")} className="link">Products</span>
               </Grid>
               <Grid item xs={3}>
-                <span className="link">Downloads</span>
+                <span onClick={() => redirect("/downloads")} className="link">Downloads</span>
               </Grid>
             </Grid>
           </div>
