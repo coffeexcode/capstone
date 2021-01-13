@@ -12,6 +12,7 @@ import './common.css';
  * (i.e. the current total attendees registered for an event)
  * @param {string} props.value The number to display in the integer data widget
  * @param {string} props.heading The label for this data point
+ * @param {object} props.data The statistical data and formatting for the chart.
  */
 export const NumberWidget = (props) => {
 

@@ -8,9 +8,10 @@ import {
 import { Line } from "react-chartjs-2";
 
 /**
- * Generic component to display live feed of an integer based statistics
+ * Generic component to display live feed of statistics in the form of a line chart
  * (i.e. the current total attendees registered for an event)
- * @param {*} props 
+ * @param {string} props.heading The label for this data point
+ * @param {object} props.data The statistical data and formatting for the chart.
  */
 export const LineChartWidget = (props) => {
     const options = {
