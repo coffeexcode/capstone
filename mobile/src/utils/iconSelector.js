@@ -22,8 +22,6 @@ const createScanQRIcon = ({ color, focused }) => (<AntDesign name="scan1" size={
  */
 const renderEventIcon = (type, size) => {
   switch (type) {
-    case true:
-      return <Ionicons name="checkmark-circle-outline" size={24} color="black" />;
     case 'opening':
       return <FontAwesome5 name="door-open" size={size} color='black' />
     case 'speaker':

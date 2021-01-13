@@ -22,7 +22,7 @@ export default appText = {
   gold: 'Gold - ',
   REGISTERED: 'REGISTERED',
   UNREGISTERED: 'NOT REGISTERED',
-  ended: 'THIS EVENT IS ENDED',
+  ended: 'THIS EVENT HAS ENDED',
   emptyDateMessage: 'There are no events scheduled for this day',
   registerButton: 'Click to manage registration'
 }
