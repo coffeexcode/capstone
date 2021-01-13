@@ -3,25 +3,30 @@ import { StyleSheet, View, Image, TouchableOpacity, SafeAreaView } from 'react-n
 import { Agenda } from 'react-native-calendars';
 import { Entypo, FontAwesome, FontAwesome5, Ionicons } from '@expo/vector-icons'; 
 
+import {
+  agendaFormatDate,
+  agendaFormattedEvents,
+  categorizeAgenda
+} from '@utils/dateHelper';
+
 import CAText from '@core/CAText';
 import Spacer from '@core/Spacer';
 import noEventsImg from '@images/undraw_no_events.png';
+import appText from '@utils/text';
 
-import data from '@data/schedule.json';
+import data from '@data/data.json';
 
 const APP_THEME_COLOR = '#9892fe';
-const text = {
-  emptyDateMessage: 'There are no events scheduled for this day'
-}
 
-export default function Schedule() {
-  const [items, setItems] = useState({});
+export default function Schedule({ navigation }) {
+  const [events, setEvents] = useState({});
   const [currentDate, setCurrentDate] = useState('');
 
   useEffect(() => {
-    const now = (new Date()).toISOString().split('T')[0];
+    const now = agendaFormatDate(new Date());
     setCurrentDate(now);
-    setItems(data[0]);
+    const agendaEvents = agendaFormattedEvents(data['events']);
+    setEvents(categorizeAgenda(agendaEvents));
   }, []);
 
   const renderIcon = type => {
@@ -38,32 +43,32 @@ export default function Schedule() {
         return <FontAwesome5 name="calendar" size={36} color="black" />
     }
   }
+
   const renderItem = item => (
-    <TouchableOpacity onPress={() => alert(item.startTime)} style={[styles.item]}>
-      {item.startTime ?
-        <CAText style={{ color: '#A9A9A9' }} size="sm">
-          {item.startTime} - {item.endTime}
-        </CAText>
-      : null}
-      <CAText appColor size='xsm'>{item.location}</CAText>
+    <TouchableOpacity
+      onPress={() => navigation.navigate('Event', { item: item })} 
+      style={[styles.item]}
+    >
+      <CAText style={{ color: '#A9A9A9' }} size="sm">
+        {item.startTime} - {item.endTime}
+      </CAText>
       <CAText size='md'>{item.name}</CAText>
-      {item.blurb ? 
-        <View
-          style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
-          <CAText
-            style={{ width: '80%', color: '#A9A9A9' }} size='xsm'
+      <View
+        style={styles.descriptionContainer}>
+        <CAText
+          style={styles.description} size='xsm'
           >
-            {item.blurb}
-          </CAText>
-          <CAText>{renderIcon(item.type)}</CAText>
-        </View>
-      : null}
+          {item.description}
+        </CAText>
+        <CAText>{renderIcon(item.type)}</CAText>
+      </View>
+      <CAText appColor size='xsm' style={styles.register}>{appText.registerButton}</CAText>
     </TouchableOpacity>
   );
 
   const renderEmptyDate = () => (
     <View style={styles.emptyDate}>
-       <CAText size='sm'>{text.emptyDateMessage}</CAText>
+       <CAText size='sm'>{appText.emptyDateMessage}</CAText>
         <Image source={noEventsImg} style={styles.splash} />
     </View>
   );
@@ -72,14 +77,16 @@ export default function Schedule() {
     <SafeAreaView style={styles.container}>
       <Spacer size='sm'/>
       <Agenda
-        items={items}
+        items={events}
         selected={currentDate}
         renderItem={renderItem}
         renderEmptyDate={renderEmptyDate}
-        renderEmptyData={renderEmptyDate}
-        rowHasChanged={(r1, r2) => r1.name !== r2.name}
         pastScrollRange={1}
         futureScrollRange={1}
+        renderEmptyData={renderEmptyDate}
+        rowHasChanged={(r1, r2) => { return r1.id !== r2.id }}
+        pastScrollRange={2}
+        futureScrollRange={2}
         theme={{
           agendaDayNumColor: 'black',
           agendaDayTextColor: 'black',
@@ -100,6 +107,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     flex: 1
   },
+  descriptionContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  description: {
+    width: '80%',
+    color: '#A9A9A9'
+  },
   item: {
     backgroundColor: 'white',
     flex: 1,
@@ -107,7 +122,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 30,
     paddingTop: 20,
-    paddingBottom: 40,
+    paddingBottom: 10,
     marginRight: 10,
     marginTop: 17
   },
@@ -118,7 +133,9 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 30
   },
-
+  register: {
+    paddingTop: 20
+  },
   splash: {
     height: "40%",
     resizeMode: 'contain',

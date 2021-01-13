@@ -5,14 +5,9 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import CAText from '@core/CAText';
 import CAButton from '@core/CAButton';
 
-import data from '@data/data.json';
+import appText from '@utils/text';
 
-const text = {
-  conferenceID: 'Conference ID: ',
-  register: 'You are registered as a(n): ',
-  loadNewConferenceTitle: 'Load New Conference',
-  loadNewConferenceMsg: 'You are using the app with the above conference loaded. You can change this by loading a new conference that you are registered to!'
-}
+import data from '@data/data.json';
 
 export default function Profile({ navigation }) {
   const [profileData, setProfileData] = useState({});
@@ -38,20 +33,20 @@ export default function Profile({ navigation }) {
       <View style={styles.horizontalRule} />
       <View>
         <CAText size='sm' style={styles.description}>
-          {text.conferenceID}
+          {appText.conferenceID}
           <CAText size="sm" style={styles.bolded}>
             {instanceData.id}
           </CAText>
         </CAText>
         <CAText size='sm' style={styles.description}>
-          {text.register}
+          {appText.register}
           <CAText size='sm' style={styles.bolded}>
             {instanceData.role}
           </CAText>
         </CAText>
-        <CAButton style={styles.loadButton} title={text.loadNewConferenceTitle} size='sm'/>
-        <CAText style={{ alignSelf: 'center', color: '#A9A9A9'}} size='xsm'>
-            {text.loadNewConferenceMsg}
+        <CAButton style={styles.loadButton} title={appText.loadNewConferenceTitle} size='sm'/>
+        <CAText style={styles.loadMessage} size='xsm'>
+            {appText.loadNewConferenceMsg}
           </CAText>
       </View>
       <View style={styles.bottomActionContainer}>
@@ -97,6 +92,11 @@ const styles = StyleSheet.create({
   loadButton: {
     margin: 30,
     backgroundColor: '#A9A9A9'
+  },
+  loadMessage: {
+    alignSelf: 'center',
+    color: '#A9A9A9',
+    width: '80%'
   },
   logoutButton: {
     marginBottom: 20,

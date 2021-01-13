@@ -4,13 +4,9 @@ import { Ionicons } from '@expo/vector-icons';
 
 import CAText from '@core/CAText';
 import CAButton from '@core/CAButton';
+import appText from '@utils/text';
 
 import data from '@data/data.json';
-
-const text = {
-  numAttendees: ' Attendee count: ',
-  sponsorButton: 'View our Sponsors'
-};
 
 export default function About({ navigation }) {
   const [conferenceData, setConferenceData] = useState({});
@@ -26,13 +22,13 @@ export default function About({ navigation }) {
         <CAText size='md' style={styles.text}>{conferenceData.description}</CAText>
         <CAText size='md'>
           <Ionicons name="people-sharp" size={24} color="black" /> 
-          {text.numAttendees}
+          {appText.numAttendees}
           <CAText size='md' style={styles.header}>
             {conferenceData.numAttendees}</CAText>
           </CAText>
       </View>
         <CAButton
-          title={text.sponsorButton}
+          title={appText.sponsorButton}
           onPress={() => navigation.navigate('Sponsors')}
         />
     </View>
@@ -41,7 +37,7 @@ export default function About({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   text: {
     paddingBottom: 20
