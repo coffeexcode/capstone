@@ -32,6 +32,11 @@ All notable changes to this project will be documented in this file.
 - Added landing page for administrative section of the website. ([#2](https://github.com/coffeexcode/capstone/pull/2))
 - Added website page for managing event applications or registrations ([#4](https://github.com/coffeexcode/capstone/pull/4))
 - Added website pages for ConAssist team details and offering page ([#13](https://github.com/coffeexcode/capstone/pull/13))
+- Added page to view events ([bfbcc43](https://github.com/coffeexcode/capstone/pull/14))
+- Added page to view conferences ([bfbcc43](https://github.com/coffeexcode/capstone/pull/14))
+- Added button to register for conference ([bfbcc43](https://github.com/coffeexcode/capstone/pull/14))
+- Added button to set a reminder for conference ([bfbcc43](https://github.com/coffeexcode/capstone/pull/14))
+- Added button to sponsor a conference ([bfbcc43](https://github.com/coffeexcode/capstone/pull/14))
 
 ### Changed
 
