@@ -8,6 +8,14 @@ import appText from '@utils/text';
 
 import data from '@data/data.json';
 
+/**
+ * Returns the About screen
+ * 
+ * @param {object} props.navigation React Navigation navigation obtaining allowing for traversal to different screens
+ * 
+ * This screen presents conference information provided by the conference organizer
+ * Allows navigation to view sponsors
+ */
 export default function About({ navigation }) {
   const [conferenceData, setConferenceData] = useState({});
 
