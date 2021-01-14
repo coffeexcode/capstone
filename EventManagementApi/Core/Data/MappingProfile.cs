@@ -46,26 +46,6 @@ namespace EventManagementApi.Core.Data
             CreateMap<TimeslotViewModel, Timeslot>()
                 .ForMember(vm => vm.Id, action => action.Ignore());
             CreateMap<Timeslot, TimeslotViewModel>();
-
-            // CourseOffering
-            CreateMap<CourseOfferingViewModel, CourseOffering>()
-                 .ForMember(eor => eor.Id, action => action.Ignore());
-            CreateMap<CourseOffering, CourseOfferingViewModel>();
-
-            // CourseOfferingRegistration
-            CreateMap<CourseOfferingRegistrationViewModel, CourseOfferingRegistration>()
-                .ForMember(eor => eor.Id, action => action.Ignore());
-            CreateMap<CourseOfferingRegistration, CourseOfferingRegistrationViewModel>();
-
-            // EventOffering
-            CreateMap<EventOfferingViewModel, EventOffering>()
-                .ForMember(eor => eor.Id, action => action.Ignore());
-            CreateMap<EventOffering, EventOfferingViewModel>();
-
-            // EventOfferingRegistration
-            CreateMap<EventOfferingRegistrationViewModel, EventOfferingRegistration>()
-                .ForMember(eor => eor.Id, action => action.Ignore());
-            CreateMap<EventOfferingRegistration, EventOfferingRegistrationViewModel>();
         }
     }
 }
