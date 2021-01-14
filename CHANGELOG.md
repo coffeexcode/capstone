@@ -42,9 +42,9 @@ All notable changes to this project will be documented in this file.
 
 ## Backend
 ### Added
-- Added REST endpoints to create and interact with user accounts ([699a6c5](https://github.com/Jailoodu/RestfulRegistration/commit/699a6c5e41b2a884352639cd666e45d9bb4bc58a))
-- Added REST endpoint to review conference applications ([699a6c5](https://github.com/Jailoodu/RestfulRegistration/commit/699a6c5e41b2a884352639cd666e45d9bb4bc58a))
-- Dockerized application so it can be run in various environments   ([757f2e5](https://github.com/Jailoodu/RestfulRegistration/commit/757f2e5eec1960ba19bdb70b576f9b9d6a6c20bc))
-- Added REST endpoint to export event attendee data  ([dd20591](https://github.com/Jailoodu/RestfulRegistration/commit/dd20591ee28f3af258593a111bdee0e1ac33640c))
+- Added REST endpoints to create and interact with user accounts ([699a6c5](https://github.com/Jailoodu/RestfulRegistration/commit/699a6c5e41b2a884352639cd666e45d9bb4bc58a)):([F-1](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-1))
+- Added REST endpoint to review conference applications ([699a6c5](https://github.com/Jailoodu/RestfulRegistration/commit/699a6c5e41b2a884352639cd666e45d9bb4bc58a)):([F-21](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-21))
+- Dockerized application so it can be run in various environments ([757f2e5](https://github.com/Jailoodu/RestfulRegistration/commit/757f2e5eec1960ba19bdb70b576f9b9d6a6c20bc))
+- Added REST endpoint to export event attendee data ([dd20591](https://github.com/Jailoodu/RestfulRegistration/commit/dd20591ee28f3af258593a111bdee0e1ac33640c)):([F-38](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-38))
 
 ### Changed
