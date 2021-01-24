@@ -12,6 +12,7 @@ import Sponsors from '@screens/Attendee/Sponsors';
 import Contact from '@screens/Attendee/Contact';
 
 import ScanQR from '@screens/Organizer/ScanQR';
+import ScanAction from '@screens/Organizer/ScanAction';
 
 import {
   createAboutIcon,
@@ -45,6 +46,7 @@ const ScheduleStackScreens = () => (
 const ScanQRStackScreens = () => (
   <ScanQRStack.Navigator initialRouteName="ScanQR">
     <ScanQRStack.Screen name="ScanQR" component={ScanQR} />
+    <ScanQRStack.Screen name="ScanAction" component={ScanAction} />
   </ScanQRStack.Navigator>
 );
 
