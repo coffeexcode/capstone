@@ -36,6 +36,7 @@ export default function About({ navigation }) {
           </CAText>
       </View>
         <CAButton
+          testID='sponsorsBtn'
           title={appText.sponsorButton}
           onPress={() => navigation.navigate('Sponsors')}
         />

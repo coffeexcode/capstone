@@ -32,11 +32,11 @@ export default function ScanAction({ navigation }) {
       <CAText size='xlg' style={styles.text}>{profileData.name}</CAText>
       <CAText size='lg' style={styles.text}>{profileData.email}</CAText>
       <View style={styles.action}>
-        <CAButton style={styles.select} title="Sign In" onPress={navigateBack} />
+        <CAButton testID='scanSignBtn' style={styles.select} title="Sign In" onPress={navigateBack} />
         <Spacer size='lg'/>
-        <CAButton style={styles.select} title="Claim Meal" onPress={navigateBack} />
+        <CAButton testID='scanClaimMealBtn' style={styles.select} title="Claim Meal" onPress={navigateBack} />
         <Spacer size='lg'/>
-        <CAButton style={styles.select} title="Claim Prize" onPress={navigateBack} />
+        <CAButton testID='scanClaimPrizeBtn' style={styles.select} title="Claim Prize" onPress={navigateBack} />
       </View>
     </View>
   )

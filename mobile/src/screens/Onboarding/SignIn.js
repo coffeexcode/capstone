@@ -33,6 +33,7 @@ export default function SignIn({ navigation }) {
           <View style={styles.inputContainer}>
             <TextInput
               style={styles.input}
+              testID='usernameInput'
               placeholderTextColor='#A9A9A9'
               placeholder='Username'
               onChangeText={text => setUsername(text)}/>
@@ -41,13 +42,14 @@ export default function SignIn({ navigation }) {
             <TextInput
               secureTextEntry
               style={styles.input}
+              testID='passwordInput'
               placeholderTextColor='#A9A9A9'
-              text
               placeholder='Password'
               onChangeText={text => setPassword(text)}/>
           </View>
           <CAButton
             size='sm'
+            testID='loginBtn'
             title='Log in'
             onPress={() => navigation.navigate('SelectView')}
           />

@@ -31,7 +31,7 @@ export default function Event({ route }) {
   return (
     <View style={styles.container}>
       <View style={styles.headingContainer}>
-        <CAText size='lg' style={styles.heading}>{eventData.name}</CAText>
+        <CAText testID='eventName' size='lg' style={styles.heading}>{eventData.name}</CAText>
         <CAText style={styles.icon}>{renderEventIcon(eventData.type, 64)}</CAText>
       </View>
       <View style={styles.descriptionContainer}>
@@ -43,18 +43,19 @@ export default function Event({ route }) {
           <Ionicons name="location-outline" size={24} color="black" />
           {eventData.roomId}
         </CAText>
-        <CAText style={styles.text}>
+        <CAText testID='eventDescription' style={styles.text}>
           {eventData.description}
         </CAText>
       </View>
       <View style={styles.registrationContainer}>
         <CAText style={styles.text} appColor>{appText.status}</CAText>
         <TouchableOpacity
+          testID='toggleRegistration'
           onPress={toggleRegistration}
           style={[styles.status, 
             eventData.status === appText.REGISTERED ? styles.registered : styles.unregistered
           ]}>
-          <CAText style={styles.statusText}>
+          <CAText testID='registrationStatus' style={styles.statusText}>
             {!eventHasEnded(eventData.start) ? eventData.status : appText.ended}
           </CAText>
         </TouchableOpacity>

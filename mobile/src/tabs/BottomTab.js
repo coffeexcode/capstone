@@ -109,6 +109,9 @@ const OrganizerHome = () => (
 );
 
 export {
+  ScheduleStackScreens,
+  ScanQRStackScreens,
+  AboutStackScreens,
   AttendeeHome,
   OrganizerHome
 }

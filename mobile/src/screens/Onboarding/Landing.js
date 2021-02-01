@@ -21,11 +21,12 @@ export default function Landing({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar style='auto'/>
-      <CAText size='xlg'><MaterialIcons name="donut-small" size={28} color="#3f51b5" /> ConAssist</CAText>
-      <Image source={landingImg} style={styles.splash} />
+      <CAText testID='title' size='xlg'><MaterialIcons name="donut-small" size={28} color="#3f51b5" /> ConAssist</CAText>
+      <Image testID='splash' source={landingImg} style={styles.splash} />
       <Spacer size='xlg' />
       <CAButton 
         style={styles.getStarted}
+        testID='getStartedBtn'
         title='Get Started'
         onPress={() => navigation.navigate('SignIn')}
         />
