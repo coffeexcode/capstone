@@ -20,6 +20,7 @@ export default function ScanQR({ navigation }) {
   const [hasScanned, setHasScanned] = useState(false);
   const [hasCameraPermission, setHasCameraPermission] = useState(false);
 
+  /* istanbul ignore next */ 
   useEffect(() => {
     async function askCameraPermissions() {
       const { status } = await Permissions.askAsync(Permissions.CAMERA);
@@ -28,11 +29,13 @@ export default function ScanQR({ navigation }) {
     askCameraPermissions();
   }, [])
 
+  /* istanbul ignore next */ 
   const handleScan = ({ type, data }) => {
     setHasScanned(true);
     navigation.navigate('ScanAction', { item: { type, data }})
   }
 
+  /* istanbul ignore next */ 
   const QRCodeScanner = (
     <>
       <BarCodeScanner style={styles.scanner} onBarCodeScanned={hasScanned ? undefined : handleScan} />
@@ -40,6 +43,7 @@ export default function ScanQR({ navigation }) {
     </>
   )
 
+  /* istanbul ignore next */ 
   const renderQRCodeScanner = () => {
     switch (hasCameraPermission) {
       case undefined:
