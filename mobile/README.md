@@ -71,7 +71,6 @@ To run the tests.
 ```
 yarn test
 ```
+When the above command runs, it will generate a coverage report on all the code within `src/`. If you are interested at viewing an interactive coverage report, please view  `coverage/lcov-report/index.html`.
 
-The static copy of the coverage report is located at `docs/coverage-report/index.html`. This coverage report is interactive - however cannot be opened on GitHub, this has to be opened on your machine as the `index.html` has dependencies within it's respective folder for rendering the content.
-
-However, When the above command runs, it will generate a coverage report on all the code within `src/`. This coverage report can be found on the root directory at `coverage/lcov-report/index.html`.
+The static copy of the coverage report is located at `docs/coverage-report/coverage.jpg`.
