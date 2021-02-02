@@ -5,6 +5,8 @@ import About from '@screens/Attendee/About';
 jest.mock('@expo/vector-icons');
 jest.useFakeTimers();
 
+global.fetch = jest.fn(() => Promise.resolve({}));
+
 describe('<About/>', () => {
   it('should render the View properly', () => {
     const tree = render(<About />).toJSON();
@@ -21,5 +23,10 @@ describe('<About/>', () => {
     fireEvent(button, 'press');
 
     expect(navigation.navigate).toHaveBeenCalledWith('Sponsors');
+  })
+
+  it('should fetch the expected response from the API', () => {
+    const comp = render(<About />);
+    expect(fetch).toHaveBeenCalled();
   })
 })

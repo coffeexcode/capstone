@@ -6,6 +6,8 @@ import Sponsors from '@screens/Attendee/Sponsors';
 jest.mock('@expo/vector-icons');
 jest.useFakeTimers();
 
+global.fetch = jest.fn(() => Promise.resolve({}));
+
 describe('<Sponsors/>', () => {
   it('should render the View properly', () => {
     const tree = render(<Sponsors />).toJSON();
@@ -32,5 +34,10 @@ describe('<Sponsors/>', () => {
     fireEvent(item, 'press');
 
     expect(navigation.navigate).toHaveBeenCalledWith('Contact', { item: firstItem });
+  })
+
+  it('should fetch the expected response from the API', () => {
+    const comp = render(<Sponsors />);
+    expect(fetch).toHaveBeenCalled();
   })
 })

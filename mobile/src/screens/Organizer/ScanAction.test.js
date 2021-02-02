@@ -4,6 +4,9 @@ import { fireEvent, render } from '@testing-library/react-native';
 import ScanAction from '@screens/Organizer/ScanAction';
 
 jest.useFakeTimers();
+jest.mock('@expo/vector-icons');
+
+global.fetch = jest.fn(() => Promise.resolve({}));
 
 describe('<ScanAction/>', () => {
   it('should render the View properly', () => {
@@ -20,5 +23,10 @@ describe('<ScanAction/>', () => {
     fireEvent(button, 'press');
 
     expect(navigation.navigate).toHaveBeenCalledWith('ScanQR');
+  })
+
+  it('should fetch the expected response from the API', () => {
+    const comp = render(<ScanAction />);
+    expect(fetch).toHaveBeenCalled();
   })
 })

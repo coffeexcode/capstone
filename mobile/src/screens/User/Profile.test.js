@@ -6,6 +6,8 @@ import Profile from '@screens/User/Profile';
 jest.mock('@expo/vector-icons');
 jest.useFakeTimers();
 
+global.fetch = jest.fn(() => Promise.resolve({}));
+
 describe('<Profile/>', () => {
   it('should render the View properly', () => {
     const tree = render(<Profile />).toJSON();
@@ -45,5 +47,10 @@ describe('<Profile/>', () => {
 
     fireEvent(button, 'press');
     expect(navigation.navigate).toHaveBeenCalledWith('SignIn');
+  })
+
+  it('should fetch the expected response from the API', () => {
+    const comp = render(<Profile />);
+    expect(fetch).toHaveBeenCalled();
   })
 })

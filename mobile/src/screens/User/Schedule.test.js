@@ -7,6 +7,8 @@ jest.mock('@expo/vector-icons');
 jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
 jest.useFakeTimers();
 
+global.fetch = jest.fn(() => Promise.resolve({}));
+
 describe('<Schedule/>', () => {
   it('should render the View properly', () => {
     const tree = render(<Schedule />).toJSON();
@@ -30,5 +32,10 @@ describe('<Schedule/>', () => {
     fireEvent(event[0], 'press');
 
     expect(navigation.navigate).toHaveBeenCalled();
+  })
+
+  it('should fetch the expected response from the API', () => {
+    const comp = render(<Schedule />);
+    expect(fetch).toHaveBeenCalled();
   })
 })
