@@ -11,6 +11,9 @@ This directory contains the clientside code for our administrative services.
   - [Getting Started](#getting-started)
     - [Pre-reqs](#pre-reqs)
     - [Installation](#installation)
+  - [Testing](#testing)
+    - [Running Tests](#running-tests)
+    - [Writing Tests](#writing-tests)
   - [Design](#design)
     - [Mockups](#mockups)
   - [Development](#development)
@@ -65,6 +68,20 @@ yarn install
 ```sh
 yarn start
 ```
+
+## Testing
+
+Create-react-app comes with jest set up out the box, I have added module alias' to the `package.json` file; if you need to fix any they are defined under the `jest` field.
+
+### Running Tests
+
+Whenever you push to your branch on Github, Travis CI will run the test suit and the results can be viewed [here](https://www.travis-ci.com/github/coffeexcode/capstone).
+
+Otherwise use `yarn test` under `/website`.
+
+### Writing Tests
+
+See `src\components\Banner\banner.test.js` for a **very** simple example of a test you can run. Typically, to start, we just want to test that expected links and elements exist on the page correctly. This would later be followed up with tests that simulate button clicks, etc., etc.
 
 ## Design
 

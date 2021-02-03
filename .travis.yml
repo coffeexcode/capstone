@@ -1,5 +1,7 @@
 dist: xenial
-language: node_js
+language: node
+node_js: 
+  - node
 stages:
   - name: website
   - name: mobile
@@ -18,9 +20,10 @@ jobs:
     - name: Mobile Unit Testing
       stage: mobile
       script: echo "mobile tests here"
-    - name: API Unit Testing
-      stage: api
-      script: echo "api testing here"
+      # this is more an example, API will travis test their own repo
+    # - name: API Unit Testing
+    #   stage: api
+    #   script: echo "api testing here"
 ## Tests that are not unit testing can be added
 ## to the same stage as a new job like so:
     # - name: Website Acceptance Testing
