@@ -16,7 +16,10 @@ jobs:
   include:
     - name: Website Unit Testing
       stage: website
-      script: cd website; yarn test
+      script:
+        - cd website
+        - yarn install
+        - yarn test
     - name: Mobile Unit Testing
       stage: mobile
       script: echo "mobile tests here"
