@@ -28,7 +28,7 @@ export const Banner = (props) => {
         </Grid>
         <Grid item xs={4}>
           <div className="navigation">
-            <Grid container spacing={0.2}>
+            <Grid container spacing={0}>
               <Grid item xs={3}>
                 <span onClick={() => redirect("/about")} className="link">About</span>
               </Grid>
@@ -43,7 +43,7 @@ export const Banner = (props) => {
         </Grid>
         <Grid item xs={4}>
           <div className="navigation">
-            <Grid container spacing={0.2}>
+            <Grid container spacing={0}>
               <Grid item xs={3}>
                 <span className="link" onClick={() => redirect("/admin")}>
                   Dashboard
