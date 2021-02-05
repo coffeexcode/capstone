@@ -1,3 +1,3 @@
 [submodule "registration"]
 	path = registration
-	url = git@github.com:Jailoodu/RestfulRegistration.git
+	url = https://github.com/Jailoodu/RestfulRegistration.git
