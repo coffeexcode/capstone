@@ -20,10 +20,12 @@ jobs:
         - cd website
         - yarn install
         - yarn test
-    - name: Mobile Unit Testing
+    - name: Mobile Testing
       stage: mobile
-      script: echo "mobile tests here"
-      # this is more an example, API will travis test their own repo
+      script:
+        - cd website
+        - yarn install
+        - yarn test
     # - name: API Unit Testing
     #   stage: api
     #   script: echo "api testing here"
