@@ -9,12 +9,13 @@ import CAText from '@core/CAText';
  * @param {object} props.style style object to be applied to button
  * @param {title} props.title text title to be displayed on button
  */
-export default function CAButton({ onPress, style, title }) {
+export default function CAButton({ onPress, style, title, testID }) {
   return (
-  <TouchableOpacity 
+  <TouchableOpacity
+    testID={testID} 
     onPress={onPress}
     style={[styles.default, style]}>
-      <CAText style={styles.text} size='sm'>
+      <CAText testID='buttonText' style={styles.text} size='sm'>
         {title}
       </CAText>
     </TouchableOpacity>

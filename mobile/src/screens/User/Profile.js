@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, SafeAreaView, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, SafeAreaView, View } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 import CAText from '@core/CAText';
@@ -33,15 +33,15 @@ export default function Profile({ navigation }) {
         <FontAwesome5 style={styles.profileIcon} name='user-circle' size={120} color='black' />
       </View>
       <View style={styles.infoContainer}>
-        <CAText style={styles.info}>{profileData.name}</CAText>
-        <CAText size='md' style={styles.info}>{profileData.email}</CAText>
-        <CAText size='md' style={styles.info} appColor>{profileData.phone}</CAText>
+        <CAText testID='name' style={styles.info}>{profileData.name}</CAText>
+        <CAText testID='email' size='md' style={styles.info}>{profileData.email}</CAText>
+        <CAText testID='phone' size='md' style={styles.info} appColor>{profileData.phone}</CAText>
       </View>
       <View style={styles.horizontalRule} />
       <View>
         <CAText size='sm' style={styles.description}>
           {appText.conferenceID}
-          <CAText size="sm" style={styles.bolded}>
+          <CAText testID='instanceID' size="sm" style={styles.bolded}>
             {instanceData.id}
           </CAText>
         </CAText>
@@ -57,7 +57,7 @@ export default function Profile({ navigation }) {
           </CAText>
       </View>
       <View style={styles.bottomActionContainer}>
-        <CAButton onPress={logout} style={styles.logoutButton} title='Logout' />
+        <CAButton testID='logoutBtn' onPress={logout} style={styles.logoutButton} title='Logout' />
       </View>
     </SafeAreaView>
   )
