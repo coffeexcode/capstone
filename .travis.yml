@@ -23,7 +23,7 @@ jobs:
     - name: Mobile Testing
       stage: mobile
       script:
-        - cd website
+        - cd mobile
         - yarn install
         - yarn test
     # - name: API Unit Testing
