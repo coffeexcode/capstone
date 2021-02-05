@@ -26,6 +26,7 @@ export default function Sponsors({ navigation }) {
 
   const renderItem = ({ item }) => (
     <TouchableOpacity
+      testID={`item-${item.id}`}
       style={styles.sponsorItem}
       onPress={() => navigation.navigate('Contact', { item: item })}
       >
@@ -63,6 +64,7 @@ export default function Sponsors({ navigation }) {
       </View>
       <View style={styles.sponsorContainer}>
       <FlatList
+          testID='sponsorList'
           data={sponsors}
           renderItem={renderItem}
           keyExtractor={sponsor => sponsor.id}

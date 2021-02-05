@@ -22,11 +22,11 @@ export default function SelectView({ navigation }) {
     <View style={styles.container}>
       <CAText appColor size='lg'>View as</CAText>
       <Spacer size='lg'/>
-      <CAButton style={styles.select} title="Organizer" onPress={navigateAsOrganizer} />
+      <CAButton testID='organizerBtn' style={styles.select} title="Organizer" onPress={navigateAsOrganizer} />
       <Spacer size='lg'/>
-      <CAButton style={styles.select} title="Sponsor" onPress={navigateAsOrganizer} />
+      <CAButton testID='sponsorBtn' style={styles.select} title="Sponsor" onPress={navigateAsOrganizer} />
       <Spacer size='lg'/>
-      <CAButton style={styles.select} title="Attendee" onPress={navigateAsAttendee} />
+      <CAButton testID='attendeeBtn' style={styles.select} title="Attendee" onPress={navigateAsAttendee} />
     </View>
   )
 }

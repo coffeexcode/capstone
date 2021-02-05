@@ -40,6 +40,7 @@ export default function Schedule({ navigation }) {
 
   const renderItem = item => (
     <TouchableOpacity
+      testID='scheduleItem'
       onPress={() => navigation.navigate('Event', { item: item })} 
       style={[styles.item]}
     >
@@ -78,9 +79,9 @@ export default function Schedule({ navigation }) {
         pastScrollRange={1}
         futureScrollRange={1}
         renderEmptyData={renderEmptyDate}
-        rowHasChanged={(r1, r2) => { return r1.id !== r2.id }}
         pastScrollRange={2}
         futureScrollRange={2}
+        testID='agenda'
         theme={{
           agendaDayNumColor: 'black',
           agendaDayTextColor: 'black',
