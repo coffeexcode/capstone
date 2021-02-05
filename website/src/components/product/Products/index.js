@@ -33,11 +33,11 @@ export const Products = (props) => {
   ];
 
   return (
-    <div>
+    <div data-testid="product-page">
       <Container className="admin-home" maxWidth="lg">
         <Grid container spacing={3}>
-          {products.map((product) => (
-            <Grid item xs={4}>
+          {products.map((product, i) => (
+            <Grid key={i} item xs={4}>
               <Details
                 heading={product.heading}
                 subheading={product.subheading}
