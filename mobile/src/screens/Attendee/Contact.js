@@ -21,10 +21,10 @@ export default function Contact({ route }) {
   
   return (
     <View style={styles.container}>
-      <CAText size='lg' style={styles.text}>{name}</CAText>
-      <CAText size='md' style={styles.text}>{contactFirstName} {contactLastName}</CAText>
-      <CAText size='md' style={styles.text}>{contactEmail}</CAText>
-      <CAText size='md' style={styles.text}>{contactPhone}</CAText>
+      <CAText testID='sponsorFName' size='lg' style={styles.text}>{name}</CAText>
+      <CAText testID='sponsorLName' size='md' style={styles.text}>{contactFirstName} {contactLastName}</CAText>
+      <CAText testID='sponsorEmail' size='md' style={styles.text}>{contactEmail}</CAText>
+      <CAText testID='sponsorPhone' size='md' style={styles.text}>{contactPhone}</CAText>
     </View>
   )
 }

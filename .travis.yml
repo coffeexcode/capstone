@@ -1,0 +1,36 @@
+dist: xenial
+language: node
+node_js: 
+  - node
+stages:
+  - name: website
+  - name: mobile
+# feel free to add more stages for different api services
+  - name: api
+
+# save time on the yarn install
+cache:
+  yarn: true
+
+jobs:
+  include:
+    - name: Website Unit Testing
+      stage: website
+      script:
+        - cd website
+        - yarn install
+        - yarn test
+    - name: Mobile Testing
+      stage: mobile
+      script:
+        - cd mobile
+        - yarn install
+        - yarn test
+    # - name: API Unit Testing
+    #   stage: api
+    #   script: echo "api testing here"
+## Tests that are not unit testing can be added
+## to the same stage as a new job like so:
+    # - name: Website Acceptance Testing
+    #   stage: website
+    #   script: do whatever acceptance testing is

@@ -24,5 +24,6 @@ export default appText = {
   UNREGISTERED: 'NOT REGISTERED',
   ended: 'THIS EVENT HAS ENDED',
   emptyDateMessage: 'There are no events scheduled for this day',
-  registerButton: 'Click to manage registration'
+  registerButton: 'Click to manage registration',
+  scanPrompt: `You have scanned the following attendee: `,
 }

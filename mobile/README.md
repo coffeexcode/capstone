@@ -61,3 +61,29 @@ expo start
 The Expo app should have opened the development server on your browser. In the bottom left, set the *Connection* to *Tunnel*.
 
 On your device (available on both Android and iOS), download the Expo app. Scan the QR Code on your browser with your system camera, the Expo app should have been prompted to open. The app will be bundled and downloaded on your device and can be opened from the app.
+
+## Testing
+
+[Jest](https://jestjs.io/) and [React Native Testing Library](https://github.com/callstack/react-native-testing-library) were used to test the mobile repository.
+
+To run the tests.
+```
+yarn test
+```
+
+When the above command runs, it will generate a coverage report on all the code within `src/`. If you are interested at viewing an interactive coverage report, please view  `coverage/lcov-report/index.html`.
+
+The static copy of the coverage report is located at `docs/coverage-report/coverage.jpg`.
+
+### Test Locations
+
+For respective tests for each file, they are adjacent to that file.
+
+For example, the test for `PresentQR.js`:
+```
+- src
+  |- screens
+    |- Attendee
+      |- PresentQR.js
+      |- PresentQR.test.js
+```

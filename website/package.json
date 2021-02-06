@@ -25,7 +25,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "react-scripts test",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -33,6 +33,17 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^@utils(.*)$": "<rootDir>/src/utils$1",
+      "^@admin(.*)$": "<rootDir>/src/components/admin$1",
+      "^@browser(.*)$": "<rootDir>/src/components/browser$1",
+      "^@attendee(.*)$": "<rootDir>/src/components/attendee$1",
+      "^@product(.*)$": "<rootDir>/src/components/product$1",
+      "^@components(.*)$": "<rootDir>/src/components$1",
+      "^@public(.*)$": "<rootDir>/public$1"
+    }
   },
   "browserslist": {
     "production": [
