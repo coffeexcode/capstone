@@ -15,3 +15,11 @@ test('sidebar registrations link goes to correct path', () => {
   fireEvent.click(linkElement, { button: 0 });
   expect(screen.getByTestId(/registrations-page/i)).toBeInTheDocument();
 });
+
+
+// test('sidebar registrations link goes to correct path', () => {
+//   renderWithRouter(<App />, { route: "/admin"});
+//   const linkElement = screen.getByTestId("help-admin");
+//   fireEvent.click(linkElement, { button: 0 });
+//   expect(screen.getByTestId(/help-admin-page/i)).toBeInTheDocument();
+// });

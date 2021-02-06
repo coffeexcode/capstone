@@ -32,7 +32,7 @@ export const Sidebar = (props) => {
           <ListItemText primary="Manage Registration" />
         </ListItem>
         <Divider />
-        <ListItem data-testid="help" onClick={() => redirect("help")} button>
+        <ListItem data-testid="help-admin" onClick={() => redirect("help")} button>
           <ListItemText primary="Help" />
         </ListItem>
       </List>
