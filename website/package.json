@@ -12,6 +12,8 @@
     "canvas": "^2.6.1",
     "chart.js": "^2.9.4",
     "chartjs": "^0.3.24",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "js-file-download": "^0.4.12",
     "json2csv": "^5.0.5",
     "material-table": "^1.69.2",
