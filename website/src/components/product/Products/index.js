@@ -12,21 +12,21 @@ export const Products = (props) => {
     {
       heading: "Basic Event",
       subheading: "Free",
-      product_description: `
+      description: `
         [Limited tooling and registration options]
       `,
     },
     {
       heading: "Advanced Event",
       subheading: "$$",
-      product_description: `
+      description: `
         [Application registration enabled]
       `,
     },
     {
       heading: "Commercial Event",
       subheading: "$$$",
-      product_description: `
+      description: `
         [Application and Ticket registration enabled]
       `,
     },
@@ -41,7 +41,7 @@ export const Products = (props) => {
               <Details
                 heading={product.heading}
                 subheading={product.subheading}
-                product_description={product.product_description}
+                description={product.description}
               />
             </Grid>
           ))}

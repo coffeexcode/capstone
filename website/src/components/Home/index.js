@@ -19,7 +19,7 @@ export const Home = (props) => {
               <p style={{ fontSize: "36px" }}>
                 Non-profit event organizing at scale
               </p>
-              <Button variant="contained" color="primary">
+              <Button data-testid="get-started-link" variant="contained" color="primary">
                 Get Started
               </Button>
             </div>
@@ -34,7 +34,12 @@ export const Home = (props) => {
             <div className="landing-call">
               <p style={{ fontSize: "24px" }}>Find an event today</p>
               <p style={{ fontSize: "36px" }}>Browse events in your area</p>
-              <Button onClick={() => redirect("/browse")} variant="contained" color="primary">
+              <Button
+                data-testid="browser-home-link"
+                onClick={() => redirect("/browser")}
+                variant="contained"
+                color="primary"
+              >
                 Browse
               </Button>
             </div>
