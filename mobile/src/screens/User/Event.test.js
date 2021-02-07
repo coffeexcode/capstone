@@ -5,6 +5,7 @@ import Event from '@screens/User/Event';
 
 jest.mock('@expo/vector-icons');
 jest.useFakeTimers();
+global.fetch = jest.fn(() => Promise.resolve({}));
 
 describe('<Event/>', () => {
   const constructRoute = (past, type, status) => {
@@ -71,7 +72,7 @@ describe('<Event/>', () => {
     expect(text.children[0]).toBe('REGISTERED');
   })
 
-  it('should not toggle the registration if the event is over', () => {
+  it('should not toggle the registration if the event is over [ACCEPTANCE TEST (F-12)]', () => {
     const route = constructRoute(true);
     const comp = render(<Event route={route} />);
     const button = comp.getByTestId('toggleRegistration');
@@ -81,9 +82,10 @@ describe('<Event/>', () => {
     fireEvent(button, 'press');
 
     expect(text.props.children).toBe('THIS EVENT HAS ENDED');
+    expect(fetch).toHaveBeenCalledTimes(0);
   })
 
-  it('should register the user if the user toggles the current unregistered event', () => {
+  it('should register the user if the user toggles the current unregistered event [ACCEPTANCE TEST (F-11)]', () => {
     const route = constructRoute(false, undefined, 'UNREGISTERED');
     const comp = render(<Event route={route}/>);
     const button = comp.getByTestId('toggleRegistration');
@@ -95,9 +97,10 @@ describe('<Event/>', () => {
     fireEvent(button, 'press');
 
     expect(text.props.children).toBe('REGISTERED');
+    expect(fetch).toHaveBeenCalled();
   })
 
-  it('should unregister the user if the user toggles the current registered event', () => {
+  it('should unregister the user if the user toggles the current registered event [ACCEPTANCE TEST (F-13)]', () => {
     const route = constructRoute(false, undefined, 'REGISTERED');
     const comp = render(<Event route={route}/>);
     const button = comp.getByTestId('toggleRegistration');
@@ -109,5 +112,6 @@ describe('<Event/>', () => {
     fireEvent(button, 'press');
 
     expect(text.props.children).toBe('NOT REGISTERED');
+    expect(fetch).toHaveBeenCalled();
   })
 })

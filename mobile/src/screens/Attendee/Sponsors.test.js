@@ -14,7 +14,7 @@ describe('<Sponsors/>', () => {
     expect(tree.type).toBe('View');
   })
 
-  it('should render a list of sponsors', () => {
+  it('should render a list of sponsors [ACCEPTANCE TEST (F-37)]', () => {
     const comp = render(<Sponsors />);
     const list = comp.getByTestId('sponsorList');
     expect(list.props.data.length).toBeGreaterThan(0);
