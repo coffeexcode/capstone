@@ -15,34 +15,34 @@ describe('<Statistics/>', () => {
         expect(sideBar).toBeInTheDocument();
     });
 
-    it('renders application status graph', () => {
+    it('renders application status graph [ACCEPTANCE TEST (F-17)]', () => {
         render(<Statistics />);
         const appGraph = screen.getByText(/Application Status/i);
         expect(appGraph).toBeInTheDocument();
     });
 
-    it('renders ticket type distribution graph', () => {
+    it('renders ticket type distribution graph [ACCEPTANCE TEST (F-17)]', () => {
         render(<Statistics />);
         const ticketGraph = screen.getByText(/Ticket Type Distribution/i);
         expect(ticketGraph).toBeInTheDocument();
 
     });
 
-    it('renders age distribution graph', () => {
+    it('renders age distribution graph [ACCEPTANCE TEST (F-16)]', () => {
         render(<Statistics />);
         const ageGraph = screen.getByText(/Age Distribution/i);
         expect(ageGraph).toBeInTheDocument();
 
     });
 
-    it('renders geographic distribution graph', () => {
+    it('renders geographic distribution graph [ACCEPTANCE TEST (F-16)]', () => {
         render(<Statistics />);
         const geoGraph = screen.getByText(/Geographic Distribution/i);
         expect(geoGraph).toBeInTheDocument();
 
     });
 
-    it('renders number cards for application status and ticket type distribution graphs', () => {
+    it('renders number cards for application status and ticket type distribution graphs [ACCEPTANCE TEST (F-17)]', () => {
         render(<Statistics />);
         const pendingCard = screen.getByText(/Pending/i);
         const acceptedCard = screen.getByText(/Accepted/i);
