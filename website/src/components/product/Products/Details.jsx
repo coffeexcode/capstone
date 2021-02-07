@@ -12,7 +12,7 @@ import {
  * Show details about our product offering for the about page
  * @param {string} props.heading Title of the product offering
  * @param {string} props.subheading Pricing of the product
- * @param {string} props.product_description Details about that product tier
+ * @param {string} props.description Details about that product tier
  */
 export const Details = (props) => {
   return (
@@ -31,7 +31,7 @@ export const Details = (props) => {
           />
           <CardContent>
             <Typography variant="body2" color="textSecondary" component="p">
-              {props.product_description}
+              {props.description}
             </Typography>
           </CardContent>
         </CardContent>

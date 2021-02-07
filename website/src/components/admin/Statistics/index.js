@@ -119,7 +119,7 @@ export const Statistics = (props) => {
   }
 
   return (
-    <Container className="dashboard" maxWidth="lg">
+    <Container data-testid="statistics-page" className="dashboard" maxWidth="lg">
       <Grid container spacing={5}>
         <Grid item xs={3}>
           <Sidebar />
