@@ -17,7 +17,7 @@ export const BrowserHome = (props) => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <Container className="dashboard" maxWidth="lg">
+    <Container data-testid="browser-home" className="dashboard" maxWidth="lg">
       <Grid container spacing={5}>
         <Grid item xs={3}>
           <Sidebar />

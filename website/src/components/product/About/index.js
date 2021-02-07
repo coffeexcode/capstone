@@ -32,7 +32,7 @@ export const About = (props) => {
   const history = useHistory();
   const redirect = (endpoint) => history.push(endpoint);
   return (
-    <div>
+    <div data-testid="about-page">
       <Container className="admin-home" maxWidth="lg">
         <Grid container spacing={3}>
           <Grid className="home-row" item xs={6}>
