@@ -77,7 +77,7 @@ export const ConferenceWidget = (props) => {
             Events
       </Typography>
       <ul>
-        {props.events.map(e=><li>{e}</li>)}
+        {props.events.map((e,i)=><li key={i}>{e}</li>)}
       </ul>
       <Divider/>
       <Button style={{marginTop:"5px"}} variant="outlined" color="primary" onClick={handleRegister}>
@@ -101,7 +101,7 @@ export const ConferenceWidget = (props) => {
 
           <CardMedia component="img" image={props.image} title="money" className="event-pic"/>
 
-          <Typography color="error" component="h8" variant="h8">
+          <Typography color="error" component="h6" variant="h6">
             {props.date}
           </Typography>
 
