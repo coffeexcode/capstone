@@ -6,7 +6,8 @@ import {
   Typography,
   Divider,
   Modal,
-  Button
+  Button,
+  Backdrop
 } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 import '@admin/common/common.css';
@@ -80,15 +81,15 @@ export const ConferenceWidget = (props) => {
         {props.events.map((e,i)=><li key={i}>{e}</li>)}
       </ul>
       <Divider/>
-      <Button style={{marginTop:"5px"}} variant="outlined" color="primary" onClick={handleRegister}>
+      <Button data-testid="registerbutton" style={{marginTop:"5px"}} variant="outlined" color="primary" onClick={handleRegister}>
         {registered ? "Unregister" : "Register"}
       </Button>
       {registered ? 
-        <Button style={{marginTop:"5px"}} variant="outlined" color="primary" onClick={handleSponsorship}>
+        <Button data-testid="sponsorbutton" style={{marginTop:"5px"}} variant="outlined" color="primary" onClick={handleSponsorship}>
         {sponsored ? "Unsponsor" : "Sponsor"}
       </Button> : ""}
       {registered ? 
-        <Button style={{marginTop:"5px"}} variant="outlined" color="primary" onClick={handleReminder}>
+        <Button data-testid="remindbutton" style={{marginTop:"5px"}} variant="outlined" color="primary" onClick={handleReminder}>
         {reminder ? "Don't Remind Me" : "Remind Me"}
       </Button> : ""}
     </div>
@@ -97,25 +98,27 @@ export const ConferenceWidget = (props) => {
   return (
     <div className="event-widget">
       <Card className="event-widget-card" >
-        <CardContent onClick={handleOpen}>
+        <CardContent data-testid="opencard" onClick={handleOpen}>
 
-          <CardMedia component="img" image={props.image} title="money" className="event-pic"/>
+          <CardMedia data-testid="media" component="img" image={props.image} title="money" className="event-pic"/>
 
-          <Typography color="error" component="h6" variant="h6">
+          <Typography data-testid="date" color="error" component="h6" variant="h6">
             {props.date}
           </Typography>
 
-          <Typography color="textPrimary" component="h5" variant="h5">
+          <Typography data-testid="title" color="textPrimary" component="h5" variant="h5">
             {props.title}
           </Typography>
 
         </CardContent>
         <Modal
+            data-testid='modal'
             style={{display:'flex',alignItems:'center',justifyContent:'center'}}
             open={open}
             onClose={handleClose}
             aria-labelledby="simple-modal-title"
             aria-describedby="simple-modal-description"
+            BackdropComponent={Backdrop}
           >
             {details}
           </Modal>
