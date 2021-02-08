@@ -8,10 +8,10 @@ import { StyleSheet, Text } from 'react-native';
  * @param {string} props.size specified size of the text
  * @param {string} props.children actual text to be rendered
  */
-export default function CAText({ appColor, style, size, children }) {
+export default function CAText({ appColor, style, size, children, testID }) {
   const applyAppColor = appColor ? styles.appColor : null;
   return (
-    <Text style={[styles.default, applyAppColor, style, styles[`${size}`]]}>
+    <Text testID={testID} style={[styles.default, applyAppColor, style, styles[`${size}`]]}>
       {children}
     </Text>
   )

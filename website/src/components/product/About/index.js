@@ -21,18 +21,19 @@ export const About = (props) => {
 
   const getData = async () => {
     const developers = await getDevelopers();
-    console.log(developers);
     setDevs(developers);
   };
 
   useEffect(() => {
-    getData();
+    if (props.developers) {
+      setDevs(props.developers);
+    } else {
+      getData();
+    }
   }, []);
 
-  const history = useHistory();
-  const redirect = (endpoint) => history.push(endpoint);
   return (
-    <div>
+    <div data-testid="about-page">
       <Container className="admin-home" maxWidth="lg">
         <Grid container spacing={3}>
           <Grid className="home-row" item xs={6}>
@@ -64,8 +65,8 @@ export const About = (props) => {
               Our Team
             </Typography>
             <Grid container spacing={2}>
-              {devs.map((dev) => (
-                <Grid item xs={6}>
+              {devs.map((dev, i) => (
+                <Grid key={i} item xs={6}>
                   <ListItem>
                     <ListItemAvatar>
                       <Avatar alt={dev.name} src={dev.github_img} />

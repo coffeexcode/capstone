@@ -11,6 +11,10 @@ This directory contains the clientside code for our administrative services.
   - [Getting Started](#getting-started)
     - [Pre-reqs](#pre-reqs)
     - [Installation](#installation)
+  - [Unit Testing](#unit-testing)
+    - [Running Unit Tests](#running-unit-tests)
+    - [Writing Unit Tests](#writing-unit-tests)
+  - [Acceptance Testing](#acceptance-testing)
   - [Design](#design)
     - [Mockups](#mockups)
   - [Development](#development)
@@ -65,6 +69,38 @@ yarn install
 ```sh
 yarn start
 ```
+
+## Unit Testing
+
+For our unit tests you can see the commands below for running them locally, or viewing results in browser via Travis CI. R
+
+### Running Unit Tests
+
+Whenever a branch is pushed to here, Travis CI will run the test suit and the results can be viewed [here](https://www.travis-ci.com/github/coffeexcode/capstone). For the website results, you can find them by clicking the job labelled `Website Unit Testing`. This should display the console results of testing.
+
+To run them locally you should run the following commands from this directory:
+```sh
+# /website
+yarn install -- --watchAll
+
+# run tests with coverage output generated
+yarn test -- --coverage --watchAll=false
+
+# OR just run tests
+yarn test
+```
+
+Either of these commands will give you the number of pass/fail unit tests, expanding on the error message for all the failed tests. Given some of these tests are looking for components *not yet implemented* they will occasional spit out huge chunks of react elements to help you figure out why it couldn't find that component, so there will be a lot of output from these test commands locally.
+
+If you ran it with the coverage flags turned on, you will get a handy table in the console output indicating the coverage for each test/folder. If you would like to see this in more detail you can find the html file version of that table at `/coverage/lcov-report/index.html`.
+
+### Writing Unit Tests
+
+See `src\components\Banner\banner.test.js` for a **very** simple example of a test you can run. Typically, to start, we just want to test that expected links and elements exist on the page correctly. This would later be followed up with tests that simulate button clicks, etc., etc.
+
+## Acceptance Testing
+
+We found that acceptance testing, with how it relates to the UI, was only really achievable as a unit test (at least given the scale of our project). Therefore, we have labelled unit tests that directly relate to fit criterion from our SRS with `[ACCEPTANCE TEST (F-#)]` at the end of their test label. To view acceptance tests that **pass** you may need to search project for `[ACCEPTANCE TEST` in your text editor locally; failed tests will be easy to find in the results seen in travis.
 
 ## Design
 

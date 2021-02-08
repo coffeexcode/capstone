@@ -20,8 +20,8 @@ export const NumberWidget = (props) => {
     <div className="number-widget">
       <Card className="number-widget-card">
         <CardContent>
-          <Typography color="textSecondary" component="h7" variant="h7">{props.heading}</Typography>
-          <Typography color="textPrimary" component="h3" variant="h3">
+          <Typography color="textSecondary" variant="inherit">{props.heading}</Typography>
+          <Typography color="textPrimary" variant="h4">
             {props.value}
           </Typography>
         </CardContent>

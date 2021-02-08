@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "canvas": "^2.6.1",
     "chart.js": "^2.9.4",
     "chartjs": "^0.3.24",
     "js-file-download": "^0.4.12",
@@ -20,12 +21,13 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "uuid": "^8.3.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "react-scripts test",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -33,6 +35,17 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^@utils(.*)$": "<rootDir>/src/utils$1",
+      "^@admin(.*)$": "<rootDir>/src/components/admin$1",
+      "^@browser(.*)$": "<rootDir>/src/components/browser$1",
+      "^@attendee(.*)$": "<rootDir>/src/components/attendee$1",
+      "^@product(.*)$": "<rootDir>/src/components/product$1",
+      "^@components(.*)$": "<rootDir>/src/components$1",
+      "^@public(.*)$": "<rootDir>/public$1"
+    }
   },
   "browserslist": {
     "production": [
@@ -45,5 +58,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
+    "enzyme": "^3.11.0"
   }
 }

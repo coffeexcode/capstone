@@ -1,6 +1,6 @@
 import React from "react";
 import { Divider, Container, Grid } from "@material-ui/core";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import DonutSmallIcon from "@material-ui/icons/DonutSmall";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import "./banner.css";
@@ -28,22 +28,22 @@ export const Banner = (props) => {
         </Grid>
         <Grid item xs={4}>
           <div className="navigation">
-            <Grid container spacing={0.2}>
+            <Grid container spacing={0}>
               <Grid item xs={3}>
-                <span onClick={() => redirect("/about")} className="link">About</span>
+                <span onClick={() => redirect("/about")} data-testid="about" className="link">About</span>
               </Grid>
               <Grid item xs={3}>
-                <span onClick={() => redirect("/products")} className="link">Products</span>
+                <span onClick={() => redirect("/products")} data-testid="products" className="link">Products</span>
               </Grid>
               <Grid item xs={3}>
-                <span onClick={() => redirect("/downloads")} className="link">Downloads</span>
+                <span onClick={() => redirect("/downloads")} data-testid="downloads" className="link">Downloads</span>
               </Grid>
             </Grid>
           </div>
         </Grid>
         <Grid item xs={4}>
           <div className="navigation">
-            <Grid container spacing={0.2}>
+            <Grid container spacing={0}>
               <Grid item xs={3}>
                 <span className="link" onClick={() => redirect("/admin")}>
                   Dashboard
@@ -54,7 +54,7 @@ export const Banner = (props) => {
               </Grid>
               <Grid item xs={3}>
                 <span className="link">
-                  <span className="login">John Doe</span>{" "}
+                  <span className="login" data-testid>John Doe</span>{" "}
                   <span className="loginIcon">
                     <AccountCircleIcon />
                   </span>

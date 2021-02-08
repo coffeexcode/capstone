@@ -16,7 +16,7 @@ export default function PresentQR() {
     <View style={styles.container}>
       <CAText appColor size='xlg'>{appText.qrHeader}</CAText>
       <Spacer size='xlg'/>
-      <Image source={testQR} style={styles.displayQR}/>
+      <Image testID='displayQR' source={testQR} style={styles.displayQR}/>
       <Spacer size='xlg'/>
       <View style={styles.msgContainer}>
         <CAText style={styles.subtitle} size='xsm'>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View, Modal } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import * as Permissions from 'expo-permissions';
 
@@ -12,14 +12,15 @@ import appText from '@utils/text';
 /**
  * Returns the ScanQR screen
  * 
+ * @param {object} props.navigation React Navigation navigation object allowing for traversal to different screens
+ * 
  * This screen is used to scan attendee's QR Codes for the purpose of verifying identification, resource consumption
  */
-export default function ScanQR() {
+export default function ScanQR({ navigation }) {
   const [hasScanned, setHasScanned] = useState(false);
   const [hasCameraPermission, setHasCameraPermission] = useState(false);
-  const [postScanMsg, setPostScanMsg] = useState('');
-  const [modalVisible, setModalVisible] = useState(false);
 
+  /* istanbul ignore next */ 
   useEffect(() => {
     async function askCameraPermissions() {
       const { status } = await Permissions.askAsync(Permissions.CAMERA);
@@ -28,12 +29,13 @@ export default function ScanQR() {
     askCameraPermissions();
   }, [])
 
+  /* istanbul ignore next */ 
   const handleScan = ({ type, data }) => {
-    setPostScanMsg(`You have signed in a user\nTYPE: ${type}\nDATA: ${data}`);
-    setModalVisible(true);
     setHasScanned(true);
+    navigation.navigate('ScanAction', { item: { type, data }})
   }
 
+  /* istanbul ignore next */ 
   const QRCodeScanner = (
     <>
       <BarCodeScanner style={styles.scanner} onBarCodeScanned={hasScanned ? undefined : handleScan} />
@@ -41,6 +43,7 @@ export default function ScanQR() {
     </>
   )
 
+  /* istanbul ignore next */ 
   const renderQRCodeScanner = () => {
     switch (hasCameraPermission) {
       case undefined:
@@ -51,27 +54,9 @@ export default function ScanQR() {
         return QRCodeScanner;
     }
   }
-
-  const renderPromptModal = () => (
-    <Modal
-        animationType='slide'
-        visible={modalVisible}
-        transparent={true}
-        onRequestClose={() => setModalVisible(false)}
-      >
-        <View style={styles.container}>
-          <View style={styles.modalContainer}>
-            <CAText size='sm'>{ postScanMsg }</CAText>
-            <Spacer size='sm'/>
-            <CAButton title='Dismiss' onPress={() => setModalVisible(!modalVisible)}/>
-          </View>
-        </View>
-      </Modal>
-  );
   
   return (
     <View style={styles.container}>
-        {renderPromptModal()}
         <CAText appColor size='xlg'>{appText.qrTitle}</CAText>
         {renderQRCodeScanner()}
         <View style={styles.msgContainer}>
@@ -88,21 +73,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
-  },
-  modalContainer: {
-    margin: 20, 
-    backgroundColor: 'white',
-    borderRadius: 20,
-    padding: 35,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 3
-    },
-    shadowOpacity: 0.5,
-    shadowRadius: 4,
-    elevation: 3
   },
   msgContainer: {
     width: "75%"
