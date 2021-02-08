@@ -9,7 +9,7 @@ For the web based UI we have a suite of unit tests using the `@testing-library/r
 
 ### Accessing Example Results
 
-* If you visit our [https://www.travis-ci.com/github/coffeexcode/capstone](Travis CI) repository, you can view the website unit tests of the latest master build by selecting the job labelled "Website Unit Testing".
+* If you visit our [Travis CI](https://www.travis-ci.com/github/coffeexcode/capstone) repository, you can view the website unit tests of the latest master build by selecting the job labelled "Website Unit Testing".
 
 ### Understanding and Running Unit Tests
 
@@ -22,7 +22,7 @@ For the mobile client, the test suite uses the `@testing-library/react-native` l
 
 ### Accessing Example Results
 
-* If you visit our [https://www.travis-ci.com/github/coffeexcode/capstone](Travis CI) repository, you can view the mobile unit tests of the latest master build by selecting the job labelled "Mobile Unit Testing". 
+* If you visit our [Travis CI](https://www.travis-ci.com/github/coffeexcode/capstone) repository, you can view the mobile unit tests of the latest master build by selecting the job labelled "Mobile Unit Testing". 
 
 ### Understanding and Running Unit Tests
 
