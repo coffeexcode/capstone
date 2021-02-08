@@ -32,6 +32,16 @@ Optionally, if you wish to go from SRS to corresponding code changes, you can na
 
 For categorized Pull Requests you can filter by labels on Github. For example, if you want to see changes related to the requirement for an administrative website, use the `admin website` label.
 
+## Testing
+
+Each service of our website has it's own test instructions, which will be aggregated into this section here. The Travis CI results for this repository only pertain to *modules directly defined here*, namely the web and mobile client code. Other services will document full instructions in their respective repositories (see links below).
+
+### Website
+
+TODO: where to find attached test results.
+
+See [`/website/README.md#running-unit-tests`](here) for instructions on running our unit tests yourself.
+
 ## Links
 ### Web Services
 See project located under `/website` for all of our web based development. For a more detailed look at this part of the project, please see [`/website/README.md`](website/README.md).
@@ -51,3 +61,4 @@ See project located in repository [`github.com/Jailoodu/RestfulRegistration`](ht
 ### Scripts
 
 The scripts directory contains individual scripts for purpose in any projects *development* or *testing*. Each script should be in it's own directory with a corresponding README.md file to explain it's purpose and usage. This, as opposed to inline documention in comments, allows for node or python scripts with dependency folders.
+
