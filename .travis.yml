@@ -17,7 +17,7 @@ jobs:
         - cd website
         - yarn install
         - yarn test
-    - name: Mobile Testing
+    - name: Mobile Unit Testing
       stage: client
       script:
         - cd mobile
