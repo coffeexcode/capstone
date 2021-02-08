@@ -23,6 +23,7 @@ namespace EventManagementApi.Repositories.Impl
             this.logger = logger;
             this.context = context;
         }
+
         public async Task<Location> CreateLocationAsync(Location location)
         {
             var added = await context.Locations.AddAsync(location);
