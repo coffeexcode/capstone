@@ -52,7 +52,7 @@ For the Marketing API, the test suite uses the `pytest` framework.
 
 ### Understanding and Running Unit Tests
 
-* Please see the section in the [README](https://github.com/Jailoodu/RestfulMarketing/blob/main/README.md#testing) for instructions regarding the tests.
+* Please see the section in the [README](https://github.com/Jailoodu/RestfulMarketing#testing) for instructions regarding the tests.
 * With regards to the acceptance tests, comments have been placed within each test case detailing which requirement is being tested.
 
 ## ... (anything that has it's own tests)
