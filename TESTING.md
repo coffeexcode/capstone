@@ -46,4 +46,13 @@ For the Registration API, the test suite uses the `pytest` framework.
 
 For the Marketing API, the test suite uses the `pytest` framework.
 
+### Accessing Example Results
+
+* If you visit our [Travis CI](https://travis-ci.org/github/Jailoodu/RestfulMarketing) repository, you can view the results of the test suite for the latest master build.
+
+### Understanding and Running Unit Tests
+
+* Please see the section in the [README](https://github.com/Jailoodu/RestfulMarketing/blob/main/README.md#testing) for instructions regarding the tests.
+* With regards to the acceptance tests, comments have been placed within each test case detailing which requirement is being tested.
+
 ## ... (anything that has it's own tests)
