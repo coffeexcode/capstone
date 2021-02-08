@@ -81,7 +81,7 @@ Whenever a branch is pushed to here, Travis CI will run the test suit and the re
 To run them locally you should run the following commands from this directory:
 ```sh
 # /website
-yarn install
+yarn install -- --watchAll
 
 # run tests with coverage output generated
 yarn test -- --coverage --watchAll=false
