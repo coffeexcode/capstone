@@ -15,7 +15,7 @@ describe('<Schedule/>', () => {
     expect(tree.type).toBe('RCTSafeAreaView');
   })
 
-  it('should render the Agenda', () => {
+  it('should render the Agenda to view scheduled events [ACCEPTANCE TEST (F-10)]', () => {
     const comp = render(<Schedule />);
     const agenda = comp.getByTestId('agenda');
     expect(agenda.type).toBe('View');

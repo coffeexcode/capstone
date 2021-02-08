@@ -25,7 +25,7 @@ describe('<ScanAction/>', () => {
     expect(navigation.navigate).toHaveBeenCalledWith('ScanQR');
   })
 
-  it('should fetch the expected response from the API', () => {
+  it('should request to the API which action was taken [ACCEPTANCE TEST (F-29, F-30)]', () => {
     const comp = render(<ScanAction />);
     expect(fetch).toHaveBeenCalled();
   })

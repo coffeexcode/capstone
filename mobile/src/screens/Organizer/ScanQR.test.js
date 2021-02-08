@@ -11,7 +11,7 @@ jest.mock('expo-permissions');
  * this, for good reason. The bar code scanner can only be tested by a physical device.
  */
 describe('<ScanQR/>', () => {
-  it('should render the View properly', () => {
+  it('should render the QR Scanner properly [ACCEPTANCE TEST (F-28)]', () => {
     const tree = render(<ScanQR/>).toJSON();
     expect(tree.type).toBe('View');
   })

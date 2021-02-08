@@ -12,7 +12,7 @@ describe('<PresentQR/>', () => {
     expect(tree.type).toBe('View');
   })
 
-  it('renders the placeholder QR code image', () => {
+  it('renders the placeholder QR code image [ACCEPTANCE TEST (F-31)]', () => {
     const comp = render(<PresentQR />);
     const qr = comp.getByTestId('displayQR');
     expect(qr.type).toBe('Image')

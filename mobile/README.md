@@ -66,8 +66,23 @@ On your device (available on both Android and iOS), download the Expo app. Scan 
 
 [Jest](https://jestjs.io/) and [React Native Testing Library](https://github.com/callstack/react-native-testing-library) were used to test the mobile repository.
 
-To run the tests.
+
+For our unit tests you can see the commands below for running them locally, or viewing results in browser via Travis CI.
+
+### Running Unit Tests
+
+Whenever a branch is pushed to here, Travis CI will run the test suit and the results can be viewed [here](https://www.travis-ci.com/github/coffeexcode/capstone). For the mobile results, you can find them by clicking the job labelled `Mobile Unit Testing`. This should display the console results of testing.
+
+To run them locally you should run the following commands from this directory:
+
+To install dependencies for testing.
+```sh
+# /mobile
+yarn install
 ```
+
+To run the tests
+```sh
 yarn test
 ```
 
@@ -87,3 +102,7 @@ For example, the test for `PresentQR.js`:
       |- PresentQR.js
       |- PresentQR.test.js
 ```
+
+### Acceptance Testing
+
+We found that acceptance testing, with how it relates to the UI, was only really achievable as a unit test (at least given the scale of our project). Therefore, we have labelled unit tests that directly relate to fit criterion from our SRS with `[ACCEPTANCE TEST (F-#)]` at the end of their test label. To view acceptance tests that **pass** you may need to search project for `[ACCEPTANCE TEST` in your text editor locally; failed tests will be easy to find in the results seen in travis.
