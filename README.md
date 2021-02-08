@@ -48,6 +48,10 @@ See project located in repository [`github.com/coffeexcode/RestfulQr`](https://g
 
 See project located in repository [`github.com/Jailoodu/RestfulRegistration`](https://github.com/Jailoodu/RestfulRegistration), or through the submodule here located under `/registration`.
 
+**Marketing System**
+
+See project located in repository [`github.com/Jailoodu/RestfulMarketing`](https://github.com/Jailoodu/RestfulMarketing), or through the submodule here located under `/marketing`.
+
 ### Scripts
 
 The scripts directory contains individual scripts for purpose in any projects *development* or *testing*. Each script should be in it's own directory with a corresponding README.md file to explain it's purpose and usage. This, as opposed to inline documention in comments, allows for node or python scripts with dependency folders.
