@@ -56,3 +56,6 @@ For the Marketing API, the test suite uses the `pytest` framework.
 * With regards to the acceptance tests, comments have been placed within each test case detailing which requirement is being tested.
 
 ## ... (anything that has it's own tests)
+
+## EventManagement API
+This API uses NUnit for tests. Currently the tests are not run from CI. You must run `dotnet test` from the project directory.
