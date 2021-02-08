@@ -29,5 +29,21 @@ For the mobile client, the test suite uses the `@testing-library/react-native` l
 * Please see the section in our mobiles [README](/mobile/README.md#testing) for instructions regarding the unit tests.
 * For information on how to connect tests to acceptance criterion from our SRS see the section on [Acceptance Testing](/mobile/README.md#acceptance-testing)
 
+## Registration API
+
+For the Registration API, the test suite uses the `pytest` framework.
+
+### Accessing Example Results
+
+* If you visit our [Travis CI](https://travis-ci.org/github/Jailoodu/RestfulRegistration) repository, you can view the results of the test suite for the latest master build.
+
+### Understanding and Running Unit Tests
+
+* Please see the section in the [README](https://github.com/Jailoodu/RestfulRegistration/blob/main/README.md#testing) for instructions regarding the tests.
+* With regards to the acceptance tests, comments have been placed within each test case detailing which requirement is being tested.
+
+## Marketing API
+
+For the Marketing API, the test suite uses the `pytest` framework.
 
 ## ... (anything that has it's own tests)
