@@ -1,3 +1,6 @@
+import download from "js-file-download";
+import { Parser } from "json2csv";
+
 const options = {
   "Content-Type": "application/json",
   "Accept": "application/json",
@@ -25,4 +28,27 @@ export const getDevelopers = async () => {
 
   const devs = await res.json();
   return devs;
+}
+
+/**
+ * Accept currently selected applicant rows in the database
+ * @param {*} e 
+ * @param {*} data 
+ */
+export const acceptApplications = (e, data) => {
+  // TODO
+}
+
+/**
+ * Create csv file and trigger download for local file
+ * @param {Object} data the rows of data to send to csv file
+ */
+export const exportData = async (data) => {
+  try {
+    const parser = new Parser(options);
+    const csv = parser.parse(data);
+    download(csv, "registrations.csv");
+  } catch (err) {
+    console.log(err);
+  }
 }

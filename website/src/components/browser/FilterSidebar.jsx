@@ -16,10 +16,6 @@ import '@admin/common/common.css';
 export const Sidebar = (props) => {
   const history = useHistory();
 
-  const redirect = (page) => {
-    history.push(`/admin/${page}`);
-  }
-
   return (
     <div className="admin-sidebar">
       <List component="admin-nav">

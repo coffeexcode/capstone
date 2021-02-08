@@ -3,10 +3,7 @@ language: node
 node_js: 
   - node
 stages:
-  - name: website
-  - name: mobile
-# feel free to add more stages for different api services
-  - name: api
+  - name: client
 
 # save time on the yarn install
 cache:
@@ -15,13 +12,13 @@ cache:
 jobs:
   include:
     - name: Website Unit Testing
-      stage: website
+      stage: client
       script:
         - cd website
         - yarn install
         - yarn test
     - name: Mobile Testing
-      stage: mobile
+      stage: client
       script:
         - cd mobile
         - yarn install

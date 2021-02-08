@@ -13,7 +13,6 @@ import "./dashboard.css";
  * See README for figma links to mockup design and purpose
  */
 export const Dashboard = (props) => {
-
   const [attendees, setAttendees] = useState([]);
   
   const getData = async () => {
