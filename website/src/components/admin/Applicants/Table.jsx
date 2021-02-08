@@ -22,11 +22,6 @@ import {
 // the defined icons they have provided in their component.
 // See https://material-table.com/#/ for details
 const tableIcons = {
-  Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
-  Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
-  DetailPanel: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
-  Edit: forwardRef((props, ref) => <Edit {...props} ref={ref} />),
-  Filter: forwardRef((props, ref) => <FilterList {...props} ref={ref} />),
   FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
   LastPage: forwardRef((props, ref) => <LastPage {...props} ref={ref} />),
   NextPage: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
@@ -34,8 +29,6 @@ const tableIcons = {
   ResetSearch: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
   Search: forwardRef((props, ref) => <Search {...props} ref={ref} />),
   SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
-  ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
-  ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
 
 };
 
@@ -49,12 +42,12 @@ export const Table = (props) => {
             actions={[
               {
                 tooltip: "Accept selected applications",
-                icon: () => <Check data-testid="accept-app" {...props} />,
+                icon: () => <Check data-testid="accept-app" />,
                 onClick: (e, data) => props.accept(e, data),
               },
               {
                 tooltip: "Export selected data",
-                icon: () => <GetApp data-testid="export-data" {...props} />,
+                icon: () => <GetApp data-testid="export-data" />,
                 onClick: (e, data) => props.export(data),
               }
             ]}
