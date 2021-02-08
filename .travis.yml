@@ -4,12 +4,13 @@ node_js:
   - node
 stages:
   - name: client
-  
+
 jobs:
   include:
     - name: Website Unit Testing
       stage: client
       script:
+        - sudo apt-get install libpixman-1-dev libcairo2-dev libpangocairo-1.0-0 libpango1.0-dev libgif-dev  libjpeg-dev
         - cd website
         - yarn install
         - yarn test
