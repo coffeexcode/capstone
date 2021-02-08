@@ -1,7 +1,7 @@
 dist: xenial
 language: node
 node_js: 
-  - node
+  - lts/*
 stages:
   - name: client
 
