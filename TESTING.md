@@ -18,4 +18,16 @@ For the web based UI we have a suite of unit tests using the `@testing-library/r
 
 ## Mobile Application
 
+For the mobile client, the test suite uses the `@testing-library/react-native` library.
+
+### Accessing Example Results
+
+* If you visit our [https://www.travis-ci.com/github/coffeexcode/capstone](Travis CI) repository, you can view the mobile unit tests of the latest master build by selecting the job labelled "Mobile Unit Testing". 
+
+### Understanding and Running Unit Tests
+
+* Please see the section in our mobiles [README](/mobile/README.md#testing) for instructions regarding the unit tests.
+* For information on how to connect tests to acceptance criterion from our SRS see the section on [Acceptance Testing](/mobile/README.md#acceptance-testing)
+
+
 ## ... (anything that has it's own tests)
