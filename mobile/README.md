@@ -36,8 +36,9 @@ You will need the following to serve the app on your own mobile device.
   - on the App Store (iOS)
   - on the Play Store (Android)
 
+*(Recommended)*: The app is served on a published url on Expo, if you would like to skip the installation steps, create an account [here](https://expo.io/signup) and skip to Usage and follow the instructions on [Expo Online](#Expo-Online)
+
 To setup the app locally. 
-> The app is served on a published url on Expo, if you would like to skip the installation steps, create an account [here](https://expo.io/signup) and skip to Usage and follow the instructions on [Expo Online](#Expo-Online)
 - Latest version of [Node](https://nodejs.org/en/)
 - [Yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable)
 - Expo-CLI
