@@ -72,9 +72,9 @@ Now, scan the QR Code on your browser with your system camera, the Expo app shou
 
 ### Expo Online 
 
-Navigate to the hosted project url on your at <https://expo.io/@conassist/projects/mobile>.
+Navigate to the hosted project url on your browser at <https://expo.io/@conassist/projects/mobile>.
 
-Scan the QR Code on your browser with your system camera, the Expo app should have been prompted to open.
+Scan the QR Code on your mobile device with your system camera, the Expo app should have been prompted to open.
 
 If the above doesn't work, navigate to the Profile tab on the Expo app. Under **Published Projects**, select `mobile`.
 
