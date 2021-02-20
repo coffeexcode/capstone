@@ -36,7 +36,7 @@ You will need the following to serve the app on your own mobile device.
   - on the App Store (iOS)
   - on the Play Store (Android)
 
-*(Recommended)*: The app is served on a published url on Expo, if you would like to skip the installation steps, create an account [here](https://expo.io/signup) and skip to Usage and follow the instructions on [Expo Online](#Expo-Online)
+*(Recommended)*: The app is served on a published url on Expo, you will need the test account to test the app. Please email me at `florente@mcmaster.ca` for a test account or message me on Microsoft Teams. Then, follow the rest of the instructions at [Expo Online](#Expo-Online) at Usage.
 
 To setup the app locally. 
 - Latest version of [Node](https://nodejs.org/en/)
@@ -72,9 +72,11 @@ Now, scan the QR Code on your browser with your system camera, the Expo app shou
 
 ### Expo Online 
 
-Navigate to the hosted project url at <https://expo.io/@ricoflorentino/projects/mobile>.
+Navigate to the hosted project url on your at <https://expo.io/@conassist/projects/mobile>.
 
 Scan the QR Code on your browser with your system camera, the Expo app should have been prompted to open.
+
+If the above doesn't work, navigate to the Profile tab on the Expo app. Under **Published Projects**, select `mobile`.
 
 ## Testing
 

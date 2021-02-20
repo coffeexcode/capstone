@@ -64,7 +64,7 @@ export default function SignIn({ navigation }) {
             />
           </View>
           <Spacer size='md' />
-          <CAText style={{ color: '#A9A9A9' }} size='xsm'>
+          <CAText style={styles.subText} size='xsm'>
             {appText.skip}
             {/* <CAText
               style={{ textDecorationLine: 'underline'}}
@@ -95,6 +95,10 @@ const styles = StyleSheet.create({
   splash: {
     height: '18%',
     resizeMode: 'contain'
+  },
+  subText: {
+    color: '#A9A9A9',
+    width: '70%'
   },
   container: {
     flex: 1,
