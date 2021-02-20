@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Moq" Version="4.16.0" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\CourseOfferingRegistration\" />
+    <Folder Include="Services\CourseOffering\" />
+    <Folder Include="Services\Course\" />
+    <Folder Include="Services\EventOfferingRegistration\" />
+    <Folder Include="Services\EventOffering\" />
+    <Folder Include="Services\Event\" />
+    <Folder Include="Services\Instructor\" />
+    <Folder Include="Services\Location\" />
+    <Folder Include="Services\Room\" />
+    <Folder Include="Services\Sponsor\" />
+    <Folder Include="Services\Timeslot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EventManagementApi\EventManagementApi.csproj" />
+  </ItemGroup>
+
+</Project>
