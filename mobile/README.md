@@ -31,7 +31,13 @@ For POC/demo purposes, the app currently gives the user a staging screen that al
 
 ## Prerequisites
 
-You will need the following to serve the app.
+You will need the following to serve the app on your own mobile device.
+- Expo Go app 
+  - on the App Store (iOS)
+  - on the Play Store (Android)
+
+To setup the app locally. 
+> The app is served on a published url on Expo, if you would like to skip the installation steps, create an account [here](https://expo.io/signup) and skip to Usage and follow the instructions on [Expo Online](#Expo-Online)
 - Latest version of [Node](https://nodejs.org/en/)
 - [Yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable)
 - Expo-CLI
@@ -51,8 +57,9 @@ Install dependencies for project.
 ```
 yarn
 ```
-
 ## Usage
+
+### Local
 After running the below, Expo's Metro Bundler will compiles the JS code using Babel and serve it to an Expo app.
 ```
 expo start
@@ -60,7 +67,13 @@ expo start
 
 The Expo app should have opened the development server on your browser. In the bottom left, set the *Connection* to *Tunnel*.
 
-On your device (available on both Android and iOS), download the Expo app. Scan the QR Code on your browser with your system camera, the Expo app should have been prompted to open. The app will be bundled and downloaded on your device and can be opened from the app.
+Now, scan the QR Code on your browser with your system camera, the Expo app should have been prompted to open. The app will be bundled and downloaded on your device!
+
+### Expo Online 
+
+Navigate to the hosted project url at <https://expo.io/@ricoflorentino/projects/mobile>.
+
+Scan the QR Code on your browser with your system camera, the Expo app should have been prompted to open.
 
 ## Testing
 

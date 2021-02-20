@@ -47,18 +47,28 @@ export default function SignIn({ navigation }) {
               placeholder='Password'
               onChangeText={text => setPassword(text)}/>
           </View>
-          <CAButton
-            size='sm'
-            testID='loginBtn'
-            title='Log in'
-            onPress={() => navigation.navigate('SelectView')}
-          />
+          <View style={{ flexDirection: 'row' }}>
+            <CAButton
+              size='sm'
+              style={styles.rowBtn}
+              testID='loginBtn'
+              title='Log in'
+              onPress={() => navigation.navigate('SelectView')}
+            />
+            <CAButton
+              size='sm'
+              style={styles.rowBtn}
+              testID='skipBtn'
+              title='Skip'
+              onPress={() => navigation.navigate('SelectView')}
+            />
+          </View>
           <Spacer size='md' />
           <CAText style={{ color: '#A9A9A9' }} size='xsm'>
-            {appText.createAccountMessage}
-            <CAText
+            {appText.skip}
+            {/* <CAText
               style={{ textDecorationLine: 'underline'}}
-              size='xsm'>here</CAText>
+              size='xsm'>here</CAText> */}
             </CAText>
         </View>
       </TouchableWithoutFeedback>
@@ -91,5 +101,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  rowBtn: {
+    marginHorizontal: 10
   }
 });

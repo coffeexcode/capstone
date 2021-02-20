@@ -31,6 +31,17 @@ describe('<SignIn/>', () => {
     expect(navigation.navigate).toHaveBeenCalledWith('SelectView');
   })
 
+  it('should navigate to the SelectView button when skip is pressed', () => {
+    const navigation = {
+      navigate: jest.fn()
+    }
+    const comp = render(<SignIn navigation={navigation} />);
+    const button = comp.getByTestId('skipBtn');
+    fireEvent(button, 'press');
+
+    expect(navigation.navigate).toHaveBeenCalledWith('SelectView');
+  })
+
   it('should change the text in the username field', () => {
     const comp = render(<SignIn />);
     const input = comp.getByTestId('usernameInput');
