@@ -44,10 +44,10 @@ export default function Schedule({ navigation }) {
       onPress={() => navigation.navigate('Event', { item: item })} 
       style={[styles.item]}
     >
-      <CAText style={{ color: '#A9A9A9' }} size="sm">
+      <CAText style={{ color: '#A9A9A9' }} size="xsm">
         {item.startTime} - {item.endTime}
       </CAText>
-      <CAText size='md'>{item.name}</CAText>
+      <CAText size='sm'>{item.name}</CAText>
       <View
         style={styles.descriptionContainer}>
         <CAText

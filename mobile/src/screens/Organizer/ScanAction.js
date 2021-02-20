@@ -28,14 +28,14 @@ export default function ScanAction({ navigation }) {
   
   return (
     <View style={styles.container}>
-      <CAText size='md' style={styles.text}>{appText.scanPrompt}</CAText>
-      <CAText size='xlg' style={styles.text}>{profileData.name}</CAText>
-      <CAText size='lg' style={styles.text}>{profileData.email}</CAText>
+      <CAText size='sm' style={styles.text}>{appText.scanPrompt}</CAText>
+      <CAText size='md' style={styles.text}>{profileData.name}</CAText>
+      <CAText size='md' style={styles.text}>{profileData.email}</CAText>
       <View style={styles.action}>
         <CAButton testID='scanSignBtn' style={styles.select} title="Sign In" onPress={navigateBack} />
-        <Spacer size='lg'/>
+        <Spacer size='md'/>
         <CAButton testID='scanClaimMealBtn' style={styles.select} title="Claim Meal" onPress={navigateBack} />
-        <Spacer size='lg'/>
+        <Spacer size='md'/>
         <CAButton testID='scanClaimPrizeBtn' style={styles.select} title="Claim Prize" onPress={navigateBack} />
       </View>
     </View>
@@ -52,10 +52,10 @@ const styles = StyleSheet.create({
   },
   action: {
     width: '100%',
-    marginTop: 20
+    marginTop: 15
   },
   text: {
-    paddingBottom: 20
+    paddingBottom: 10
   },
   select: {
     width: '70%' ,
