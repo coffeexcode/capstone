@@ -12,10 +12,16 @@ Below are instructions for students testing ConAssist for the second portion of 
 To get the mobile application working, see details in the mobile apps [README](https://github.com/coffeexcode/capstone/blob/master/mobile/README.md#prerequisites).
 
 Once you have managed to set this up, please try out the following:
+ * Using the app as an 
+    * **Attendee**:
+      * displaying your unique QR Code
+      * registering/unregistering for an event in the future
+      * viewing sponsor information
+    * **Organizer/Sponsor**:
+      * Scanning a(ny) QR Code and signing in a user
 
 
-
-Any feedback is welcome, in particular if we could get opinions on [...] we would appreciate that.
+Any feedback is welcome, in particular if we could get opinions on the above we would appreciate that.
 
 ### Registration API
 
