@@ -25,7 +25,7 @@ Once you have managed to set this up, please try out the following:
       * Scanning a(ny) QR Code and signing in a user
 
 
-Any feedback is welcome, in particular if we could get opinions on the above we would appreciate that.
+Any feedback is welcome, in particular if we could get opinions on the above we would appreciate that. You can send any available feedback to `florente@mcmaster.ca` or message `Enrico Florentino` on Teams.
 
 ### Registration API
 
@@ -55,7 +55,7 @@ curl -X DELETE http://localhost:5001/api/users/<id>
 ```
 4. Repeat the command listed in *Step 2*, verifying that the delete was successful.
 
-To report a **failure** of any steps above, please open an issue under `https://github.com/Jailoodu/RestfulRegistration/issues` describing what went wrong. For general feedback or to indicate that it was completed with no issue, you can email `johnse20@mcmaster.ca` or message `Ethan Johnston` on Teams.
+To report a **failure** of any steps above, please open an issue under `https://github.com/Jailoodu/RestfulRegistration/issues` describing what went wrong. For general feedback, you can email `johnse20@mcmaster.ca` or message `Ethan Johnston` on Teams.
 
 ### Website
 
@@ -69,7 +69,7 @@ Once you have managed to get this running locally, please follow the instruction
 4. Click on the `Manage Registrations` navigation button on the left.
 5. Select several rows of the data table, two buttons should appear at the top of the table. Click on the 'Export' button (hover for tooltip), and ensure a csv file is generated.
 
-This part of the project is still in a somewhat mockup stage, with no connection to our database or api. We are primarily looking for feedback on design and visuals here. That said, outside of the above steps, feel free to navigate around what exists of the website and record thoughts or feedback. When you are done you can email `johnse20@mcmaster.ca` or message `Ethan Johnston` on Teams with any feedback you might have or just to indicate you've finished trying it out. 
+This part of the project is still in a somewhat mockup stage, with no connection to our database or api. We are primarily looking for feedback on design and visuals here. That said, outside of the above steps, feel free to navigate around what exists of the website and record thoughts or feedback. When you are done you can email `johnse20@mcmaster.ca` or message `Ethan Johnston` on Teams with any feedback you might have.
 
 ## Website
 
