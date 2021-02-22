@@ -3,6 +3,34 @@
 
 Each service of our project has it's own test instructions, which will be aggregated into this section here. It is important to note that Travis CI results for this repository only pertain to *modules directly defined here*, namely the web and mobile client code. Other services will document full instructions in their respective repositories (see instructions below).
 
+## Testable Artifacts
+
+Below are instructions for students testing ConAssist for the second portion of the testing mark in the course.
+
+### Mobile Application
+
+To get the mobile application working, see details in the mobile apps [README](https://github.com/coffeexcode/capstone/blob/master/mobile/README.md#prerequisites).
+
+Once you have managed to set this up, please try out the following:
+
+
+
+Any feedback is welcome, in particular if we could get opinions on [...] we would appreciate that.
+
+### Registration API
+
+...
+
+### Website
+
+To get the website running in your browser locally, see details in the website [README]().
+
+Once you have managed to get this running locally, please navigate to the following pages and answer related question:
+
+
+This part of the project is still in a somewhat mockup stage, with no connection to our database or api. We are primarily looking for feedback on design and visuals here.
+
+
 ## Website
 
 For the web based UI we have a suite of unit tests using the `@testing-library/react` library.
