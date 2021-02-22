@@ -120,6 +120,5 @@ For the Marketing API, the test suite uses the `pytest` framework.
 ## EventManagement API
 This API uses NUnit for tests. Currently the tests are not run from CI. You must run `dotnet test` from the project directory.
 
-## ... (anything that has it's own tests)
 
 

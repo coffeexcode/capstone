@@ -31,7 +31,14 @@ For POC/demo purposes, the app currently gives the user a staging screen that al
 
 ## Prerequisites
 
-You will need the following to serve the app.
+You will need the following to serve the app on your own mobile device.
+- Expo Go app 
+  - on the App Store (iOS)
+  - on the Play Store (Android)
+
+*(Recommended)*: The app is served on a published url on Expo, you will need the test account to test the app. Please email me at `florente@mcmaster.ca` for a test account or message me on Microsoft Teams. Then, follow the rest of the instructions at [Expo Online](#Expo-Online) at Usage.
+
+To setup the app locally. 
 - Latest version of [Node](https://nodejs.org/en/)
 - [Yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable)
 - Expo-CLI
@@ -51,8 +58,9 @@ Install dependencies for project.
 ```
 yarn
 ```
-
 ## Usage
+
+### Local
 After running the below, Expo's Metro Bundler will compiles the JS code using Babel and serve it to an Expo app.
 ```
 expo start
@@ -60,7 +68,15 @@ expo start
 
 The Expo app should have opened the development server on your browser. In the bottom left, set the *Connection* to *Tunnel*.
 
-On your device (available on both Android and iOS), download the Expo app. Scan the QR Code on your browser with your system camera, the Expo app should have been prompted to open. The app will be bundled and downloaded on your device and can be opened from the app.
+Now, scan the QR Code on your browser with your system camera, the Expo app should have been prompted to open. The app will be bundled and downloaded on your device!
+
+### Expo Online 
+
+Navigate to the hosted project url on your browser at <https://expo.io/@conassist/projects/mobile>.
+
+Scan the QR Code on your mobile device with your system camera, the Expo app should have been prompted to open.
+
+If the above doesn't work, navigate to the Profile tab on the Expo app. Under **Published Projects**, select `mobile`.
 
 ## Testing
 

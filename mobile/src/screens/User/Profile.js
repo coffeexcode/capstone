@@ -30,12 +30,12 @@ export default function Profile({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.iconContainer}>
-        <FontAwesome5 style={styles.profileIcon} name='user-circle' size={120} color='black' />
+        <FontAwesome5 style={styles.profileIcon} name='user-circle' size={64} color='black' />
       </View>
       <View style={styles.infoContainer}>
-        <CAText testID='name' style={styles.info}>{profileData.name}</CAText>
-        <CAText testID='email' size='md' style={styles.info}>{profileData.email}</CAText>
-        <CAText testID='phone' size='md' style={styles.info} appColor>{profileData.phone}</CAText>
+        <CAText testID='name' size='md' style={styles.info}>{profileData.name}</CAText>
+        <CAText testID='email' size='sm' style={styles.info}>{profileData.email}</CAText>
+        <CAText testID='phone' size='sm' style={styles.info} appColor>{profileData.phone}</CAText>
       </View>
       <View style={styles.horizontalRule} />
       <View>
@@ -45,13 +45,13 @@ export default function Profile({ navigation }) {
             {instanceData.id}
           </CAText>
         </CAText>
-        <CAText size='sm' style={styles.description}>
+        <CAText size='xsm' style={styles.description}>
           {appText.register}
-          <CAText size='sm' style={styles.bolded}>
+          <CAText size='xsm' style={styles.bolded}>
             {instanceData.role}
           </CAText>
         </CAText>
-        <CAButton style={styles.loadButton} title={appText.loadNewConferenceTitle} size='sm'/>
+        <CAButton style={styles.loadButton} title={appText.loadNewConferenceTitle} size='xsm'/>
         <CAText style={styles.loadMessage} size='xsm'>
             {appText.loadNewConferenceMsg}
           </CAText>
@@ -84,10 +84,10 @@ const styles = StyleSheet.create({
   iconContainer: {
     alignSelf: 'center',
     marginTop: 60,
-    marginBottom: 20
+    marginBottom: 10
   },
   info: {
-    marginBottom: 10
+    marginBottom: 5
   },
   description: {
     padding: 10
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
   loadButton: {
-    margin: 30,
+    margin: 20,
     backgroundColor: '#A9A9A9'
   },
   loadMessage: {
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     width: '80%'
   },
   logoutButton: {
-    marginBottom: 20,
+    marginBottom: 10,
     width: '90%',
     shadowColor: '#000',
     shadowOffset: {
