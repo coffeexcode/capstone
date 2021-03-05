@@ -7,10 +7,6 @@ Each service of our project has it's own test instructions, which will be aggreg
 
 Below are instructions for students testing ConAssist for the second portion of the testing mark in the course. None of these tests should take more than 5-10 minutes of your time, if you are hung up on an error you can report it and move on to the next section.
 
-### Getting Started
-
-In order to complete several of the sections below, you will need access to a private Git repository that houses most of the ConAssist project. Please email `brownn11@mcmaster.ca` or message `Nathan Brown` on Teams for access to this repository.
-
 ### Mobile Application
 
 To get the mobile application working, see details in the mobile apps [README](https://github.com/coffeexcode/capstone/blob/master/mobile/README.md#prerequisites).
