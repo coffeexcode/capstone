@@ -54,9 +54,6 @@ You will need the following installed to run this site locally.
 ```sh
 git clone https://github.com/coffeexcode/capstone.git
 ```
-- Generate client test data
-  - Navigate to `./capstone/scripts/faker`
-  - Follow instructions located in README there
 - Navigate to `./capstone/website`
 - Install dependencies
 

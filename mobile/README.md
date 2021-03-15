@@ -36,7 +36,12 @@ You will need the following to serve the app on your own mobile device.
   - on the App Store (iOS)
   - on the Play Store (Android)
 
-*(Recommended)*: The app is served on a published url on Expo, you will need the test account to test the app. Please email me at `florente@mcmaster.ca` for a test account or message me on Microsoft Teams. Then, follow the rest of the instructions at [Expo Online](#Expo-Online) at Usage.
+*(Recommended)*: The app is served on a published url on Expo, you will need the test account to test the app. Use the below credentials for using the app or accessing any of the links to be used in the future.
+
+* username: `testconassist@gmail.com`
+* password: `Testn5674`
+
+Then, follow the rest of the instructions at [Expo Online](#Expo-Online) in  Usage.
 
 To setup the app locally. 
 - Latest version of [Node](https://nodejs.org/en/)
