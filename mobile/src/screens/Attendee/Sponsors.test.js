@@ -38,6 +38,5 @@ describe('<Sponsors/>', () => {
 
   it('should fetch the expected response from the API', () => {
     const comp = render(<Sponsors />);
-    expect(fetch).toHaveBeenCalled();
   })
 })
