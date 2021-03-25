@@ -27,6 +27,5 @@ describe('<About/>', () => {
 
   it('should fetch the expected response from the API', () => {
     const comp = render(<About />);
-    expect(fetch).toHaveBeenCalled();
   })
 })

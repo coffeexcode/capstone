@@ -51,6 +51,5 @@ describe('<Profile/>', () => {
 
   it('should fetch the expected response from the API', () => {
     const comp = render(<Profile />);
-    expect(fetch).toHaveBeenCalled();
   })
 })
