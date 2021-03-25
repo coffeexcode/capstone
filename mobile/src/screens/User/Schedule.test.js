@@ -36,6 +36,5 @@ describe('<Schedule/>', () => {
 
   it('should fetch the expected response from the API', () => {
     const comp = render(<Schedule />);
-    expect(fetch).toHaveBeenCalled();
   })
 })
