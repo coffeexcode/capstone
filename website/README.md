@@ -55,6 +55,10 @@ You will need the following installed to run this site locally.
 git clone https://github.com/coffeexcode/capstone.git
 ```
 - Navigate to `./capstone/website`
+```sh
+# /capstone
+cd website
+```
 - Install dependencies
 
 ```sh
