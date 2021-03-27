@@ -1,15 +1,11 @@
 import React, { forwardRef } from "react";
 import MaterialTable from "material-table";
+import { Details } from "./Details";
 import {
   Search,
-  AddBox,
   Clear,
-  Edit,
-  FilterList,
   FirstPage,
   LastPage,
-  Remove,
-  ViewColumn,
   ArrowDownward,
   Check,
   ChevronLeft,
@@ -29,7 +25,7 @@ const tableIcons = {
   ResetSearch: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
   Search: forwardRef((props, ref) => <Search {...props} ref={ref} />),
   SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
-
+  DetailPanel: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
 };
 
 export const Table = (props) => {
@@ -59,6 +55,11 @@ export const Table = (props) => {
             ]}
             data={props.data}
             title="Registrations"
+            detailPanel={rowData => {
+              return (
+                <Details data={rowData} />
+              )
+            }}
           />
   )
 }

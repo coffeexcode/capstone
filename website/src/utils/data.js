@@ -1,9 +1,11 @@
 import download from "js-file-download";
+import axios from "axios";
 import { Parser } from "json2csv";
 
 const options = {
   "Content-Type": "application/json",
   "Accept": "application/json",
+  "Access-Control-Allow-Origin": "true",
 };
 
 /**
@@ -19,6 +21,7 @@ export const getAttendees = async (...ids) => {
   // return only request items
   return attendees.filter(v => ids.indexOf(v.id) !== -1)
 };
+
 
 /**
  * Retrieve developers for the about page, just a list of all our info
@@ -51,4 +54,26 @@ export const exportData = async (data) => {
   } catch (err) {
     console.log(err);
   }
+}
+
+
+/**
+ * Object for new api methods that interact with external API
+ */
+ export const v1 = {
+  async getAttendees(...ids) {
+    console.log(`${process.env.REACT_APP_API}/api/users/`);
+    const res = await fetch(`http://localhost:5001/api/users/`, options);
+    console.log(res);
+    const attendees = await res.json();
+    console.log(attendees);
+    if (ids.length === 0) return attendees;
+  
+    // return only request items
+    return attendees.filter(v => ids.indexOf(v.id) !== -1)
+  }
+}
+
+export const getFromAPI = async (...ids) => {
+ 
 }
