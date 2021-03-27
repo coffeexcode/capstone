@@ -1,9 +1,7 @@
 import React, { useEffect, useState, forwardRef } from "react";
 import { Container, Grid, Typography } from "@material-ui/core";
-import { getAttendees, v1, exportData, acceptApplications } from "@utils/data";
-import download from "js-file-download";
+import {  v1, exportData, acceptApplications } from "@utils/data";
 import { Sidebar } from "@admin/common/Sidebar";
-import { Parser } from "json2csv";
 import { Table } from "./Table";
 import "./applicants.css";
 
@@ -14,12 +12,11 @@ import "./applicants.css";
  */
 export const Registrations = (props) => {
   const [attendees, setAttendees] = useState([]);
-  const { getAttendees: testAPI } = v1;
   const fields = ["id", "name", "status"];
   const options = { fields };
 
   const getData = async () => {
-    const { users: rows } = await testAPI();
+    const rows = await v1.getAttendees();
     setAttendees(rows);
   };
 

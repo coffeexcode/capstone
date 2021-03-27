@@ -65,10 +65,15 @@ export const exportData = async (data) => {
     console.log(`${process.env.REACT_APP_API}/api/users/`);
     const res = await fetch(`http://localhost:5001/api/users/`, options);
     console.log(res);
-    const attendees = res.data;
+    const attendees = await res.json();
+    console.log(attendees);
     if (ids.length === 0) return attendees;
   
     // return only request items
     return attendees.filter(v => ids.indexOf(v.id) !== -1)
   }
+}
+
+export const getFromAPI = async (...ids) => {
+ 
 }

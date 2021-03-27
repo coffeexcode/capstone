@@ -65,6 +65,12 @@ cd website
 yarn install
 ```
 
+- Run the registration API locally
+
+```sh
+docker run -d -p 5001:5001 edavidj/conassist-register:v1.0
+```
+
 - Run the service for development
 
 ```sh
