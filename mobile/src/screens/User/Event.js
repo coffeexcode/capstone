@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Alert, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import CAText from '@core/CAText';
@@ -20,7 +20,25 @@ export default function Event({ route }) {
    
   useEffect(() => {
     setEventData({...route.params.item});
-  },[]);
+  }, []);
+
+  const confirmRegistration = () => {
+    Alert.alert(
+      "Event",
+      "Confirm registration?",
+      [
+        {
+          text: "Cancel",
+          onPress: () => {},
+          style: 'cancel'
+        },
+        {
+          text: "OK",
+          onPress: () => toggleRegistration()
+        }
+      ]
+    )
+  }
 
   const toggleRegistration = () => {
     if (eventHasEnded(eventData.start)) return;
@@ -31,7 +49,7 @@ export default function Event({ route }) {
   return (
     <View style={styles.container}>
       <View style={styles.headingContainer}>
-        <CAText testID='eventName' size='md' style={styles.heading}>{eventData.name}</CAText>
+        <CAText testID='eventName' size='lg' style={styles.heading}>{eventData.name}</CAText>
         <CAText style={styles.icon}>{renderEventIcon(eventData.type, 48)}</CAText>
       </View>
       <View style={styles.descriptionContainer}>
@@ -51,7 +69,7 @@ export default function Event({ route }) {
         <CAText size='sm' style={styles.text} appColor>{appText.status}</CAText>
         <TouchableOpacity
           testID='toggleRegistration'
-          onPress={toggleRegistration}
+          onPress={confirmRegistration}
           style={[styles.status, 
             eventData.status === appText.REGISTERED ? styles.registered : styles.unregistered
           ]}>
@@ -115,6 +133,7 @@ const styles = StyleSheet.create({
     fontWeight: '500'
   },
   heading: {
+    textAlign: 'center',
     fontWeight: '500',
     width: '75%',
     padding: 20

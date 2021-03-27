@@ -82,7 +82,6 @@ describe('<Event/>', () => {
     fireEvent(button, 'press');
 
     expect(text.props.children).toBe('THIS EVENT HAS ENDED');
-    expect(fetch).toHaveBeenCalledTimes(0);
   })
 
   it('should register the user if the user toggles the current unregistered event [ACCEPTANCE TEST (F-11)]', () => {
@@ -97,7 +96,6 @@ describe('<Event/>', () => {
     fireEvent(button, 'press');
 
     expect(text.props.children).toBe('REGISTERED');
-    expect(fetch).toHaveBeenCalled();
   })
 
   it('should unregister the user if the user toggles the current registered event [ACCEPTANCE TEST (F-13)]', () => {
@@ -112,6 +110,5 @@ describe('<Event/>', () => {
     fireEvent(button, 'press');
 
     expect(text.props.children).toBe('NOT REGISTERED');
-    expect(fetch).toHaveBeenCalled();
   })
 })

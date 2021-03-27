@@ -3,13 +3,9 @@
 
 Each service of our project has it's own test instructions, which will be aggregated into this section here. It is important to note that Travis CI results for this repository only pertain to *modules directly defined here*, namely the web and mobile client code. Other services will document full instructions in their respective repositories (see instructions below).
 
-## Testable Artifacts
+## External Testing
 
 Below are instructions for students testing ConAssist for the second portion of the testing mark in the course. None of these tests should take more than 5-10 minutes of your time, if you are hung up on an error you can report it and move on to the next section.
-
-### Getting Started
-
-In order to complete several of the sections below, you will need access to a private Git repository that houses most of the ConAssist project. Please email `brownn11@mcmaster.ca` or message `Nathan Brown` on Teams for access to this repository.
 
 ### Mobile Application
 
