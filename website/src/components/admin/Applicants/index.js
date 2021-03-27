@@ -1,6 +1,6 @@
 import React, { useEffect, useState, forwardRef } from "react";
 import { Container, Grid, Typography } from "@material-ui/core";
-import { getAttendees, exportData, acceptApplications } from "@utils/data";
+import { getAttendees, v1, exportData, acceptApplications } from "@utils/data";
 import download from "js-file-download";
 import { Sidebar } from "@admin/common/Sidebar";
 import { Parser } from "json2csv";
@@ -14,11 +14,12 @@ import "./applicants.css";
  */
 export const Registrations = (props) => {
   const [attendees, setAttendees] = useState([]);
+  const { getAttendees: testAPI } = v1;
   const fields = ["id", "name", "status"];
   const options = { fields };
 
   const getData = async () => {
-    const { users: rows } = await getAttendees();
+    const { users: rows } = await testAPI();
     setAttendees(rows);
   };
 
