@@ -49,7 +49,7 @@ export default function ScanQR({ navigation }) {
       case undefined:
         return <CAText>{appText.requestPermissionsMessage}</CAText>;
       case false:
-        return <CAText>{appText.deniedPermissionsMessage}</CAText>;
+        return <CAText>{appText.requestPermissionsMessage}</CAText>;
       default:
         return QRCodeScanner;
     }
