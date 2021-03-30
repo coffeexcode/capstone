@@ -1,10 +1,12 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
+import { Alert } from 'react-native';
 
 import Event from '@screens/User/Event';
 
 jest.mock('@expo/vector-icons');
 jest.useFakeTimers();
+jest.spyOn(Alert, 'alert');
 global.fetch = jest.fn(() => Promise.resolve({}));
 
 describe('<Event/>', () => {
@@ -95,7 +97,7 @@ describe('<Event/>', () => {
 
     fireEvent(button, 'press');
 
-    expect(text.props.children).toBe('REGISTERED');
+    expect(Alert.alert).toHaveBeenCalled();
   })
 
   it('should unregister the user if the user toggles the current registered event [ACCEPTANCE TEST (F-13)]', () => {
@@ -109,6 +111,6 @@ describe('<Event/>', () => {
 
     fireEvent(button, 'press');
 
-    expect(text.props.children).toBe('NOT REGISTERED');
+    expect(Alert.alert).toHaveBeenCalled();
   })
 })

@@ -35,7 +35,7 @@ export default function Profile({ navigation }) {
       <View style={styles.infoContainer}>
         <CAText testID='name' size='md' style={styles.info}>{profileData.name}</CAText>
         <CAText testID='email' size='sm' style={styles.info}>{profileData.email}</CAText>
-        <CAText testID='phone' size='sm' style={styles.info} appColor>{profileData.phone}</CAText>
+        <CAText testID='phone' size='sm' style={styles.info}>{profileData.phone}</CAText>
       </View>
       <View style={styles.horizontalRule} />
       <View>

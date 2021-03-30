@@ -23,17 +23,11 @@ export const Sidebar = (props) => {
           <ListItemText primary="All" />
         </ListItem>
         <Divider/>
-        <ListItem  button>
-          <ListItemText primary="For You" />
-        </ListItem>
         <Divider/>
         <ListItem  button>
           <ListItemText primary="Today" />
         </ListItem>
         <Divider/>
-        <ListItem  button>
-          <ListItemText primary="This weekend" />
-        </ListItem>
         <Divider/>
         <ListItem  button>
           <ListItemText primary="Free" />

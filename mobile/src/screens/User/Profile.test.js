@@ -48,9 +48,4 @@ describe('<Profile/>', () => {
     fireEvent(button, 'press');
     expect(navigation.navigate).toHaveBeenCalledWith('SignIn');
   })
-
-  it('should fetch the expected response from the API', () => {
-    const comp = render(<Profile />);
-    expect(fetch).toHaveBeenCalled();
-  })
 })
