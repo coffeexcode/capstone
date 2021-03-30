@@ -26,5 +26,6 @@ export default appText = {
   emptyDateMessage: 'There are no events scheduled for this day',
   registerButton: 'Click to manage registration',
   scanPrompt: `You have scanned the following attendee: `,
+  alertConfirm: `Are you sure you want to toggle registration?`,
   skip: `Select the skip button if you are externally testing the app`
 }

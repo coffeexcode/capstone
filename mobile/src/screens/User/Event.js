@@ -24,8 +24,8 @@ export default function Event({ route }) {
 
   const confirmRegistration = () => {
     Alert.alert(
-      "Event",
-      "Confirm registration?",
+      "Confirm",
+      appText.alertConfirm,
       [
         {
           text: "Cancel",

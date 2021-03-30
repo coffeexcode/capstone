@@ -20,21 +20,4 @@ describe('<Schedule/>', () => {
     const agenda = comp.getByTestId('agenda');
     expect(agenda.type).toBe('View');
   })
-
-  it('should navigate to the selected event when pressed', () => {
-    const navigation = {
-      navigate: jest.fn()
-    }
-    const comp = render(<Schedule navigation={navigation} />);
-    const event = comp.getAllByTestId('scheduleItem');
-
-
-    fireEvent(event[0], 'press');
-
-    expect(navigation.navigate).toHaveBeenCalled();
-  })
-
-  it('should fetch the expected response from the API', () => {
-    const comp = render(<Schedule />);
-  })
 })
