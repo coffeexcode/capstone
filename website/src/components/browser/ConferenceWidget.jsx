@@ -51,6 +51,9 @@ export const ConferenceWidget = (props) => {
     setOpen(false);
   };
   const handleRegister = () => {
+    if (!registered){
+      window.open("https://l1a5ob6zkr4.typeform.com/to/vd6lDfrY", '_blank');
+    }
     setRegister(prevState => !prevState)
   };
 
