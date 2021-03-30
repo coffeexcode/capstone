@@ -28,7 +28,12 @@ const tableIcons = {
   DetailPanel: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
 };
 
+/**
+ * Component to wrap the material table configuration we are using.
+ * @param {fn} props.export Method for generating an xml file representing table data 
+ */
 export const Table = (props) => {
+
   return (
     <MaterialTable
             style={{height: "100%",}}
@@ -36,11 +41,6 @@ export const Table = (props) => {
               selection: true
             }}
             actions={[
-              {
-                tooltip: "Accept selected applications",
-                icon: () => <Check data-testid="accept-app" />,
-                onClick: (e, data) => props.accept(e, data),
-              },
               {
                 tooltip: "Export selected data",
                 icon: () => <GetApp data-testid="export-data" />,
@@ -57,7 +57,7 @@ export const Table = (props) => {
             title="Registrations"
             detailPanel={rowData => {
               return (
-                <Details data={rowData} />
+                <Details data={rowData} update={props.update} />
               )
             }}
           />

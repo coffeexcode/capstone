@@ -1,6 +1,7 @@
 import download from "js-file-download";
 import axios from "axios";
 import { Parser } from "json2csv";
+import { ListItemAvatar } from "@material-ui/core";
 
 const options = {
   "Content-Type": "application/json",
@@ -34,12 +35,19 @@ export const getDevelopers = async () => {
 }
 
 /**
- * Accept currently selected applicant rows in the database
- * @param {*} e 
- * @param {*} data 
+ * As the data received from the TypeForm setup to handle applications is
+ * impractical for rendering event statistics, this helper will transform
+ * those objects into more readable form
+ * @param {[]Object} data List of applications
+ * @returns {[]Object} List of applications in the form [fieldname] -> response
  */
-export const acceptApplications = (e, data) => {
-  // TODO
+export const transformTypeFormData = (data) => {
+  return data.map(row => {
+    const item = {
+
+    }
+    return item;
+  })
 }
 
 /**
@@ -62,18 +70,16 @@ export const exportData = async (data) => {
  */
  export const v1 = {
   async getAttendees(...ids) {
-    console.log(`${process.env.REACT_APP_API}/api/users/`);
     const res = await fetch(`http://localhost:5001/api/users/`, options);
-    console.log(res);
     const attendees = await res.json();
-    console.log(attendees);
     if (ids.length === 0) return attendees;
   
     // return only request items
     return attendees.filter(v => ids.indexOf(v.id) !== -1)
+  },
+  async updateAttendee(data) {
+    console.log("updating...")
+    const res = await axios.put(`http://localhost:5001/api/users/${data.id}`, data);
+    return res;
   }
-}
-
-export const getFromAPI = async (...ids) => {
- 
 }
