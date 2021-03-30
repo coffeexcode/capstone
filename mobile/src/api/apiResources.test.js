@@ -15,7 +15,7 @@ beforeEach(() => {
   fetch.mockClear();
 });
 
-describe('apiReosurces', () => {
+describe('apiResources', () => {
   
   it('should fetch the events from the api', async () => {
 

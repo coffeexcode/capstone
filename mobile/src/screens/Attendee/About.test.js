@@ -24,8 +24,4 @@ describe('<About/>', () => {
 
     expect(navigation.navigate).toHaveBeenCalledWith('Sponsors');
   })
-
-  it('should fetch the expected response from the API', () => {
-    const comp = render(<About />);
-  })
 })

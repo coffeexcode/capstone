@@ -33,8 +33,4 @@ describe('<Schedule/>', () => {
 
     expect(navigation.navigate).toHaveBeenCalled();
   })
-
-  it('should fetch the expected response from the API', () => {
-    const comp = render(<Schedule />);
-  })
 })

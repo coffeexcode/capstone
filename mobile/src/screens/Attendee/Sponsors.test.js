@@ -35,8 +35,4 @@ describe('<Sponsors/>', () => {
 
     expect(navigation.navigate).toHaveBeenCalledWith('Contact', { item: firstItem });
   })
-
-  it('should fetch the expected response from the API', () => {
-    const comp = render(<Sponsors />);
-  })
 })
