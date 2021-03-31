@@ -2,6 +2,7 @@ import download from "js-file-download";
 import axios from "axios";
 import { Parser } from "json2csv";
 import { ListItemAvatar } from "@material-ui/core";
+import { Today } from "@material-ui/icons";
 
 const options = {
   "Content-Type": "application/json",
@@ -42,10 +43,17 @@ export const getDevelopers = async () => {
  * @returns {[]Object} List of applications in the form [fieldname] -> response
  */
 export const transformTypeFormData = (data) => {
-  return data.map(row => {
-    const item = {
-
-    }
+  return data.filter(l => l.form_response.answers.length == 9).map(row => {
+    const item = {id:row.id,
+                  name:row.form_response.answers[0].text,
+                  email:row.form_response.answers[4].email,
+                  location:row.form_response.answers[8].choice.label,
+                  phone:row.form_response.answers[3].phone_number,
+                  age: (new Date().getFullYear()) - (new Date(row.form_response.answers[1].date).getFullYear()),
+                  status:row.status,
+                  occupation:row.form_response.answers[2].text}
+    console.log(item.email)
+    console.log(item.age)
     return item;
   })
 }
