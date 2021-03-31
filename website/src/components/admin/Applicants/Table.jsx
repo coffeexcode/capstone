@@ -52,6 +52,8 @@ export const Table = (props) => {
               { title: "ID", field: "id" },
               { title: "Name", field: "name" },
               { title: "Status", field: "status"},
+              { title: "Age", field: "age" },
+              { title: "Email", field: "email"}
             ]}
             data={props.data}
             title="Registrations"

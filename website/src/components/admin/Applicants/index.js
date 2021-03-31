@@ -1,6 +1,6 @@
 import React, { useEffect, useState, forwardRef } from "react";
 import { Container, Grid, Typography } from "@material-ui/core";
-import { v1, exportData } from "@utils/data";
+import { v1, exportData, transformTypeFormData } from "@utils/data";
 import { Sidebar } from "@admin/common/Sidebar";
 import Loader from "react-loader-spinner";
 import { Table } from "./Table";
@@ -21,7 +21,7 @@ export const Registrations = (props) => {
 
   const getData = async () => {
     const rows = await v1.getAttendees();
-    setAttendees(rows);
+    setAttendees(transformTypeFormData(rows));
   };
 
   const update = (data) => {

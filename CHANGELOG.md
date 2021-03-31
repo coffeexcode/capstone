@@ -42,6 +42,9 @@ All notable changes to this project will be documented in this file.
 - Added typeform for attendees to register to a conference ([#88](https://github.com/coffeexcode/capstone/pull/88))
 
 ### Changed
+- Changed applicant management table to include drop down with details on each user, including resume and details ([#90](https://github.com/coffeexcode/capstone/pull/90))
+- Changed applicant management table to allow for accepting or rejecting applications to conference ([#90](https://github.com/coffeexcode/capstone/pull/90))
+- Changed applicant management table to display more complete information about each entry, including actual responses to form questions from typeform demo ([#91](https://github.com/coffeexcode/capstone/pull/91))
 
 ## Backend
 ### Added
