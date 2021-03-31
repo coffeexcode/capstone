@@ -6,7 +6,7 @@ const options = {
 /**
  * Returns the count of a specific property from a data object array
  * e.g. # of applicants accepted
- * @param {Array.Object} data Object array of faker data
+ * @param {Array.Object} data Object array of data
  * @param {string} field Name of the property (e.g. status)
  * @param {string} value The value of the property you want to find the count for (e.g. Accepted)
  */
@@ -15,9 +15,20 @@ export const getCount = (data, field, value) => {
 };
 
 /**
+ * Returns the count from a data object array that is not the specified property
+ * e.g. # of applicants that are not accepted
+ * @param {Array.Object} data Object array of data
+ * @param {string} field Name of the property (e.g. status)
+ * @param {string} value The value of the property you do not want to find the count for (e.g. Accepted)
+ */
+ export const getCountNot = (data, field, value) => {
+  return data.filter(v => v[field] !== value).length
+};
+
+/**
  * Returns the count of a range of a specific property from a data object array
  * e.g. # of applicants between the ages of 18 and 25
- * @param {Array.Object} data Object array of faker data
+ * @param {Array.Object} data Object array of data
  * @param {string} field Name of the property (e.g. age)
  * @param {string} value1 The lowerbound range of the property you want to find the count for (e.g. 18)
  * @param {string} value1 The upperbound range of the property you want to find the count for (e.g. 25)
@@ -29,7 +40,7 @@ export const getCountRange = (data, field, value1, value2) => {
 /**
  * Returns a sorted (desc) object array of the top states applicants are located at and their count
  * i.e. [{state : New York, count : 24}, {state : Chicago, count : 13}, ...]
- * @param {Array.Object} data Object array of faker data
+ * @param {Array.Object} data Object array of data
  */
 export const getTopLocations = (data) => {
   var locations = [];
@@ -40,9 +51,9 @@ export const getTopLocations = (data) => {
     /* For each entry in data, add it to the locations object array with a count of 0 (if it doesn't exist),
      or increment the location's count by 1 */
     for (var i = 0; i < data.length; i++) {
-      index = locations.map(function (l) { return l.state }).indexOf(data[i].address.state);
+      index = locations.map(function (l) { return l.location }).indexOf(data[i].location);
       if (index === -1) {
-        locations.push({ state: data[i].address.state, count: 1 })
+        locations.push({ location: data[i].location, count: 1 })
       }
       else {
         locations[index].count++;
@@ -59,7 +70,7 @@ export const getTopLocations = (data) => {
 
 /**
  * Returns the sum of location counts (from getTopLocations) starting at an index to the end
- * @param {Array.Object} data Object array of faker data
+ * @param {Array.Object} data Object array of data
  * @param {Array.Object} start starting index
  */
 export const getSumOfLocationsCount = (locations, start) => {

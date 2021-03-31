@@ -75,7 +75,7 @@ export const Details = (props) => {
                 disabled
                 variant="outlined"
                 label="Question 1"
-                defaultValue={lorem}
+                defaultValue={props.data.question1}
               />
               <br />
               <br />
@@ -85,7 +85,7 @@ export const Details = (props) => {
                 disabled
                 variant="outlined"
                 label="Question 2"
-                defaultValue={lorem}
+                defaultValue={props.data.question2}
               />
               <br />
               <br />
@@ -95,7 +95,7 @@ export const Details = (props) => {
                 disabled
                 variant="outlined"
                 label="Question 3"
-                defaultValue={lorem}
+                defaultValue={props.data.question3}
               />
               <br />
               <br />
