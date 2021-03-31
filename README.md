@@ -42,7 +42,17 @@ See project located under `/mobile` for all of our mobile based development. For
 ### Backend Services
 **QR Code Management System**
 
-See project located in repository [`github.com/coffeexcode/RestfulQr`](https://github.com/coffeexcode/RestfulQr), or through the submodule here located under `/restfulqr`.
+See project located in repository [`github.com/coffeexcode/RestfulQr`](https://github.com/coffeexcode/RestfulQr), or through the submodule here located under `/Restful QR`.
+
+
+**Event Mangement API**
+
+See project located under `/EventManagementApi` for this API.  For a more detailed look at this part of the project, please see [`/EventManagementApi/README.md`](EventManagementApi/README.md).
+
+**Attendace API**
+
+See project located under `/AttendanceApi` for this API.  For a more detailed look at this part of the project, please see [`/AttendanceApi/README.md`](AttendanceApi/README.md).
+
 
 **Registration System**
 
