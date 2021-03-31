@@ -7,8 +7,8 @@ import { BarChartWidget } from "../common/BarChartWidget";
 import { NumberWidget } from "../common/NumberWidget";
 import { HorizontalBarChartWidget } from "../common/HorizontalBarChartWidget";
 import { LineChartWidget } from "../common/LineChartWidget";
-import { getAttendees } from "@utils/data";
-import { getCount, getCountRange, getTopLocations, getSumOfLocationsCount } from "@utils/stats";
+import { v1, transformTypeFormData } from "@utils/data";
+import { getCount, getCountNot, getCountRange, getTopLocations, getSumOfLocationsCount } from "@utils/stats";
 
 /* Component for the /admin/statistics page */
 export const Statistics = (props) => {
@@ -16,8 +16,9 @@ export const Statistics = (props) => {
   const [attendees, setAttendees] = useState([]);
   
   const getData = async () => {
-    const { users: rows } = await getAttendees();
-    setAttendees(rows);
+    const rows = await v1.getAttendees();
+    console.log(rows)
+    setAttendees(transformTypeFormData(rows));
   };
 
   useEffect(() => {
@@ -47,12 +48,12 @@ export const Statistics = (props) => {
   }
 
   // Data for ticket type bar chart
-  const ticketTypeData = {
-    labels: ['Standard', 'Full-Access', 'VIP'],
+  const occupationData = {
+    labels: ['Student', 'Adult', 'Total'],
     datasets: [
       {
         label: '# of Applicants',
-        data: [getCount(attendees,"type", "Standard"), getCount(attendees,"type", "Full-Access"), getCount(attendees,"type", "VIP")],
+        data: [getCount(attendees,"occupation", "Student"), getCountNot(attendees,"occupation", "Student"), attendees.length],
         backgroundColor: [
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 159, 64, 0.2)',
@@ -91,26 +92,26 @@ export const Statistics = (props) => {
 
   // Data for geographic distribution horizontal bar chart
   const locationData = {
-    labels: locations.slice(0,5).map(l  => l.state).concat(["Other"]),
+    labels: locations.slice(0,2).map(l  => l.location).concat(["Other"]),
     datasets: [
       {
         label: '# of applicants',
-        data: locations.slice(0,5).map(l => l.count).concat([getSumOfLocationsCount(locations, 5)]),
+        data: locations.slice(0,2).map(l => l.count).concat([getSumOfLocationsCount(locations, 2)]),
         backgroundColor: [
           'rgba(75, 192, 192, 0.2)',
           'rgba(255, 206, 86, 0.2)',
           'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(153, 102, 255, 0.2)'
+          //'rgba(255, 159, 64, 0.2)',
+          //'rgba(54, 162, 235, 0.2)',
+          //'rgba(153, 102, 255, 0.2)'
         ],
         borderColor: [
           'rgba(75, 192, 192, 1)',
           'rgba(255, 206, 86, 1)',
           'rgba(255, 99, 132, 1)',
-          'rgba(255, 159, 64, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(153, 102, 255, 1)'
+          //'rgba(255, 159, 64, 1)',
+          //'rgba(54, 162, 235, 1)',
+          //'rgba(153, 102, 255, 1)'
         ],
         borderWidth: 1,
         width: 200,
@@ -138,7 +139,7 @@ export const Statistics = (props) => {
               <PieChartWidget heading="Application Status" data={applicationsData} />
             </Grid>
             <Grid item xs={6}>
-              <BarChartWidget heading="Ticket Type Distribution" data={ticketTypeData} />
+              <BarChartWidget heading="Occupation Distribution" data={occupationData} />
             </Grid>
           </Grid>
           <Grid container spacing={2}>
@@ -152,13 +153,13 @@ export const Statistics = (props) => {
               <NumberWidget heading="Rejected" value={getCount(attendees, "status", "Rejected")} />
             </Grid>
             <Grid item xs={2}>
-              <NumberWidget heading="Standard" value={getCount(attendees, "type", "Standard")} />
+              <NumberWidget heading="Student" value={getCount(attendees, "occupation", "Student")} />
             </Grid>
             <Grid item xs={2}>
-              <NumberWidget heading="Full-Access" value={getCount(attendees, "type", "Full-Access")} />
+              <NumberWidget heading="Adult" value={getCountNot(attendees, "occupation", "Student")} />
             </Grid>
             <Grid item xs={2}>
-              <NumberWidget heading="VIP" value={getCount(attendees, "type", "VIP")} />
+              <NumberWidget heading="Total" value={attendees.length} />
             </Grid>
           </Grid>
           <Grid container spacing={2}>
