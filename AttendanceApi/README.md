@@ -1,5 +1,5 @@
-# Event Management API
-Microservice to support managing subscriber hosted events
+# Attendance API
+Microservice to support recording "attendance" events throughout a conference
 
 # Building
 ## Running in Docker
@@ -7,12 +7,12 @@ Microservice to support managing subscriber hosted events
 
 2. Build the docker image
 ```bash
-docker build -f Dockerfile .. -t eventmanagement-api-demo:latest 
+docker build -f Dockerfile .. -t attendance-api-demo:latest 
 ```
 
 3. Run the docker container
 ```bash
-docker run --rm -p 5000:80 --name demo1 -e ASPNETCORE_ENVIRONMENT=Development eventmanagement-api-demo
+docker run --rm -p 5000:80 --name demo1 -e ASPNETCORE_ENVIRONMENT=Development attendance-api-demo
 ```
 
 4. Application is available at http://localhost:5000

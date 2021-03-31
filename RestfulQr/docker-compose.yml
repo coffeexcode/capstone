@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  restfulqr:
+    image: ${DOCKER_REGISTRY-}restfulqr
+    build:
+      context: .
+      dockerfile: RestfulQr/Dockerfile
+    ports:
+      - 51301:80
+      - 51300:443
+  db:
+    image: postgres:13.1
+    environment:
+      POSTGRES_USER: restfulqr-user
+      POSTGRES_PASSWORD: restfulqr
+      POSTGRES_DB: RestfulQr
+    ports:
+      - 5432:5432
+  seq:
+    image: datalust/seq
+    ports: 
+      - 51302:80
+      - 51303:5341
+    environment:
+      - ACCEPT_EULA=Y
