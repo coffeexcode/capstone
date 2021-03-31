@@ -61,6 +61,9 @@ All notable changes to this project will be documented in this file.
 - Added REST endpoint to export event attendee data ([dd20591](https://github.com/Jailoodu/RestfulRegistration/commit/dd20591ee28f3af258593a111bdee0e1ac33640c)) - ([F-38](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-38))
 - Added REST endpoint for users (sponsors, etc) to pay event organizers ([e00ef31](https://github.com/Jailoodu/RestfulRegistration/commit/e00ef3177cef831dd87cc9628e1d7c0ff0d6757f)) - ([F-35](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-35))
 
+### Marketing API
+- Added REST endpoints allowing organizers to add marketing material for their conference ([289b392](https://github.com/Jailoodu/RestfulMarketing/commit/289b3923abdf193c2fe2d2227a0083ddd382b5e1)) - ([F-34](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-34))
+
 #### QR Code API
 - Added ability to generate QR Codes upon registering for a conference - ([F-27](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-38)) - ([ba54330](https://github.com/coffeexcode/RestfulQr/commit/ba54330e28b7286ce7949ef22acd7cd4cfcc3d9d))
 
