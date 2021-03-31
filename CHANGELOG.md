@@ -26,7 +26,8 @@ All notable changes to this project will be documented in this file.
 - Added functionality to allow QR Code to perform action ([#20](https://github.com/coffeexcode/capstone/pull/20))
 
 ### Changed
-
+- Update profile and event page UI ([#86](https://github.com/coffeexcode/capstone/pull/86))
+- Update event page to allow confirmation for users registering/withdrawing from event offerings ([#89](https://github.com/coffeexcode/capstone/pull/89))
 ## Website
 ### Added
 - Added landing page for administrative section of the website. ([#2](https://github.com/coffeexcode/capstone/pull/2))
