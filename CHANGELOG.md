@@ -38,6 +38,7 @@ All notable changes to this project will be documented in this file.
 - Added button to register for conference ([bfbcc43](https://github.com/coffeexcode/capstone/pull/14))
 - Added button to set a reminder for conference ([bfbcc43](https://github.com/coffeexcode/capstone/pull/14))
 - Added button to sponsor a conference ([bfbcc43](https://github.com/coffeexcode/capstone/pull/14))
+- Added typeform for attendees to register to a conference ([#88](https://github.com/coffeexcode/capstone/pull/88))
 
 ### Changed
 
