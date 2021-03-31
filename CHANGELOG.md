@@ -42,6 +42,9 @@ All notable changes to this project will be documented in this file.
 - Added typeform for attendees to register to a conference ([#88](https://github.com/coffeexcode/capstone/pull/88))
 
 ### Changed
+- Replaced ticket type graph (and its number widgets) to show applicant's occupation in statistics page ([b6c6e40](https://github.com/coffeexcode/capstone/commit/b6c6e40d3bd91993f5271592e015c9e3a3a9584e))
+- When applicants are accepted or rejected, the application status graph (and its number widgets) are updated accordingly ([b6c6e40](https://github.com/coffeexcode/capstone/commit/b6c6e40d3bd91993f5271592e015c9e3a3a9584e))
+- Geographic graph shows top 2 countries instead of top 5 cities. ([b6c6e40](https://github.com/coffeexcode/capstone/commit/b6c6e40d3bd91993f5271592e015c9e3a3a9584e))
 - Changed applicant management table to include drop down with details on each user, including resume and details ([#90](https://github.com/coffeexcode/capstone/pull/90))
 - Changed applicant management table to allow for accepting or rejecting applications to conference ([#90](https://github.com/coffeexcode/capstone/pull/90))
 - Changed applicant management table to display more complete information about each entry, including actual responses to form questions from typeform demo ([#91](https://github.com/coffeexcode/capstone/pull/91))
