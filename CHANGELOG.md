@@ -76,3 +76,7 @@ All notable changes to this project will be documented in this file.
 #### QR Code API
 - Added ability to generate QR Codes upon registering for a conference - ([F-27](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-27)) - ([ba54330](https://github.com/coffeexcode/RestfulQr/commit/ba54330e28b7286ce7949ef22acd7cd4cfcc3d9d))
 - Added ability to serve QR codes to other services - ([F-27](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-38)), ([F-28](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-28)), ([F-29](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-29)), ([F-30](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-30)), ([F-31](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-31)), - ([ba54330](https://github.com/coffeexcode/RestfulQr/commit/ba54330e28b7286ce7949ef22acd7cd4cfcc3d9d))
+
+#### Attendance API
+- Added ability to retrieve attendee attendance data - (Component of [F-25](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-25)) - ([866cd6f
+](https://github.com/coffeexcode/capstone/commit/866cd6fc6dc2ca0a72c1ebd4afadeac2e8720f48))
