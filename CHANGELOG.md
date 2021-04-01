@@ -66,7 +66,7 @@ All notable changes to this project will be documented in this file.
 - Added REST endpoint to review conference applications ([699a6c5](https://github.com/Jailoodu/RestfulRegistration/commit/699a6c5e41b2a884352639cd666e45d9bb4bc58a)) - ([F-21](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-21))
 - Dockerized application so it can be run in various environments ([757f2e5](https://github.com/Jailoodu/RestfulRegistration/commit/757f2e5eec1960ba19bdb70b576f9b9d6a6c20bc))
 - Added REST endpoint to export event attendee data ([dd20591](https://github.com/Jailoodu/RestfulRegistration/commit/dd20591ee28f3af258593a111bdee0e1ac33640c)) - ([F-38](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-38))
-- Added REST endpoint for users (sponsors, etc) to pay event organizers ([e00ef31](https://github.com/Jailoodu/RestfulRegistration/commit/e00ef3177cef831dd87cc9628e1d7c0ff0d6757f)) - ([F-35](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-35))
+- Added REST endpoint for users to provide payment ([e00ef31](https://github.com/Jailoodu/RestfulRegistration/commit/e00ef3177cef831dd87cc9628e1d7c0ff0d6757f)) - ([F-35](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-35)) - ([F-5](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-5))
 
 #### Marketing API
 - Added REST endpoints allowing organizers to add marketing material for their conference ([289b392](https://github.com/Jailoodu/RestfulMarketing/commit/289b3923abdf193c2fe2d2227a0083ddd382b5e1)) - ([F-34](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-34))
