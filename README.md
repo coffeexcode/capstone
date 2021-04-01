@@ -40,6 +40,12 @@ See project located under `/website` for all of our web based development. For a
 See project located under `/mobile` for all of our mobile based development. For a more detailed look at this part of the project, please see [`/mobile/README.md`](mobile/README.md).
 
 ### Backend Services
+
+#### Documentation
+All of the backend services use [Swagger](https://swagger.io/tools/swagger-ui/) to help document and understand each system. Each project has a description about how to run the project and how/where to view the Swagger document. The web viewer for Swagger uses in-code documentation to generate interactive and informative documentation, as well as being
+able to test the API live from within the browser.
+
+
 **QR Code Management System**
 
 See project located in repository [`github.com/coffeexcode/RestfulQr`](https://github.com/coffeexcode/RestfulQr), or through the submodule here located under `/Restful QR`.
