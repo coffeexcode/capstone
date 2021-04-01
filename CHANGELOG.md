@@ -74,5 +74,3 @@ All notable changes to this project will be documented in this file.
 
 #### QR Code API
 - Added ability to generate QR Codes upon registering for a conference - ([F-27](https://github.com/coffeexcode/capstone/wiki/Requirements-Document#F-38)) - ([ba54330](https://github.com/coffeexcode/RestfulQr/commit/ba54330e28b7286ce7949ef22acd7cd4cfcc3d9d))
-
-### Changed
