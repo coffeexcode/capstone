@@ -20,6 +20,8 @@ This repository contains, or references, all source code relevant to the ConAssi
 
 ## Roadmap
 
+> Update (2021-03-31): These instructions still hold for the final code submission, to filter the CHANGELOG.md by new changes use the command `git diff CHANGELOG.md ccfe25193227395827c4def52a92afee356eba91` from the root level of the project.
+
 For references from SRS to relevant code, see [`CHANGELOG.md`](CHANGELOG.md). Our group determined that the most sane option for a full-stack web and mobile service like ConAssist to meet the requirement of linking to our SRS document was through references from *all* Pull Requests to the section in the SRS document they are meant to address. 
 
 ### Direct Querying
